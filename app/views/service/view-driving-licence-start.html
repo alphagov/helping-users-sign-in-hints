@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+
+  <div class="grid-row">  
+    <div class="column-two-thirds">
+      <header class="page-header">
+        <h1 class="heading-xlarge">View or share your driving licence information</h1>
+      </header>
+
+      <article>
+     
+        <p>You can use this service to:</p>
+
+        <ul class="list list-bullet">
+          <li>view your driving record, for example vehicles you can drive</li>
+          <li>check your penalty points or disqualifications</li>
+          <li>create a licence ‘check code’ to share your driving record with someone, for example a car hire company</li>
+        </ul>
+
+        <p>The ‘check code’ will be valid for 21 days.</p>
+
+        <div class="panel panel-border-wide">
+          <p>This service is also available <a href='#'>in Welsh (Cymraeg)</a>.</p>
+        </div>
+
+        <div class="button-wrap">
+          <a class="button button-start" href="/hub/slide-start{{formQuery}}">
+            <strong>Start now</strong>
+          </a>
+        </div>
+
+        <h2 class="heading-medium">Before you start</h2>
+
+        <p>You can’t use this service:</p>
+
+        <ul class="list list-bullet">
+          <li>if your licence was issued outside of England, Wales or Scotland</li>
+          <li>to check the progress of a licence application</li>
+        </ul>
+
+        <p>It’s a criminal offence to obtain someone else’s personal information without their permission.</p>
+
+        <h2 class="heading-medium">Other ways to apply</h2>
+
+        {{ serviceOtherWays | safe}}
+        
+      </article>
+    </div>
+    
+    <div class="column-third">
+      <div class="related-content">
+        <h2 class="">Driving licences</h2>
+        <ul class="related-content-list">
+          <li><a href="#">Driving licence codes</a></li>
+          <li><a href="#">Tell DVLA you’ve changed address</a></li>
+          <li><a href="#">Driving licence categories</a></li>
+          <li><a href="#">Check someone's driving licence information</a></li>
+          <li><a href="#">More</a></li>
+        </ul>
+        <h2 class="">Elsewhere on the web</h2>
+        <ul class="related-content-list">
+          <li><a href="#">Northern Ireland driving licences</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
+

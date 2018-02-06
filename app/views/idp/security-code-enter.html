@@ -1,0 +1,58 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Security code</h1>
+			<div class="form-group">
+
+				<p>We've sent your security code to:</p>
+
+				<p>
+					{% if data['mobileNumber'] > 1 %}
+						{{data['mobileNumber']}}
+					{% else %}
+						077123456789
+					{% endif %}
+				</p>
+				
+				<p>It may take a minute or so to arrive.</p>
+
+				<form id="main-form" action="/idp/name{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group"  data-required="Please enter the security code sent to your mobile phone">
+						<label class="form-label" for="securityCode">Security code</label>
+						<input class="form-control" id="securityCode" name="securityCode" type="text">
+					</div>
+				
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+						
+						<div  class="secondry-button">
+							<a href="javascript:history.back()">Back</a>
+						</div>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

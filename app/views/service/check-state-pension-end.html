@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">  
+    <div class="column-two-thirds">    
+
+      <h1 class="heading-large">Your State Pension</h1>
+
+      <div class="govuk-box-highlight">
+        <p>
+          Your forecast is:</br>
+          <span class="heading-xlarge">£155.65 a week</span><br>
+          You can get your State Pension on 1 January 2036 when you’ll be 68, 
+        </p>
+      </div>
+      
+      <ul class="list list-bullet">
+        <li>is not a guarantee and is based on the current law</li>
+        <li>is based on your latest National Insurance record (5 April 2016)</li>
+        <li>assumes that you’ll contribute another 18 years</li>
+        <li>does not include any increase due to inflation</li>
+      </ul>
+      
+      <p>You currently have 20 years on your record and you need at least 10 years to get any State Pension.</p>
+      
+      <p class="panel panel-border-narrow">If you have lived or worked overseas (opens in new tab), your time abroad may help you make up the 10 years you need to get any State Pension.</p>
+      
+      <h2 class='heading-medium'>£155.65 is the most you can get</h2>
+      
+      <p>You cannot improve your forecast any further, unless you choose to put off claiming. You’ll still need to pay National Insurance contributions until 2056 as they fund other state benefits and the NHS.</p>
+      
+      <p>After State Pension age, 1 January 2036, you no longer have to pay National Insurance</p>
+
+      <p><a href="#">View your National Insurance record</a></p>
+      
+      <h2 class="heading-medium">How contracting out affects your pension income</h2>
+      
+      <p>Like most people, you were contracted out of part of the State Pension.</p>
+      
+      <p>More about how contracting out has affected your pension income.</p>
+        
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+

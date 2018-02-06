@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+ 
+    <form method="POST" action="hub/slide-start{{formQuery}}">
+ 
+      <div class="column-half">
+        <h1 class="heading-large">
+          The fancy new GOV.UK Verify prototype
+          <span class="heading-secondary">v3.0</span>
+        </h1>
+        <div class="button-wrap">
+          <h2 class="heading-medium">LOA1 services</h2>
+          <input type="submit" formaction="/service/view-driving-licence-start?requestId=view-share-driving-licence" value="View or share your driving licence information" class="button" id="next-button">
+
+          <h2 class="heading-medium">LOA2 services</h2>
+          <input type="submit" formaction="/service/check-state-pension-start?requestId=check-state-pension" value="Check your state pension" class="button" id="next-button">
+        </div>
+      </div>
+      <div class="column-half">
+
+      <div id="usersLOA">
+        <h2 class="heading-medium">Select additional options</h2>
+        <h3 class="heading-small">Users level of assurance</h3>
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice">
+                <input id="radio-0" type="radio" name="usersLOA" value="0"  checked="checked">
+                  <label class="block-label selection-button-radio" for="radio-0">
+                  Unverified
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-1" type="radio" name="usersLOA" value="1">
+                <label class="block-label selection-button-radio" for="radio-1">
+                  LOA1
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-2" type="radio" name="usersLOA" value="2">
+                <label class="block-label selection-button-radio" for="radio-2">
+                  LOA2
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div id="pass-fail">
+          <h3 class="heading-small">Succeed/fail</h3>
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice">
+                <input id="verify-true" type="radio" name="verify" value="true"  checked="checked">
+                <label class="block-label selection-button-radio" for="verify-true">
+                  Pass
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="verify-false" type="radio" name="verify" value="false">
+                <label class="block-label selection-button-radio" for="verify-false">
+                  Fail
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div id="validation">
+          <h3 class="heading-small">Input validation</h3>
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice">
+                <input id="validate-false" type="radio" name="validation" value="false"  checked="checked">
+                <label class="block-label selection-button-radio" for="validate-false">
+                  Off
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="validate-true" type="radio" name="validation" value="true">
+                <label class="block-label selection-button-radio" for="validate-true">
+                  On
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div id="thirdCycle">
+            <h3 class="heading-small">Third cycle matching</h3>
+            <div class="form-group">
+              <fieldset class="inline">
+                <div class="multiple-choice">
+                  <input id="thirdCycle-false" type="radio" name="thirdCycle" value="false" checked="checked">
+                  <label class="block-label selection-button-radio" for="thirdCycle-false">
+                    Off
+                  </label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="thirdCycle-true" type="radio" name="thirdCycle" value="true">
+                  <label class="block-label selection-button-radio" for="thirdCycle-true">
+                    On
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

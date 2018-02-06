@@ -1,0 +1,45 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">IDP NAME has been unable to verify your identity</h1>
+
+				{{ formData|safe }}
+
+				<form id="main-form" action="/hub/verify-failed{{formQuery}}" method="get">
+
+					<p>To protect you against fraud, we can't be specific as to why this happened. The most common reasons are:</p>
+
+					<ul class="list list-bullet">
+						<li>there isn't enough information about you on your credit file or financial history</li>
+						<li>the details you provided don't match the information held by the DVLA, HM Passports Office or credit agencies</li>
+					</ul>
+
+					<p>Your credit score has not been affected in any way during this process.</p>
+
+					<div class='form-group'>
+						<button class="button">
+							Find out more on GOV.UK
+						</button>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

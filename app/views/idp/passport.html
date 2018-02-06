@@ -1,0 +1,82 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">UK Passport details</h1>
+			<div class="form-group">
+
+				<p>Please enter these details exactly as they appear on your passport.</p>
+
+				<form id="main-form" action="/idp/choose-proof-of-address{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group" data-required="Please enter your passport number">
+						<label class="form-label" for="passportNumber">Passport number</label>
+						<input class="form-control" id="passportNumber" type="text">
+					</div>
+					
+					<div class="form-group">
+						<fieldset>
+
+							<div class="form-date">
+								
+								<h3 class="heading-small">Expiry date</h3>
+
+							  <div class="form-hint">For example, 31 1 1970</div>
+
+							  <div class="form-group form-group-day">
+							    <label for="dobDay">Day</label>
+							    <input type="text" autocomplete="off" class="form-control" id="dobDay" name="dobDay">
+							  </div>
+							  <div class="form-group form-group-month">
+							    <label for="dobMonth">Month</label>
+							    <input type="text" autocomplete="off" class="form-control" id="dobMonth" name="dobMonth">
+							  </div>
+							  <div class="form-group form-group-year">
+							    <label for="dobYear">Year</label>
+							    <input type="text" autocomplete="off" class="form-control" id="dobYear" name="dobYear">
+							  </div>
+							</div>
+
+						</fieldset>
+					</div>		
+				
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+					</div>
+
+					<details>
+					  <summary><span class="summary">I don't have my passport details with me</span></summary>
+
+					  <div class="panel panel-border-narrow">
+							<p>If you don't have your passport details with you, you can:</p>
+							<ul class="list list-bullet">
+								<li><a href="#">save and return when you have your passport</a> </li>
+								<li><a href="#">cancel and access the government service another way</a></li>
+							</ul>
+						</div>
+					</details>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

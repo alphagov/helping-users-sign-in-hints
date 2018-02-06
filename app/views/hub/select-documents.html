@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">Your photo identity document</h1>
+
+      {{data['non-uk-group']}}
+      <p>Certified companies use information from identity documents to verify you.</p>
+
+      <div class="panel panel-border-wide">
+        <p>
+          The more identity documents you can provide now, the more likely it is that the company can verify you successfully.
+        </p>
+      </div>
+
+      <form action="/hub/select-other-documents{{formQuery}}">
+        {{formData | safe}}
+        <div class="form-group" data-required="Please answer the question">
+          <fieldset class="block">
+
+            <legend class="heading-medium">Do you have a valid UK photocard driving licence, full or provisional?</legend>
+
+            <div class="multiple-choice" data-target="driving-licence-uk">
+              <input id="driving-licence-true" type="radio" name="drivingLicence" value="true">
+              <label for="driving-licence-true">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="">
+              <input id="driving-licence-false" type="radio" name="drivingLicence" value="false">
+              <label for="driving-licence-false">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="driving-licence-uk">
+              
+              <legend class="heading-small">Where was your driving licence issued?</legend>
+
+              <div class="multiple-choice" data-target="">
+                <input id="driving-licence-gb" type="radio" name="drivingLicenceGB" value="true">
+                <label for="driving-licence-gb">Great Britain</label>
+              </div>
+
+              <div class="multiple-choice" data-target="">
+                <input id="driving-licence-ni" type="radio" name="drivingLicenceGB" value="false">
+                <label for="driving-licence-ni">Northern Ireland</label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group" data-required="Please answer the question">
+          <fieldset class="block">
+
+            <legend class="heading-medium">Do you have a UK passport?</legend>
+
+            <div class="multiple-choice" data-target="">
+              <input id="passport-true" type="radio" name="passport" value="true">
+              <label for="passport-true">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="dont-live-in-uk">
+              <input id="passport-false" type="radio" name="passport" value="false">
+              <label for="passport-false">No</label>
+            </div>
+              
+            </fieldset>
+          </div>
+        <input class="button" type="submit" value="Continue">
+      </form>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

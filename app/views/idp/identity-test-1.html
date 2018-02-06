@@ -1,0 +1,66 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Identity test</h1>
+
+				{{ formData|safe }}
+
+				<form id="main-form" action="/idp/identity-test-2{{formQuery}}" method="get">
+
+					<p>Your answers help verify you are {{data['firstName']}} {{data['lastName']}}.</p>
+
+					<p>We’ll check your answers against your credit record, but this will not affect your credit score.</p>
+
+					<div class="form-group" data-required="Please answer the question">
+						<fieldset class="block">
+							<legend class="heading-medium">When did you open your personal current account?</legend>
+				      <div class="multiple-choice">
+				        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+				        <label for="radio-inline-1">Less than 2 years ago</label>
+				      </div>
+				      <div class="multiple-choice">
+				        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+				        <label for="radio-inline-2">Between 2 and 4 years ago</label>
+				      </div>
+				      <div class="multiple-choice">
+				        <input id="radio-inline-3" type="radio" name="radio-inline-group" value="No">
+				        <label for="radio-inline-3">Between 4 and 6 years ago</label>
+				      </div>
+				      <div class="multiple-choice">
+				        <input id="radio-inline-4" type="radio" name="radio-inline-group" value="No">
+				        <label for="radio-inline-4">More than 6 years ago</label>
+				      </div>
+				      <div class="multiple-choice">
+				        <input id="radio-inline-5" type="radio" name="radio-inline-group" value="No">
+				        <label for="radio-inline-5">I have never had one</label>
+				      </div>
+						</fieldset>
+					</div>
+					
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+    {% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Select your proof of address</h1>
+      
+      <p>We need to double check your address is correct. We do this by checking with your bank or credit card provider.</p>      
+      
+			<ul class="list list-bullet">
+        <li>No charges will be made to your accounts</li>
+        <li>We will not be able to see any of your transactions</li>
+        <li>We will not share your bank details with the service you are accessing</li>
+      </ul>
+
+			{{ formData | safe }}
+
+      <div class="column-half">
+        <div class="evidence-container">
+          <div class="img-container">
+            <img src="/public/images/evidence-icons/bank.png" alt="">
+          </div>
+          <a class="button" href="/idp/bank-account{{formQuery}}">UK bank account</a>
+        </div>
+      </div>
+      <div class="column-half">
+        <div class="evidence-container">
+          <div class="img-container">
+            <img src="/public/images/evidence-icons/card.png" alt="">
+          </div>
+          <a class="button" href="/idp/credit-card{{formQuery}}">Debit or credit card</a>
+        </div>
+      </div>
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}

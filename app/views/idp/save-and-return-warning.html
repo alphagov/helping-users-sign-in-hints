@@ -1,0 +1,30 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Are you sure you want to sign out of your {{idpName}} identity account?</h1>
+
+				{{ formData|safe }}
+
+				<p>
+					<a href="/hub/signed-out{{formQuery}}" class="button">Yes, return to GOV.UK</a> <a href="javascript:history.back()">No, continue with my verification</a>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-half">
+			<h1 class="heading-xlarge ">Sign up to GOV.UK Verify Free, safe and secure.</h1>
+			<div class="form-group">
+
+				<h2 class="heading-medium" style="font-weight: lighter; font-size:24px;" >Create your identity account</h2>
+				
+
+				<form id="main-form" action="/idp/security-code{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group" data-required="Please enter your email address">
+						<label class="form-label" for="username">Email address</label>
+					<input class="form-control" id="username" name="username" type="text" placeholder="Enter your email address" style="width:460px;" >
+					</div>
+			
+					<div class="form-group" data-required="Please enter your password">
+						<label class="form-label" for="password">Password</label>
+						<input class="form-control" id="password" type="password" placeholder="Enter your password" autocomplete='off'  style="width:460px;" name="_secret">
+					</div>
+			
+					<div class="form-group" data-required="Please confirm your password">
+						<label class="form-label" for="password">Confirm password</label>
+						<input class="form-control" id="password" type="password" placeholder="Confirm your password" autocomplete='off'  style="width:460px;" name="_secret">
+					</div>
+
+					<p>
+			      <input id="declaration" name="declaration" type="checkbox" value="true">
+			      <label for="declaration">I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions</a></label>
+		      </p>
+
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+						
+						<div  class="secondry-button">
+							<a href="javascript:history.back()">Back</a>
+						</div>
+					</div>
+					
+					<p>If you don't already have a {{idpName}} identity account you can <a href="{{baseURL}}/input-email{{formQuery}}">create an account</a>.</p>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

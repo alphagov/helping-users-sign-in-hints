@@ -1,0 +1,46 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">IDP NAME has verified your identity</h1>
+
+				{{ formData|safe }}
+
+				<form id="main-form" action="/hub/verify-success{{formQuery}}" method="get">
+
+					<p>We're confident it's you accessing the government service, and not someone pretending to be you. You can continue to GOV.UK.</p>
+
+					<p>You can now sign in with your IDP NAME identity account whenever you see the GOV.UK Verify logo.</p>
+
+					<p>
+						<img src="/public/images/govuk-verify-small-black-text.png" alt="">
+					</p>
+
+					<p>Access government services that use GOV.UK Verify with your username, password and the security code we send to your mobile phone.</p>
+
+					<div class='form-group'>
+						<button class="button">
+							Continue to GOV.UK
+						</button>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

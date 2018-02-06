@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <meta http-equiv="refresh" content="5;url=/service{{serviceCompleteURL}}{{formQuery}}">
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <header class="page-header">
+        <div>
+          <h1 style="text-align:center;" class="heading-large">
+            {{ serviceProvider }} is processing your details
+          </h1>
+          <p style="text-align:center;">This may take a minute or so, please bear with us.</p>
+        </div>
+      </header>
+
+      <div class="fullwidth-loading" style="text-align:center;">
+        <img src="/public/images/ajax-loader.gif" alt="loading animation" title="" class="ajaxLoader"/>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}
+
+

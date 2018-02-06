@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">Do you have a mobile phone or tablet?</h1>
+
+      <p>Certified companies can send security codes to your mobile.</p>
+
+      <form action="/hub/choose-a-company{{formQuery}}">
+        {{formData | safe}}
+        <div class="form-group" data-required="Please answer the question">
+          <fieldset class="block">
+
+            <div class="multiple-choice" data-target="install-apps">
+              <input id="mobile-device-true" type="radio" name="mobile" value="true">
+              <label for="mobile-device-true">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="">
+              <input id="mobile-device" type="radio" name="mobile" value="false">
+              <label for="mobile-device">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="install-apps">
+              
+              <!-- <legend class="heading-small"> -->
+
+                Can you install apps on your device?
+
+                <span class='form-hint'>Some certified companies ask you to download a free app and use your phone's camera as part of verifying your identity.</span>
+
+              <!-- </legend> -->
+
+              <div class="multiple-choice" data-target="">
+                <input id="apps-yes" type="radio" name="apps" value="true">
+                <label for="apps-yes">Yes</label>
+              </div>
+              
+              <div class="multiple-choice" data-target="">
+                <input id="apps-no" type="radio" name="apps" value="false">
+                <label for="apps-no">No</label>
+              </div>
+
+              <div class="multiple-choice" data-target="">
+                <input id="apps-dont-know" type="radio" name="apps" value="false">
+                <label for="apps-dont-know">I don’t know</label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <input class="button" type="submit" value="Continue">
+      </form>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

@@ -1,0 +1,66 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">What’s your address?</h1>
+			<div class="form-group">
+
+				<form id="main-form" action="/idp/choose-id{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group">
+						<fieldset>
+
+							<div class="form-group" data-required="Please enter your house number or name, building and street name">
+				        <label class="form-label" for="building">House number or name, building and street name</label>
+				        <input class="form-control" id="address1" name="address1" type="text">
+				        <input class="form-control" id="address2" name="address2" type="text" style="margin-top: 15px">
+				      </div>
+				      <div class="form-group" data-required="Please enter your town or city">
+				        <label class="form-label" for="town">Town or city</label>
+				        <input class="form-control" id="town" name="town" type="text">
+				      </div>
+				      <div class="form-group">
+				        <label class="form-label" for="county">County (optional)</label>
+				        <input class="form-control" id="county" name="county" type="text">
+				      </div>
+				      <div class="form-group" data-required="Please enter your postcode">
+				        <label class="form-label" for="postcode">Postcode</label>
+				        <input class="form-control" id="postcode" name="postcode" type="text" style="width: 150px">
+				      </div>
+
+						</fieldset>
+					</div>			
+
+				
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+						
+						<div  class="secondry-button">
+							<a href="javascript:history.back()">Back</a>
+						</div>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

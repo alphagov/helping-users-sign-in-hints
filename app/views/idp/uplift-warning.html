@@ -1,0 +1,51 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">The government service needs to be more confident it's you</h1>
+
+			{{ formData|safe }}
+
+			<p>Because the service you're accessing is at a higher risk of fraud, you need to provide more evidence; this is to make sure someone isn't pretending to be you.</p>
+
+			<div class="panel panel-border-wide">
+				<p>You add the evidence by entering identity document and bank details and then answering questions only you should know the answer to.</p>
+
+				<p>You won’t need to do this every time you access a government service.</p>
+			</div>
+
+			<p>Once we've checked the evidence and we know that it's you, you can access all government services using your {{idpName}} identity account.</p>
+
+			<p><img class="sign-in-logo" src="/public/images/govuk-verify-small-black-text.png" style="max-height:50px;" alt=""></p>
+
+					
+			<form id="main-form" action="/idp/choose-id{{formQuery}}" method="get">
+				<div class='form-group'>
+					<button class="button">
+						Continue
+					</button>
+				</div>
+			</form>
+
+
+			<div class="save-and-return-button">
+	       <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">I can’t provide more evidence</a> 
+	    </div>
+				
+		</div>
+	</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Security code</h1>
+			<div class="form-group">
+
+				<p>We'll send you a security code to your mobile. This is to make sure that the mobile number you enter belongs to you.</p>
+
+				<p>We'll send you a new code every time you sign in, to make sure it's not someone pretending to be you. This means you’ll need your phone with you every time.</p>
+				
+				<p>We won't use your mobile number for any other purpose.</p>
+
+				<p>
+					<details>
+					  <summary><span class="summary"> I don't have my mobile phone with me</span></summary>
+					  <div class="panel panel-border-narrow">
+
+					    <p>If you don't have your mobile phone with you, you can:</p>
+
+							<ul class="list list-bullet">
+								<li><a href="#">save and return when you have your mobile phone</a></li>
+								<li><a href="#">cancel and access the government service another way</a></li>
+							</ul>
+					  </div>
+					</details>
+				</p>
+
+				<form id="main-form" action="/idp/security-code-enter{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group" data-required="Please enter your mobile number">
+						<label class="form-label" for="mobileNumber">Mobile number</label>
+						<input class="form-control" id="mobileNumber" name="mobileNumber" type="text">
+					</div>
+			
+				
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+						
+						<div  class="secondry-button">
+							<a href="javascript:history.back()">Back</a>
+						</div>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

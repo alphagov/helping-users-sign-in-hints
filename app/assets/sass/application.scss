@@ -1,0 +1,134 @@
+  // Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+@import 'patterns/task-list';
+
+
+// Pages .scss files
+@import 'pages/hub-sign-in';
+@import 'pages/slides';
+
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+// verify logo in hub
+
+  .verify-logo {
+    @include grid-column(1 / 3, tablet, right);
+    display: inline-block;
+    float:left;
+    margin-top:2em;
+    img{
+    width:150px
+    }
+  }
+
+
+// Available languages include
+
+.available-languages {
+  @include grid-column(1 / 3, tablet, right);
+
+  ul {
+    @extend %contain-floats;
+    list-style: none;
+    padding: $gutter-half 0 $gutter-one-third;
+    border-bottom: 1px solid $border-colour;
+
+    li {
+      float: left;
+      display: block;
+      border-right: 1px solid $border-colour;
+      padding: 0 $gutter-one-third 0 0;
+      height: 16px;
+      margin: 3px $gutter-one-third 2px 0;
+
+      &.last {
+        border-right: 0;
+      }
+
+      a,
+      span {
+        display: block;
+        margin-top: -1px;
+        @include core-16;
+      }
+
+      .direction-rtl & {
+        direction: rtl;
+        float: right;
+        text-align: start;
+        border-left: 1px solid $border-colour;
+        border-right: 0;
+        margin: 3px 0 2px $gutter-one-third;
+        padding: 0 0 0 $gutter-one-third;
+
+        &.last {
+          border-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Verify and IDP logo lockup
+
+.verify-idp-logo-lockup {
+  padding: 20px 0;
+  
+  .idp-logo-lockup {
+    height:60px;
+  }
+  
+  .verify-logo-lockup {
+    height:60px; 
+    margin-left: 30px; 
+    padding-left: 30px; 
+    border-left:#bfc1c3 solid 1px;
+  }
+}
+
+
+// service page sidebar
+
+.related-content {
+    margin-top: 120px;
+    border-top: 10px solid #005ea5;
+    padding-top: 5px;
+    h2 {
+    padding: 15px 0 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.25;
+    }
+    li {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }

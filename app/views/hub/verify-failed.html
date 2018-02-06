@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">{{idpName}} was unable to verify your identity</h1>
+
+      <p>There are a few reasons why this might happen, including:</p>
+
+      <ul class="list list-bullet">
+        <li>your answer to a question doesn't match records</li>
+        <li>does not have access to enough information about you</li>
+        <li>you've recently had a change in your circumstances, and they are not up to date online</li>
+      </ul>
+
+      <p>However, each company uses different methods for each of these steps.</p>
+
+      <p>So we’ll now ask you some questions to check which companies can verify you. We’ll then send you to the website of the company you choose.</p>
+
+      <h2 class="heading-medium">What to do next</h2>
+
+      <p>
+        <details>
+          <summary><span class="summary">Contact {{idpName}}</span></summary>
+          <div class="panel panel-border-narrow">
+      
+              <p>identityservicesupport@{{idpSlug}}.com</p>
+              <p>Telephone: 0800 052 1051<br/>Monday to Friday, 8am to 7pm<br/>Saturday, 8am to 4pm
+              <br/>
+              <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+            </p>
+      
+          </div>
+        </details>
+      </p>
+
+      <p>
+        <details>
+          <summary><span class="summary">Try verifying with another certified company</span></summary>
+          <div class="panel panel-border-narrow">
+            <p>Other companies use different methods from {{idpName}} and may therefore stand a better chance of verifying your identity.</p>
+            <p><a href="/hub/about-choosing-a-company?requestId={{ requestId }}&registration=true&above_age_threshold=true&resident_last_12_months=true&userLOA={{userLOA}}">Find another company to verify you</a></p>
+          </div>
+        </details>
+      </p>
+      {% if userLOA == '1' %}
+      <h2 class="heading-medium">You can still access these government services with your {{idpName}} identity account</h2>
+
+      <ul class="list list-bullet">
+        <li>complete your claim or access your Universal Credit account</li>
+        <li>view or share your driving licence information</li>
+      </ul>
+      {% endif %}
+
+
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

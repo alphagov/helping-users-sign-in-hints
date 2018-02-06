@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+
+    <div class="grid-row">
+      <div class="column-quarter">.</div>
+        <div class="column-one-half sign-in-container" style="">
+            
+          <h1 class="heading-large">
+           Sign in with your<br>identity account
+          </h1>
+
+          {{formData | safe}}
+          
+          <div class="idp-list-container">
+            <ul class="list ">
+            {% for idp in idps %}
+              <li class="idp-links">
+                <div class="button-wrap">
+                  <form method="POST" action="{{idpRoot}}/{{ idp.slug }}/sign-in{{formQuery}}&idp={{idp.slug}}&serviceLOA={{serviceLOA}}">
+                    <input type="hidden" name="password" value="jolly-roger">
+                    <div class="idp-icon-container">
+                      <img src="/public/images/idp-icons/{{idp.slug}}.png" class="idp-icon">
+                    </div>
+
+                    <button class="button-link" >{{ idp.name }}</button>
+                  </form>
+                </div>
+              </li>    
+            {% endfor %}
+            </ul>
+          </div>
+          <p>or</p>
+
+          <form id="" class="js-validate" novalidate="novalidate" action="/about-choosing-a-company{{formQuery}}" accept-charset="UTF-8" method="get">
+            {{formData | safe}}
+            <input class="button" id="next-button" type="submit" value="Set up an identity account">
+  <!--           <input type="hidden"  name='registration' value="true">
+            <input type="hidden"  name='driving_licence' value="true">
+            <input type="hidden"  name='passport' value="true"> -->
+          </form>
+
+          <br>
+          <br>
+          <p style="text-align: left;">UK government trusts these certified companies as they are part of GOV.UK Verify. Set up an identity account with a certified company so you can securely sign in to {{serviceNameLower}}.</p>
+          <img src="/public/images/verify-certified-badge.svg" width="75%" class="">
+          <br>
+          <br>
+          <details  style="">
+            <summary><span class="summary">What is GOV.UK Verify?</span></summary>
+            <div class="" style="text-align: left;">
+              <p>GOV.UK Verify is designed by the UK government to fight the growing problem of online identity theft.</p>
+
+              <p>Companies apply to be part of GOV.UK Verify. They are certified when they meet security and privacy standards set by government so you can trust them with your personal information.</p>
+
+              <p>When a government service uses GOV.UK Verify, you can access the service with the identity account you set up with the certified company.
+              </p>
+
+            </div>
+          </details>
+    </div>
+  </div>
+
+</main>
+
+<style type="text/css">
+
+  .idp-links-picker {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+  width: 33%;
+  display: block;
+}
+
+.idp-icon-container {
+  width: 43px;
+  display: inline-block;
+  text-align: center;
+  padding-right: 15px;
+}
+
+.idp-icon {
+  max-height: 35px;
+  max-width: 43px;
+  vertical-align: middle;
+}
+
+.idp-list-container {
+text-align: center;
+}
+
+.idp-links {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.idp-links:last-child {
+  border-bottom: none;
+}
+
+.idp-links:last-child {
+  border-bottom: none;
+}
+
+
+.button-link{
+    background: none;
+    border: none;
+    font-size: 19px;
+    text-decoration: underline;
+    color: #005ea5;
+    cursor: pointer;
+}
+
+.sign-in-container {
+  text-align: center; 
+  border: 5px solid #dee0e2; 
+  margin-top: 10px; 
+  padding-bottom: 30px;
+}
+
+</style>
+
+
+{% endblock %}
+
+

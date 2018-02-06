@@ -1,0 +1,81 @@
+{% extends "layout_slide.html" %}
+
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+
+{% block slide_content %}
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/about-choosing-a-company" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+	<p>Verifying your identity takes about {% if serviceLOA == 1 %}5{% else %}15{% endif %} minutes to complete, but you only have to do it once.</p>
+
+  <p>You’ll then have an identity account with the certified company.</p>
+
+  <p>You can then access other government services in less than 1 minute wherever you see the GOV.UK Verify logo.</p>
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Start now">
+    </div>
+  </div>
+  
+  <details role="group">
+    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+      <span class="summary">What government services use GOV.UK Verify</span>
+    </summary>
+    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+      <p>GOV.UK Verify is new, and government services are joining all the time.</p> 
+
+      {% if serviceLOA == 1 %}
+
+        <p>You can use your identity account to access:</p>
+        
+        <ul class="list-bullet list">
+          <li>view or share your driving licence information</li>
+        </ul>
+
+        <p>When you access these government services, you'll be asked to provide more evidence as these services need to be confident someone isn't pretending to be you:</p>
+
+        <ul class="list-bullet list">
+          <li>complete your Self Assessment</li>
+          <li>check your State Pension</li>
+          <li>sign in to your personal tax account</li>
+          <li>complete your claim or access your Universal Credit account</li>
+          <li>claim your redundancy payment and monies owed</li>
+          <li>check your income tax for the current year</li>
+          <li>report a medical condition that affects your driving</li>
+          <li>renew your short-term medical driving licence</li>
+          <li>check or update your company car tax</li>
+          <li>use Rural Payments</li>
+          <li>help friends and family with their tax</li>
+          <li>apply for a vehicle operator licence</li>
+        </ul>
+
+      {% else %}
+       
+        <p>The current services using Verify are:</p>
+        <ul class="list-bullet list">
+  				<li>complete your Self Assessment</li>
+  				<li>check your State Pension</li>
+  				<li>sign in to your personal tax account</li>
+  				<li>view or share your driving licence information</li>
+  				<li>complete your claim or access your Universal Credit account</li>
+  				<li>claim your redundancy payment and monies owed</li>
+  				<li>check your income tax for the current year</li>
+  				<li>report a medical condition that affects your driving</li>
+  				<li>renew your short-term medical driving licence</li>
+  				<li>check or update your company car tax</li>
+  				<li>use Rural Payments</li>
+  				<li>help friends and family with their tax</li>
+  				<li>apply for a vehicle operator licence</li>
+        </ul>
+        
+      {% endif %}
+    </div>
+  </details>
+
+</form>
+
+{% endblock %}

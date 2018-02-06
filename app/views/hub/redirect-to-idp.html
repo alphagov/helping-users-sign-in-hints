@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Create your {{idpName}} identity account</h1>
+
+        <p>You'll now verify your identity on the {{idpName}} website.</p>
+
+        <p>They'll give you an identity account you can use wherever you see the GOV.UK Verify logo.</p>
+
+        <p>You'll then be able to {{serviceNameLower}}.</p>
+
+        <form action="{{idpRoot}}sign-up{{formQuery}}">
+
+          <div class="form-group">
+            <div class="actions">
+              <input class="button" id="next-button" type="submit" value="Continue to the {{idpName}} website">
+            </div>
+          </div>
+
+        </form>
+
+      {% include "includes/idp-and-verify-logos.html" %}
+
+      </div>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

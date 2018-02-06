@@ -1,0 +1,52 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Identity test</h1>
+
+				{{ formData|safe }}
+
+				<form id="main-form" action="/idp/identity-test-1{{formQuery}}" method="get">
+
+					<p>We’re going to ask you some questions that only you should know the answers to.</p>
+
+					<p>We check your answers against your credit record. Everyone in the UK aged 18 and over has a credit record if they’ve had a credit account for longer than 6 months.</p>
+					
+					<p>A credit record typically includes:</p>
+
+					<ul class="list-bullet">
+						<li>bank accounts, loans and credit cards</li>
+						<li>utility company accounts</li>
+						<li>whether you’re on the electoral register</li>
+					</ul>
+
+					<p>By taking the identity test, you grant {{idpName}} temporary access to your credit record.</p>
+
+					<p>Your credit score won’t be affected. </p>
+					
+					<div class='form-group'>
+						<button class="button">
+							Take the identity test
+						</button>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">You might not be able to have your identity verified</h1>
+
+      <p>To verify an identity, certified companies access credit records then ask you to confirm this information. Most young people and newcomers to the UK have a limited ‘credit history’, companies might not be able to check your identity in this way.</p>
+
+      <h2 class="heading-medium">What you’ll need on your credit record</h2>
+
+      <p>Your identity might be verified if you have 2 or more of the following:</p>
+
+      <ul class="list list-bullet">
+        <li>current account with a UK bank</li>
+        <li>credit card</li>
+        <li>personal loan</li>
+        <li>mortgage</li>
+        <li>gas or electricity bills</li>
+        <li>mobile phone contract</li>
+        <li>you’re registered to vote</li>
+      </ul>
+
+      <p>You’ll also need a UK passport or a UK driving licence.</p>
+
+      <p><a href="/hub/select-documents{{formQuery}}">I’d like to try to verify my identity online</a></p>
+
+      {% if serviceNameLower | length > 1 %}
+        <h2 class="heading-medium">Other ways to {{serviceNameLower}}</h2>
+        {{serviceOtherWays | safe}}
+      {% endif %}
+
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

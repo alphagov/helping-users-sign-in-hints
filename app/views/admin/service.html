@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <h1 class="heading-xlarge">Verify admin tool</h1>
+      </header>
+
+      <h2 class="heading-large">
+        {% if isEdit %}Edit{% else %}Add{% endif %} service
+      </h2>
+
+      {% if isEdit %}
+      <div class="form-group">
+        <!-- <p>
+          Give this URL to the service team:
+        </p>
+
+        <p>
+          <pre>http://govuk-verify.herokuapp.com/intro?requestId={{service.slug}}</pre>
+        </p> -->
+      </div>
+      {% endif %}
+
+      <form action="/admin" method="post">
+
+        {% if isEdit %}
+        <input type="hidden" name="oldSlug" value="{{service.slug}}">
+        {% endif %}
+
+        <div class="form-group">
+          <label class="form-label" for="name">Service name</label>
+          <input class="form-control" type="text" name="name" id="name" value="{{service.name | safe}}">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="slug">Slug</label>
+          <input class="form-control" type="text" name="slug" id="slug" value="{{service.slug | safe}}">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="provider">Service provider</label>
+          <input class="form-control" type="text" name="provider" id="provider" value="{{service.provider | safe}}">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="endURL">Start URL</label>
+          <input class="form-control" type="text" name="startURL" id="startURL" value="{{service.urls.start | safe}}">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="endURL">End URL</label>
+          <input class="form-control" type="text" name="endURL" id="endURL" value="{{service.urls.end | safe}}">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="otherWays">Other ways to access this service</label>
+          <p class="meta-data">Used to describe alternative channels to Verify throughout the hub</p>
+
+          <textarea class="form-control" style="width:570px" name="otherWays" id="otherWays">{{service.otherWays}}</textarea>
+        </div>
+
+        <div class="form-group" class="span12">
+          <label class="form-label" for="whyVerifysUsed">Why this service uses Verify</label>
+          <p class="meta-data">[Service provider] uses Verify to help prevent other people from...</p>
+          <textarea class="form-control" style="width:570px" name="whyVerifysUsed" id="whyVerifysUsed" placeholder="e.g. accessing your driving licence information">{{service.whyVerifysUsed}}</textarea>
+          <p class="meta-data">..., as it stops someone from pretending to be you.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="LOA">Level of Assurance</label>
+          <span class="value">
+            <select name="LOA" id="LOA">
+              {% for option in LOAoptions %}
+              <option value="{{option.value | safe }}" {% if option.selected == true %}selected{% endif %}>
+                {{option.name}}
+              </option>
+              {% endfor %}
+            </select>
+          </span>
+        </div>
+
+        <div class="actions">
+          {% if isEdit == true %}
+          <button class="button">Save changes</button>
+          {% else %}
+          <button class="button">Add service</button>
+          {% endif %}
+        </div>
+
+        {% if isEdit == true %}
+        <!-- TODO: delete -->
+        {% endif %}
+
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

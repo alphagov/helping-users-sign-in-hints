@@ -1,0 +1,57 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+{% endblock %}
+
+{% block header_class %}
+{% endblock %}
+
+{% block content %}
+<main id="content">
+{% include "includes/available-languages.html" %}
+  {% block page_content %}
+    
+    <div class="content-inner slides">
+      <div class="grid-row">
+        <div class="column-one-third">
+          <figure>
+            <img srcset="/public/images/govuk-verify.svg 1x" alt="GOV.UK Verify" src="/public/images/govuk-verify.png">
+          </figure>
+        </div>
+        <div class="column-two-thirds">
+          {% block slide_content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</main>
+{% endblock %}
+
+{% block footer_support_links %}
+<h2 class="visuallyhidden">Support links</h2>
+
+<ul>
+  <li><a href="https://gov.uk/help" hreflang="en">Help</a></li>
+  <li><a href="https://www.signin.service.gov.uk/cookies">Cookies</a></li>
+  <li><a href="https://www.signin.service.gov.uk/privacy-notice">Privacy notice</a></li>
+  <li>
+    <a href="https://www.signin.service.gov.uk/feedback">Feedback</a>
+  </li>
+  <li>Built by the <a href="https://gds.blog.gov.uk" lang="en" hreflang="en">Government Digital Service</a></li>
+</ul>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
+
+

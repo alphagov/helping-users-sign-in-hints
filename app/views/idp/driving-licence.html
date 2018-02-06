@@ -1,0 +1,78 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Driving licence details</h1>
+			<div class="form-group">
+
+				<p>We’ll check the details of your Driving licence with the DVLA.</p>
+				<p>Please enter these details exactly as they appear on your photocard driving licence.</p>
+
+				<form id="main-form" action="/idp/choose-proof-of-address{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group">
+						<div class="form-group">
+							<label class="form-label">Item 4a on your licence</label>
+							<input class="form-control form-control-xsmall" type="text" maxlength="2">
+							-&nbsp;
+							<input class="form-control form-control-xsmall" type="text" maxlength="2">
+							-&nbsp;
+							<input class="form-control form-control-xsmall" type="text" maxlength="4" style="width: 70px">
+						</div>
+
+						<div class="form-group">
+							<label class="form-label">Item 4b on your licence</label>
+							<input class="form-control form-control-xsmall" type="text" maxlength="2">
+							-&nbsp;
+							<input class="form-control form-control-xsmall" type="text" maxlength="2">
+							-&nbsp;
+							<input class="form-control form-control-xsmall" type="text" maxlength="4" style="width: 70px">
+						</div>
+
+						<div class="form-group">
+							<label class="form-label">Item 5 on your licence</label>
+							<input class="form-control" style="width:14em" type="text" maxlength="16">
+							<input class="form-control form-control-xsmall" type="text" maxlength="2">
+						</div>
+					</div>		
+				
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+					</div>
+
+					<details>
+					  <summary><span class="summary">I don't have my driving licence details with me</span></summary>
+
+					  <div class="panel panel-border-narrow">
+							<p>If you don't have your driving licence details with you, you can:</p>
+							<ul class="list list-bullet">
+								<li><a href="#">save and return when you have your driving licence</a> </li>
+								<li><a href="#">cancel and access the government service another way</a></li>
+							</ul>
+						</div>
+					</details>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

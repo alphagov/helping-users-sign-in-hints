@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+
+  <div class="grid-row">  
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Your driving licence</h1>
+      <div class="govuk-box-highlight">
+        <p>Your driving licence check code:</br>
+        <span class="heading-xlarge">NPsvZW57</span></p>
+      </div>  
+      
+      <h2 class="heading-medium">Personal details</h2>
+
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td>{{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</td>
+        </tr>
+        <tr>
+          <td>Date of birth:</td>
+          <td>{{data['dobDay']}} {{data['dobMonth']}} {{data['dobYear']}}</td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>{{data['address1']}}, {{data['address2']}}, {{data['town']}}, {{data['postcode']}}</td>
+        </tr>
+      </table>
+
+
+      <h2 class="heading-medium">Licence details</h2>
+
+      <table>
+        <tr>
+          <td>Driving Status::</td>
+          <td>Full licence</td>
+        </tr>
+        <tr>
+          <td>Valid from::</td>
+          <td>20 February 2009</td>
+        </tr>
+        <tr>
+          <td>Valid to:</td>
+          <td>20 February 2019</td>
+        </tr>
+        <tr>
+          <td>Driving licence number:</td>
+          <td>{{data['lastName']}}{{data['dobMonth']}}{{data['dobDay']}}J9264</td>
+        </tr>
+        <tr>
+          <td>Issue number:</td>
+          <td>12</td>
+        </tr>
+      </table>
+
+    </div>
+    <div class="column-third ">
+      <div class="related-content">
+        <p>
+          <a href='#'>What you can drive</a><br>
+          View your current driving entitlements.
+        </p>
+        <p>
+          <a href='#'>Penalty points and disqualifications</a><br>
+          You currently have 0 penalty points.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}
+
+

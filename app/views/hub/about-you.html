@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">About you</h1>
+
+       <form action="/hub/select-documents{{formQuery}}">
+       {{formData | safe}}
+       <div class="form-group" data-required="Please answer the question">
+         <fieldset class="inline">
+
+           <legend class="heading-medium">Are you 20 or over?</legend>
+
+           <div class="multiple-choice" data-target="age-over-20">
+             <input id="age-over-20" type="radio" name="user_age" value="true">
+             <label for="age-over-20">Yes</label>
+           </div>
+
+           <div class="multiple-choice" data-target="age-under-20">
+             <input id="age-under-20" type="radio" name="user_age" value="false">
+             <label for="age-under-20">No</label>
+           </div>
+
+         </fieldset>
+       </div>
+       <div class="form-group" data-required="Please answer the question">
+         <fieldset class="inline">
+
+           <legend class="heading-medium">Have you lived in the UK for the last 12 months?</legend>
+
+           <div class="multiple-choice" data-target="lives-in-uk">
+             <input id="lives-in-uk" type="radio" name="user_uk" value="true">
+             <label for="lives-in-uk">Yes</label>
+           </div>
+
+           <div class="multiple-choice" data-target="dont-live-in-uk">
+             <input id="dont-live-in-uk-question" type="radio" name="user_uk" value="false">
+             <label for="dont-live-in-question">No</label>
+           </div>
+           
+           <div class="panel panel-border-narrow js-hidden" id="dont-live-in-uk">
+             
+             <legend class="heading-medium">Which of these apply to you?</legend>
+
+             <div class="multiple-choice" data-target="">
+               <input id="moved-last-year" type="radio" name="non-uk-group" value="true">
+               <label for="moved-last-year">I moved to the UK in the last 12 months</label>
+             </div>
+             
+             <div class="multiple-choice" data-target="">
+               <input id="dont-live-at-address" type="radio" name="non-uk-group" value="true">
+               <label for="dont-live-at-address">I have an address in the UK, but I don’t live there</label>
+             </div>
+
+             <div class="multiple-choice" data-target="">
+               <input id="dont-have-uk-address" type="radio" name="non-uk-group" value="false">
+               <label for="dont-have-uk-address">I don’t have a UK address</label>
+             </div>
+             
+           </div>
+
+           </fieldset>
+         </div>
+         <input class="button" type="submit" value="Continue">
+       </form>
+
+  	</div>
+  </div>
+</main>
+
+
+{% endblock %}
+
+

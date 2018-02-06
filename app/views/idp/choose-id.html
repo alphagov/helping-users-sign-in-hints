@@ -1,0 +1,52 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+    {% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Which document would you like to prove your identity with?</h1>
+      
+      <p>We need proof of who you are, so we need to double check the details of your ID with DVLA, DVA or HM Passports office.</p>      
+      
+			{{ formData | safe }}
+
+      <div class="column-half">
+        <div class="evidence-container">
+          <div class="img-container">
+            <img src="/public/images/evidence-icons/passport.png" alt="">
+          </div>
+          <a class="button" href="/idp/passport{{formQuery}}">UK Passport</a>
+        </div>
+      </div>
+      <div class="column-half">
+        <div class="evidence-container">
+          <div class="img-container">
+            <img src="/public/images/evidence-icons/driving-licence.png" alt="">
+          </div>
+          <a class="button" href="/idp/driving-licence{{formQuery}}">UK Driving licence</a>
+        </div>
+      </div>
+
+      <div class="column-half">
+        <div class="evidence-container">
+          <div class="img-container">
+            <img src="/public/images/evidence-icons/non-uk-id.png" alt="">
+          </div>
+          <a class="button" href="/idp/non-uk-passport{{formQuery}}">Non-UK Passport, ID or driving licence</a>
+        </div>
+      </div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

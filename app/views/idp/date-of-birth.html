@@ -1,0 +1,62 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">What's your date of birth?</h1>
+			<div class="form-group">
+
+				<p>Please enter all parts of your name in full - don't use initials.</p>
+
+				<form id="main-form" action="/idp/address{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group" data-required="Please enter your email address">
+						<div class="form-date">
+						  <div class="form-hint">For example, 31 1 1970</div>
+
+						  <div class="form-group form-group-day">
+						    <label for="dobDay">Day</label>
+						    <input type="text" autocomplete="off" class="form-control" id="dobDay" name="dobDay">
+						  </div>
+						  <div class="form-group form-group-month">
+						    <label for="dobMonth">Month</label>
+						    <input type="text" autocomplete="off" class="form-control" id="dobMonth" name="dobMonth">
+						  </div>
+						  <div class="form-group form-group-year">
+						    <label for="dobYear">Year</label>
+						    <input type="text" autocomplete="off" class="form-control" id="dobYear" name="dobYear">
+						  </div>
+						</div>
+					</div>			
+
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+						
+						<div  class="secondry-button">
+							<a href="javascript:history.back()">Back</a>
+						</div>
+					</div>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

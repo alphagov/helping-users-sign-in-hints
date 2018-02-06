@@ -1,0 +1,30 @@
+[
+  {
+    "name" : "Barclays",
+    "slug" : "barclays"
+  },
+  {
+    "name" : "Citizensafe",
+    "slug" : "citizensafe"
+  },
+  {
+    "name" : "Digidentity",
+    "slug" : "digidentity"
+  },
+  {
+    "name" : "Experian",
+    "slug" : "experian"
+  },
+  {
+    "name" : "Post Office",
+    "slug" : "post-office"
+  },
+  {
+    "name" : "Royal Mail",
+    "slug" : "royal-mail"
+  },
+  {
+    "name" : "SecureIdentity",
+    "slug" : "secureidentity"
+  }
+]

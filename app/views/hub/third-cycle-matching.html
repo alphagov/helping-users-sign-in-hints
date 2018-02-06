@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ serviceName }}</h1>
+
+      <p>This is the first time you’ve signed in.</p>
+
+
+      <form action="waiting-for-match{{formQuery}}">
+
+        {{ formData | safe }}
+        {% if serviceName == "Register for and file your Self Assessment tax return" %}
+          <label class="form-label" for="ni-number">
+            <strong>Unique Taxpayer Reference (UTR) </strong>
+            <span class="form-hint">For example, 1234567890.</span>
+          </label>
+          <input class="form-control" id="ni-number" type="text">
+          
+          </br>
+          </br>
+          
+          <details>
+            <summary><span class="summary"> Where to find your Unique Taxpayer Reference (UTR)</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>
+                Your UTR is on previous tax returns and other documents from HMRC, for example:
+              </p>
+              <ul class="list list-bullet">
+                <li>notices to file a return</li>
+                <li>payment reminders</li>
+              </ul>
+
+              <p>You can also find your UTR in your HMRC online account.</p>
+              <p>If you can’t find your UTR call the Self Assessment helpline if you need your UTR and can’t find any documents from HMRC.</p>
+            </div>
+          </details>
+
+        {% elif serviceProvider == "HMRC" %}
+
+          <label class="form-label" for="ni-number">
+            National Insurance number
+            <span class="form-hint">For example, VO 12 34 56 D.</span>
+          </label>
+          <input class="form-control" id="ni-number" type="text">
+          
+          </br>
+          </br>
+          
+          <details>
+            <summary><span class="summary"> Where to find your National Insurance number</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>
+                Your UTR can be found on documentation issued by HMRC such as the Tax Return (SA100), a 'Notice to complete a Tax Return' (SA316) or a Statement of Account.
+              </p>
+              <p>
+                Depending on the type of document issued the reference may be printed next to the headings 'Tax Reference', 'UTR' or 'Official Use'.
+              </p>
+            </div>
+          </details>
+
+        {% elif serviceProvider == "DVLA" %}
+
+          <label class="form-label" for="dl-number">
+            Driving licence number (Item 5 on your licence)
+            <span class="form-hint">For example, JONES849339TS8AD 12.</span>
+          </label>
+          <input class="form-control" style="width:14em" type="text" autocomplete="off" maxlength="16" name="dlNumber">
+          <input class="form-control form-control-xsmall" style="width:3em"type="text" autocomplete="off" name="dlIssue">
+          </br>
+          </br>
+          
+          <details>
+            <summary><span class="summary"> Where to find your driving licence number</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>
+                Your driving licence number can be found in section 5 of your driving licence photocard.
+              </p>
+              <img src="/public/images/driving_licence_number.png" alt="Your driving licences section 5">
+            </div>
+          </details>
+
+        {% else %}
+
+          <label class="form-label" for="ni-number">
+            National Insurance number
+            <span class="form-hint">For example, VO 12 34 56 D.</span>
+          </label>
+          <input class="form-control" id="ni-number" type="text">
+        
+          </br>
+          </br>
+          
+          <details>
+            <summary><span class="summary"> Where to find your National Insurance number</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem accusamus provident explicabo unde veniam. Maiores sequi, enim quaerat animi, harum nemo labore quia deserunt error perferendis modi, asperiores eos ad.
+              </p>
+            </div>
+          </details>
+
+        {% endif %}
+
+
+      </br>
+
+      <div class="actions">
+        <input type="hidden" value="true" name="third_cycle_done" id="third_cycle_done">
+        <input type="submit" value="Continue" class="button" id="next-button">
+      </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

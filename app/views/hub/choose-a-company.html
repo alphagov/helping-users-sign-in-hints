@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">Choose a company to verify your identity</h1>
+
+        <p>You don't have to be an existing customer with a company.</p>
+
+        <p>They ask you to provide personal information and evidence, and then check it's correct using the new, secure systems they built.</p>
+
+        <p><a href="#">Why there’s a choice of companies</a></p>
+
+        {{ formData | safe }}
+
+  		 <div id="company-about">
+
+        <p>Based on your answers, {{ available_idps | length }} companies can verify you now:</p>
+
+        {% for idp in available_idps | sort(false, true, 'name') %}
+        <div class="idp-choice">
+
+          <div class="company-logo">
+            <img alt="" src="/public/images/idp-logos/{{ idp.slug }}.png">
+
+            <p class="company-about">
+              <a href="/about-idp{{ formQuery | safe }}&amp;idp={{ idp.slug }}">About {{ idp.name }}</a>
+            </p>
+          </div>
+
+          <div class="idp-option">
+
+            <div class="button-wrap">
+              <form method="POST" action="/hub/redirect-to-idp{{formQuery}}">
+                <input type="hidden" name="idpChoice" value="{{idp.slug}}">
+                <button class="button">Select {{ idp.name }}</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

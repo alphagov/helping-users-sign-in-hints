@@ -1,0 +1,284 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/examples/unbranded/
+
+// Pages .scss files
+// @import 'pages/idp-choose-evidence';
+
+// Override the govuk_frontend_toolkit's font stack
+// https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_font_stack.scss#L13
+$toolkit-font-stack: $helvetica-regular;
+
+.idp {
+  // Remove GOV.UK footer styles
+  #footer {
+    border: 0;
+    background: #dcdcdc;
+  }
+}
+
+#header{
+  background: #fff;
+  border-bottom: 10px solid white;
+
+
+  .idp-logo img{
+    display: inline-block;
+    max-width: 140px;
+    max-height: 50px;
+  }
+
+  .inner{
+    max-width: 960px;
+    padding: 10px 30px;
+    overflow: hidden;
+    margin: auto;
+
+    span{
+      @include media(mobile){
+        display: none;
+      }
+    }
+  }
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  font-size: 16px !important;
+  background-color: #EDEDED;
+  background-image: url(/public/images/idp_background.jpg);
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  position: relative;
+  background-size: cover;
+}
+
+h1 {
+  color: #575756 !important;
+  font-weight: lighter !important;
+  font-size: 3em;
+  margin: 0;
+}
+
+h3,h4,textarea,button,.text,select,option,p,a,li,input,.heading-medium,.heading-small,
+.font-xlarge,.font-large,.font-medium,.font-small,.block-label {
+  font-family: 'Dosis', sans-serif;
+}
+
+h1,h2,
+.heading-xlarge,.heading-large,
+.form-label-bold{
+  font-family: 'Dosis', sans-serif;
+}
+
+select,option{
+  font-size: 19px;
+}
+
+h1,h2,h3,h4,button,.button{
+  font-weight: 700;
+}
+
+#content{
+  padding: 30px 30px 60px 30px;
+  background: #fff;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  border-radius:20px;
+  border: 1px solid #DADADA;
+  .idp-start {
+    background: none;
+  }
+}
+
+.back-to-gov:link,
+.back-to-gov:visited,
+.back-to-gov{
+  display: inline-block;
+  background:#005ea5;
+  color: #fff;
+  padding: 10px 14px;
+  margin: 0 0 0 30px;
+  text-decoration: none;
+}
+
+.intro {
+  margin-bottom: 1em;
+}
+
+// forms 
+.button,
+.button:hover{
+  background-color: #f80;
+  box-shadow: none;
+  padding: 10px 20px 10px 20px;
+  border: 2px solid grey;
+}
+.button:hover{
+  opacity:0.9;
+}
+
+.secondry-button {
+  padding-left: 1em;
+  margin-top:10px;
+  display: inline-block;
+}
+
+.form-control{
+  border: 1px solid #CCC;
+}
+
+.form-control-long{
+  max-width: 320px;
+}
+
+.form-control-small{
+  width: 60px;
+}
+
+.form-control-xsmall{
+  width: 40px;
+}
+
+.multiple-choice [type=radio] + label::before {
+  content: "";
+  border: 1px solid #CCC;
+}
+
+
+.verify{
+  padding: 20px;
+  border-left: 1px solid #ccc;
+  a {
+    font-size: 16px;
+
+  }
+  .logo-wrap{
+    text-align: center;
+    margin: 0 0 20px 0;
+    img {
+      max-width: 175px;
+      max-height: 80px;
+      margin: 10px 0;
+    }
+  }
+  li{
+    margin: 1em 0 1em 1em;
+    list-style: disc;
+  }
+}
+
+// Errors
+
+span.error-message {
+  font-family: 'Dosis', sans-serif;
+}
+
+.form-group-error {
+    margin-right: 0px;
+    border-left: none;
+    padding-left: 0px;
+    input {
+      border: 2px solid $error-colour;
+      margin-top: 10px;
+    }
+}
+
+// idps background colour, keycolour, text colour
+
+$idps: (
+  barclays: (white, #28ABE3, #28ABE3),
+  citizensafe: (white, #13558C, #c9cde2),
+  digidentity: (white, #80BC47, #80BC47),
+  experian: (white, #26478d, #c5cce8),
+  secureidentity: (white, #184183, #bfcfe7),
+  post-office: (white, #C0163F, #f2bdb0),
+  royal-mail: (white, #BE4130, #BE4130)
+  );
+
+@each $idp, $data in $idps
+{
+
+  $header-colour: nth($data, 1);
+  $accent-colour: nth($data, 2);
+  $text-colour: nth($data, 3);
+
+  .idp.#{$idp}{
+    #header {
+      background: $header-colour;
+      border-bottom: 10px solid white;
+      border-bottom-color: $accent-colour;
+
+    }
+    #content {
+      h1, h2 {
+        margin-top: 0;
+      }
+      border: 1px solid $accent-colour;
+    }
+    .button {
+      background-color: $accent-colour;
+      border: 0;
+      border-bottom: 3px solid  darken($accent-colour, 10%);
+    }
+
+    h1 {
+      color: $text-colour;
+    }
+  }
+}
+
+
+
+// Choose evidence pages
+
+.evidence-container {
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 10px; 
+  border: 1px solid #DADADA; 
+  .button {
+    margin: 0;
+  }
+  .img-container {
+    text-align: center;
+    img {
+      max-height: 100px;
+      max-width: 150px;
+    }
+  }
+}
+
+
+// Certified company logo
+
+.certified-logo {
+  float: right;
+  // clear: right;
+  // margin-right: 45px;
+  margin-top: 30px;
+  img {
+    align: center;
+    max-height: 75px;
+  } 
+  .heading-large {
+    font-weight: 300; 
+    font-size:24px;
+  }
+  p {
+    font-size: 16px;
+  }
+}

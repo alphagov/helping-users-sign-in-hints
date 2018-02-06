@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">GOV.UK Verify prototype admin tool</h1>
+      
+      <p><a href="/admin/add-service" class="button">Add a service</a></p>
+
+      <h3 class="heading-medium">Services</h3>
+
+      <ul class="list list-bullet">
+        {% for service in services %}
+        <li class="service">
+          <a href="/admin/services/{{service.slug | safe}}">{{service.name}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

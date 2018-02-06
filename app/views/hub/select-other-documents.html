@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">Other identity documents</h1>
+
+      <p>Some certified companies can use identity documents from other countries to verify you.</p>
+
+      <div class="panel panel-border-wide">
+        <p>
+          The more identity documents you can provide now, the more likely it is that the company can verify you successfully.
+        </p>
+      </div>
+
+      <form action="/hub/select-phone{{formQuery}}">
+        {{formData | safe}}
+        <div class="form-group" data-required="Please answer the question">
+          <fieldset class="block">
+
+            <legend class="heading-medium">Do you have a non-UK passport, ID card or driving licence?</legend>
+
+            <div class="multiple-choice" data-target="">
+              <input id="non-uk-id-true" type="radio" name="non_uk_id" value="true">
+              <label for="non-uk-id-true">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="">
+              <input id="non-uk-id-false" type="radio" name="non_uk_id" value="false">
+              <label for="non-uk-id-false">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <input class="button" type="submit" value="Continue">
+      </form>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

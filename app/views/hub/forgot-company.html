@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+
+  <div class="grid-row">
+  {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+      <h2 class="heading-large">We can’t tell you which company verified you</h2>
+      
+      <p>Security standards mean GOV.UK can’t store your information, so we can’t tell you which company you registered with.</p> 
+
+      <p>Look for correspondence from a certified company. Check your:</p>
+
+      <ul class="list list-bullet">
+        <li>email inbox for the confirmation email</li>
+        <li>spam folder and deleted emails</li>
+        <li>texts on your mobile phone</li>
+      </ul>
+
+      <p>You can try to get your identity verified by a certified company again.</p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

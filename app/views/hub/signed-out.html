@@ -1,0 +1,26 @@
+  {% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+	<div class="grid-row">
+	  {% include "includes/verify-logo.html" %}
+	  <div class="column-two-thirds">
+			<h1 class="heading-large">{{idpName}} has saved your information</h1>
+
+	    <p>When you're ready to carry on verifying your identity, go back to <a href="{{serviceStartURL}}">{{serviceNameLower}}</a>.</p>
+
+	    <p>You’ll need the username and password you created to sign in to {{idpName}}.</p>
+
+		</div>
+	</div>
+</main>
+
+{% endblock %}
+
+

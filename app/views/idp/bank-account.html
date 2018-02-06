@@ -1,0 +1,54 @@
+{% extends "layout_idp.html" %}
+
+{% set idp = data['idpChoice'] %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block body_classes %}idp {{ idp }}{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	<div class="grid-row">
+		{% include "includes/idp-sidebar.html" %}
+		<div class="column-two-thirds">
+			<h1 class="heading-large ">Bank account details</h1>
+			<div class="form-group">
+
+				<form id="main-form" action="/idp/identity-test-intro{{formQuery}}" method="get">
+					
+					{{ formData|safe }}
+
+					<div class="form-group" data-required="Please enter your account number">
+						<label class="form-label" for="accountNumber">Account number</label>
+						<input class="form-control" id="accountNumber" type="text">
+					</div>
+					
+					<div class="form-group">
+						<legend class="form-label">Sort code</legend>
+						<input class="form-control form-control-xsmall inputs" type="text" maxlength="2">
+						-&nbsp;
+						<input class="form-control form-control-xsmall inputs" type="text" maxlength="2">
+						-&nbsp;
+						<input class="form-control form-control-xsmall inputs" type="text" maxlength="2">
+					</div>
+				
+					<div class='form-group'>
+						<button class="button">
+							Continue
+						</button>
+					</div>
+
+					<p><a href="#">I don't have my bank account details with me</a></p>
+
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

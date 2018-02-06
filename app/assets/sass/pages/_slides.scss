@@ -1,0 +1,151 @@
+// Slides layout
+// ==========================================================================
+
+.slides {
+
+  background-color: $mainstream-brand;
+  color: $white;
+
+  margin-top: $gutter-half;
+  margin-bottom: $gutter-half;
+
+  @include media(tablet) {
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+  }
+
+  @include media(desktop) {
+    margin-bottom: -$gutter;
+  }
+
+  @include box-sizing(border-box);
+
+  min-height: 480px;
+
+  padding: $gutter;
+
+  @include media(tablet) {
+    padding: $gutter * 1.5;
+  }
+
+  @include media(desktop) {
+    padding: 75px 70px;
+  }
+
+  h1 {
+
+    @include bold-27;
+
+    @include media (mobile) {
+      margin-top: $gutter-half;
+      margin-bottom: $gutter-half;
+    }
+
+    margin-bottom: $gutter;
+  }
+
+  p,
+  ul {
+    @include core-24;
+  }
+
+  a,
+  a:focus,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
+
+  .actions {
+    margin: $gutter 0 $gutter-half;
+
+    .button {
+      background: $white;
+      color: $mainstream-brand;
+      font-weight: bold;
+    }
+  }
+
+  // Figure is used to wrap the logo
+  figure {
+    max-width: 200px;
+
+    img {
+      width: 100%;
+    }
+
+    @include media(mobile) {
+      width: 40%;
+    }
+  }
+
+  details {
+    summary {
+      color: $white;
+    }
+
+    .panel {
+      border-left-color: $white;
+    }
+
+    p,
+    ul {
+      font-size: 1em;
+    }
+  }
+}
+
+// Hub - Start page
+// ==========================================================================
+
+.hub-start {
+
+  h1 {
+    @include bold-36;
+  }
+
+  // .button {
+  //   @include media(tablet) {
+  //     margin-left: $gutter-half;
+  //   }
+  // }
+
+  .error,
+  .validation-message {
+    border-color: $white;
+    color: inherit;
+  }
+
+  .block-label {
+    @include core-24;
+    background: transparent;
+    border: 0;
+
+    &.selected {
+      background: transparent;
+    }
+
+    &:hover {
+      background-color: $link-hover-colour;
+    }
+  }
+
+}
+
+// About certified companies
+.list-companies {
+  margin-bottom: $gutter-half;
+
+  li {
+    @include inline-block;
+    width: 50%;
+
+    @include media (tablet) {
+      width: 24%;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

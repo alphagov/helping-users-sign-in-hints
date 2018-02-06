@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">GOV.UK Verify will not work for you</h1>
+
+      <p>You need a current UK address to get your identity verified.</p>
+
+      {% if serviceNameLower | length > 1 %}
+        <h2 class="heading-medium">Other ways to {{serviceNameLower}}</h2>
+        {{serviceOtherWays | safe}}
+      {% endif %}
+
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

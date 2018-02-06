@@ -1,0 +1,36 @@
+{% extends "layout_slide.html" %}
+
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+
+{% block slide_content %}
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/slide-about" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+  <h1>Sign in with GOV.UK Verify</h1>
+
+	
+  <div class="form-group">
+    <fieldset class="block">
+      <div class="multiple-choice">
+        <input id="verify_create_account" type="radio" name="registration" value="true">
+        <label for="verify_create_account" style="font-size: 24px;">Create a new identity account</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="verify_sign_in" type="radio" name="registration" value="false">
+        <label for="verify_sign_in" style="font-size: 24px;">Sign in with your identity account</label>
+      </div>
+    </fieldset>
+  </div>
+
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Next">
+    </div>
+  </div>
+</form>
+
+{% endblock %}
