@@ -14,19 +14,21 @@
         <div class="column-one-half sign-in-container" style="">
               
           <h1 class="heading-large">
-           Sign in with your<br>identity account
+           Prove your identity with an<br>identity account
           </h1>
 
-          <p>Set up an identity account with a certified company so you can securely sign in to check your State Pension</p>
+          <p>To securely access {{serviceNameLower}} you need to sign in with an identity account.</p>
 
           <form id="" class="js-validate" novalidate="novalidate" action="/hub/slide-about{{formQuery}}" accept-charset="UTF-8" method="get">
             {{formData | safe}}
-            <input class="button" id="next-button" type="submit" value="Set up an identity account">
+            <input class="button" id="next-button" type="submit" value="Set up a new identity account">
           </form>
           <br>
           <p>or</p>
 
-          <p>Sign in with an identity account that you set up with a certified company in the past.</p>
+          <h3 class="heading-small">Sign in with an existing identity account</h3>
+
+          <p>If you've already set one up, select your identity account.</p>
 
           {{formData | safe}}
           
