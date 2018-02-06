@@ -171,6 +171,15 @@ router.get('/hub/sm-signin', function (req, res) {
 });
 
 
+// Sending user to sn signin
+
+router.get('/hub/slide-start', function(req,res){
+
+  
+  res.redirect('sm-signin')
+  
+})
+
 // Sign in or registraion journey routing
 
 router.get('/hub/slide-about', function(req,res){

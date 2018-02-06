@@ -1,0 +1,61 @@
+// Social media signin page
+
+
+.idp-links-picker {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+  width: 33%;
+  display: block;
+}
+
+.idp-icon-container {
+  width: 43px;
+  display: inline-block;
+  text-align: center;
+  padding-right: 15px;
+}
+
+.idp-icon {
+  max-height: 35px;
+  max-width: 43px;
+  vertical-align: middle;
+}
+
+.idp-list-container {
+text-align: center;
+}
+
+.idp-links {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.idp-links:last-child {
+  border-bottom: none;
+}
+
+.idp-links:last-child {
+  border-bottom: none;
+}
+
+
+.button-link{
+    background: none;
+    border: none;
+    font-size: 19px;
+    text-decoration: underline;
+    color: #005ea5;
+    cursor: pointer;
+}
+
+.sign-in-container {
+  text-align: center; 
+  border: 5px solid #dee0e2; 
+  margin-top: 10px; 
+  padding-bottom: 30px;
+}
