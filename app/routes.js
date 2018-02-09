@@ -222,8 +222,8 @@ router.get('/hub/select-documents', function(req,res){
 
 router.get('/hub/select-other-documents', function(req,res){
 
-  if ((req.session.data['passport'] == 'true')&&(req.session.data['drivingLicence'] == 'true')){
-    res.redirect('select-phone' + res.locals.formQuery)
+  if ((req.session.data['passport'] == 'true')||(req.session.data['drivingLicence'] == 'true')){
+    res.redirect('choose-a-company' + res.locals.formQuery)
   } else {
     res.render('hub/select-other-documents')
   }
