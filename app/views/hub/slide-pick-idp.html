@@ -1,0 +1,26 @@
+{% extends "layout_slide.html" %}
+
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+
+{% block slide_content %}
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/slide-create-account" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+	<h1 class="slide-heading">1. Pick an account to sign up with</h1>
+
+  <p>We'll ask you some questions to work out which will work best for you.</p>
+  <p>Its free to use and you don't need to be a customer of the company that provides the account.</p>
+
+  <p>You'll then be taken to the companies website to create your identity account.</p>
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="About creating your identity account">
+    </div>
+  </div>
+</form>
+
+{% endblock %}

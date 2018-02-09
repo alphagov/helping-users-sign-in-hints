@@ -1,0 +1,41 @@
+{% extends "layout_slide.html" %}
+
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+
+{% block slide_content %}
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/slide-confirm-identity" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+	<h1 class="slide-heading">2. Create your identity account</h1>
+
+  <p>You'll be taken to the companies website to create an identity account.</p>
+  <!-- <p>You'll need to create a username and password, and add some personal details so they know who you are.</p> -->
+  <p>You'll be able to use this account to securely access a range of other services across GOV.UK.</p>
+
+  <details role="group">
+    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+      <span class="summary">More about creating an identity account</span>
+    </summary>
+    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+      <p>You'll be asked to provide details from a range of documents that we will need to double check with the trusted institue that provided them.</p>
+
+      <p>This could include:</p>
+      <ul class="list list-bullet">
+        <li>your passport</li>
+        <li>your driving licence</li>
+        <li>details from your financial records</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Next">
+    </div>
+  </div>
+</form>
+
+{% endblock %}
