@@ -11,17 +11,17 @@
   <div class="grid-row">
     {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
-  		<h1 class="heading-large">Your photo identity document</h1>
+  		<h1 class="heading-large">Which documents can you use to confirm your identity?</h1>
 
       {{data['non-uk-group']}}
-      <p>Certified companies use information from identity documents to verify you.</p>
+      <p>Your document details will be checked with the issuing authority.</p>
 
-      <div class="panel panel-border-wide">
+<!--       <div class="panel panel-border-wide">
         <p>
           The more identity documents you can provide now, the more likely it is that the company can verify you successfully.
         </p>
       </div>
-
+ -->
       <form action="/hub/select-other-documents{{formQuery}}">
         {{formData | safe}}
         <div class="form-group" data-required="Please answer the question">

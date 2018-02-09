@@ -9,16 +9,22 @@
 
   {{ formData | safe }}
 
-	<h1 class="slide-heading">1. Pick an account to sign up with</h1>
+	<h1 class="slide-heading">1. Pick which online identity you want to use</h1>
 
-  <p>We'll ask you some questions to work out which will work best for you.</p>
+  <p>We'll ask you some questions to work out which will work best for you – you'll then get a choice of which one to use.</p>
   <p>Its free to use and you don't need to be a customer of the company that provides the account.</p>
 
-  <p>You'll then be taken to the companies website to create your identity account.</p>
+    <details role="group">
+    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+      <span class="summary">Why you need to pick an online idenity</span>
+    </summary>
+    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+    </div>
+  </details>
 
   <div class="form-group">
     <div class="actions">
-      <input class="button" id="next-button" type="submit" value="About creating your identity account">
+      <input class="button" id="next-button" type="submit" value="About creating your online identity">
     </div>
   </div>
 </form>
