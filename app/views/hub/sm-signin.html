@@ -23,6 +23,7 @@
           <form id="" class="js-validate" novalidate="novalidate" action="/hub/slide-all-long{{formQuery}}" accept-charset="UTF-8" method="get">
             {{formData | safe}}
             <input class="button" id="next-button" type="submit" value="Set up a new online identity">
+            <input type="hidden" name="registration" value="true">
           </form>
           <br>
           <p>or</p>
@@ -39,11 +40,11 @@
               <li class="idp-links">
                 <div class="button-wrap">
                   <form method="POST" action="{{idpRoot}}/{{ idp.slug }}/sign-in{{formQuery}}&idp={{idp.slug}}&serviceLOA={{serviceLOA}}">
-                    <input type="hidden" name="password" value="jolly-roger">
+                    <input type="hidden" name="registration" value="false">
                     <div class="idp-icon-container">
                       <img src="/public/images/idp-icons/{{idp.slug}}.png" class="idp-icon">
                     </div>
-
+                    
                     <button class="button-link" >{{ idp.name }}</button>
                   </form>
                 </div>
