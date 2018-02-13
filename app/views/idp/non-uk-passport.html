@@ -14,7 +14,7 @@
 	<div class="grid-row">
 		{% include "includes/idp-sidebar.html" %}
 		<div class="column-two-thirds">
-			<h1 class="heading-large ">Non-UK Passport details</h1>
+			<h1 class="heading-large ">Non-UK ID details</h1>
 			<div class="form-group">
 
 				<p>Please enter these details exactly as they appear on your passport.</p>
@@ -24,8 +24,17 @@
 					{{ formData|safe }}
 
 					<div class="form-group" data-required="Please enter your passport number">
-						<label class="form-label" for="passportNumber">Passport number</label>
+						<label class="form-label-bold heading-small" for="passportNumber">ID number</label>
 						<input class="form-control" id="passportNumber" type="text">
+					</div>
+
+					<div class="form-group" data-required="Please enter your passport number">
+						<label class="form-label-bold heading-small" for="passportFirstName">First name(s) including middle name(s)</label>
+						<input class="form-control" id="passportFirstName" type="text">
+					</div>
+					<div class="form-group" data-required="Please enter your passport number">
+						<label class="form-label-bold heading-small" for="passportFirstName">Last name</label>
+						<input class="form-control" id="passportFirstName" type="text">
 					</div>
 					
 					<div class="form-group">
@@ -33,9 +42,35 @@
 
 							<div class="form-date">
 								
-								<h3 class="heading-small">Expiry date</h3>
+								<h3 class="form-label-bold">Date of birth</h3>
 
 							  <div class="form-hint">For example, 31 1 1970</div>
+
+							  <div class="form-group form-group-day">
+							    <label for="dobDay">Day</label>
+							    <input type="text" autocomplete="off" class="form-control" id="dobDay" name="dobDay">
+							  </div>
+							  <div class="form-group form-group-month">
+							    <label for="dobMonth">Month</label>
+							    <input type="text" autocomplete="off" class="form-control" id="dobMonth" name="dobMonth">
+							  </div>
+							  <div class="form-group form-group-year">
+							    <label for="dobYear">Year</label>
+							    <input type="text" autocomplete="off" class="form-control" id="dobYear" name="dobYear">
+							  </div>
+							</div>
+
+						</fieldset>
+					</div>			
+				
+					<div class="form-group">
+						<fieldset>
+
+							<div class="form-date">
+								
+								<h3 class="form-label-bold">ID expiry date</h3>
+
+							  <div class="form-hint">For example, 31 1 2025</div>
 
 							  <div class="form-group form-group-day">
 							    <label for="dobDay">Day</label>
