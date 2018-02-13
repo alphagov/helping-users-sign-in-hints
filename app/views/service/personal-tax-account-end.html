@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">  
+    <div class="column-full">    
+        
+    <div class="personal-tax-heading">
+      <h1 class="heading-large">
+        {% if firstName.length > 0 %}
+          {{firstName | capitalize}} {{middleName | capitalize}} {{lastName | capitalize}}</h1>
+        {% else %}
+          John Smith
+        {% endif %}
+    </div>
+
+
+  <div class="column-two-thirds">
+    
+    <div class="grid-row ">
+      <div class="column-full">
+        
+        <div class="govuk-box-highlight">
+          <p>You paid too much tax, HMRC will transfer you</br>
+          <span class="heading-xlarge">£178.40</span></p>
+        </div>
+        
+        <h2 class="heading-medium personal-tax-sub-heading">Tax and National Insurance</h2>
+        <div class="grid-row">
+          <div class="column-half">
+          <h3 class="heading-small"><a href="#">Pay As You Earn (PAYE)</a></h3>
+          <p>Check your tax codes and an estimate of the Income Tax you'll pay.</p>
+          </div>
+          <div class="column-half">
+          <h3 class="heading-small"><a href="#">National Insurance</a></h3>
+          <p>View your National Insurance record.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="grid-row">
+      <div class="column-full">
+        <h2 class="heading-medium  personal-tax-sub-heading">Child Benefit and tax credits</h2>
+        <div class="grid-row">
+          <div class="column-half">
+          <h3 class="heading-small"><a href="#">Child Benefit</a></h3>
+          <p>Tell us about changes that may affect your Child Benefit.</p>
+          </div>
+          <div class="column-half">
+          <h3 class="heading-small"><a href="#">Tax credits</a></h3>
+          <p>Check your tax credits record.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="grid-row">
+      <div class="column-full">
+        <h2 class="heading-medium personal-tax-sub-heading">Pension and retirement</h2>
+        <div class="grid-row">
+          <div class="column-half">
+          <h3 class="heading-small"><a href="#">State Pension forecast</a></h3>
+          <p>Check when you can claim your State Pension and how much you can get.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="grid-row">
+      <div class="column-full">
+        <h2 class="heading-medium personal-tax-sub-heading">Services you might need</h2>
+        <div class="grid-row">
+          <div class="column-two-thirds">
+          <p>If you're married or in a civil partnership and you earn less than £11,000, you may benefit from applying for Marriage Allowance.</p>
+          <p><a href="#">Check if you can get Marriage Allowance</a></p>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="grid-row">
+      <div class="column-full">
+        <h2 class="heading-medium personal-tax-sub-heading">Help with tax for friends and family</h2>
+        <div class="grid-row">
+          <div class="column-two-thirds">
+          <p>Give friends or family permission to access your account, or become someone else’s trusted helper to help them with their tax.</p>
+          <p><a href="#">View your trusted helper contacts</a></p>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+</div>  
+  <div class="column-third personal-tax-sidebar">
+    <h2 class="heading-small">Personal details</h2>
+    <ul>
+      <li><a href="">Update your address</a></li>
+      <li><a href="">Manage your paperless settings</a></li>
+    </ul>
+    
+    <h2 class="heading-small">Track your forms and letters</h2>
+    <p>Find out how your form or letter is progressing and when you should expect a response by.</p>
+    <p><a href="#">Track your forms and letters</a></p>
+  </div>
+
+</div>
+          
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">  
+    <div class="column-two-thirds">    
+        
+    <h1 class="heading-xlarge">Personal tax account: sign in or set up</h1>
+
+    <p>
+      Use your personal tax account to check your records and manage your details with HM Revenue and Customs (HMRC).
+    </p>
+
+    <!-- <p>You’ll be sent to Verify to sign in. If you haven’t used Verify before, it will take you about 5 minutes to get set up.</p> -->
+
+    <div class="sign-in-wrap">
+      <div class="button-wrap">
+        <a class="button button-start" href="/hub/slide-start{{formQuery}}">
+          <strong>Start now</strong>
+        </a>
+      </div>
+    </div>
+
+    <!-- <h3 class="heading-small">Sign in with Government Gateway</h3>
+    <p>You can also <a href="https://www.tax.service.gov.uk/gg/sign-in?continue=/business-account/self-assessment">sign in with Government Gateway</a> if you already have an account. Government Gateway allows you to access online HMRC services easily and securely.</p> -->
+
+    <h2 class="heading-medium">What you can do</h2>
+    <p>You can use your personal tax account to:</p>
+    <ul class="list list-bullet">
+      <li></a>check your Income Tax estimate and tax code</li>
+      <li></a>fill in, send and view a personal tax return</li>
+      <li></a>claim a tax refund</li>
+      <li></a>check and manage your tax credits</li>
+      <li></a>check your State Pension</li>
+      <li></a>track tax forms that you’ve submitted online</li>
+      <li></a>check or update your Marriage Allowance</li>
+      <li></a>tell HMRC about a change of address</li>
+      <li></a>check or update benefits you get from work, eg company car details and medical insurance</li>
+    </ul>
+
+    <p>More services will be added in the future.</p>
+
+<!--     <h2 class="heading-medium">Other ways to apply</h2>
+    <h3 class="heading-small">By phone or post</h3>
+    <p>If you’ll <a href="#">reach your State Pension age</a> in more than 30 days, call the <a href="#">Future Pension Centre</a> and ask for a statement.</p>
+
+    <p>You can also fill in the <a href="#">BR19 application form</a> and send it in the post.</p>
+
+    <p>You’ll get your statement within 10 working days.</p>
+
+    <h3 class="heading-small">If you’re already getting your State Pension or have delayed claiming it</h3>
+    <p>To get information about your State Pension, contact the <a href="#">Pension Service</a> if you’re in the UK or the <a href="#">International Pension Centre</a> if you live abroad.</p>
+
+    <h3 class="heading-small">If you’ve worked and paid National Insurance in the Isle of Man</h3>
+    <p>Contact the <a href="#">Future Pension Centre</a> to get information about your State Pension.</p> -->
+
+
+      <h2 class="heading-medium">Other ways to apply</h2>
+
+      {{serviceOtherWays | safe}}
+          
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+
