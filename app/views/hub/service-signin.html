@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Prove your identity to continue</h1>
+
+      {{formData | safe}}
+
+      <form action='/hub/sm-signin{{formQuery}}'>
+        
+        <div class="form-group">
+          <fieldset class="block">
+  
+            <div class="multiple-choice">
+              <input id="radio-inline-1" type="radio" name="sign_in" value="gateway">
+              <label for="radio-inline-1">
+                <span class="label-header">Sign in with Government Gateway</span></br>
+                <span class="label-subhead">You’ll have a user ID if you’ve signed up to do things like file your Self Assessment tax return online. </span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-inline-2" type="radio" name="sign_in" value="verify">
+              <label for="radio-inline-2">
+                <span class='label-header'>Sign in with GOV.UK Verify</span><br>
+                <span class="label-subhead">You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity. </span>
+              </label>
+            </div>
+            <div class="form-block">or</div>
+            <div class="multiple-choice">
+              <input id="radio-inline-3" type="radio" name="sign_in" value="create">
+              <label for="radio-inline-3">
+                <span class="label-header">Create an account</span><br>
+                <span class="label-subhead">Create a new account with Government Gateway or GOV.UK Verify.</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="button">Continue</button>
+      </form>  
+
+    </div>
+  </div>
+</main>
+
+
+<style>
+
+</style>
+
+{% endblock %}
+
+

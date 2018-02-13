@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      {# <a class="link-back" href="/url/of/previous/page">Back</a> #}
+
+      <h1 class="heading-large">
+        Create an account
+      </h1>
+
+      <p>You can choose to create a Government Gateway or GOV.UK Verify. You’ll be able to apply for a basic criminal record check with either account.</p>
+
+      <!-- <p><a href="/eidas/pick-country">I have another European identity account</a></p> -->
+
+   </div>
+  </div>
+  <div class="grid-row">
+      <div class="column-full">
+        <table>
+        <tr>
+          <td class="heading-medium table-body">Government Gateway</td>
+          <td class="heading-medium table-body">GOV.UK Verify</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="heading-small">What you need</div>
+            <p>Government Gateway works best if you have:</p>
+            <ul class="list list-bullet">  
+              <li>your National Insurance number</li>
+            </ul>
+            And one of the following:
+            <ul class="list list-bullet">
+              <li>a P60</li>
+              <li>a recent payslip</li>
+              <li>a UK passport</li>
+            </ul>
+            <a href="/government-gateway{{formQuery}}" class="button">Create a Government Gateway account</a>
+          </td>
+          <td>
+            <div class="heading-small">What you need</div>
+            <p>GOV.UK Verify requires you to:</p>
+            <ul class="list list-bullet">
+              <li>have a UK address</li>
+              <li>be over 18 years old</li>
+            </ul>
+            It works best if you can provide either:
+            <ul class="list list-bullet">
+              <li>a valid passport</li>
+              <li>a driving licence</li>
+            </ul>
+            <a href="/about{{formQuery}}" class="button">Create an account with GOV.UK Verify</a>
+            <br>
+            <br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="heading-small">How long it takes, on average</div>
+            10 minutes
+          </td>
+          <td>
+            <div class="heading-small">How long it takes, on average</div>
+            15 minutes
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="heading-small">How it works</div>
+            Your details will be shared with the department that runs the ‘{{serviceNameLower}}’ service.
+          </td>
+          <td>
+            <div class="heading-small">How it works</div>
+            A certified company will double check your identity. All the companies involved have met security standards set by government.
+          </td>
+        </tr>
+      </table>
+      </div> 
+    </div> 
+
+  </div>
+</div>
+
+</main>
+
+
+{% endblock %}
+
+
