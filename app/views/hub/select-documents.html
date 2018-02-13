@@ -14,7 +14,7 @@
   		<h1 class="heading-large">Which documents can you use to confirm your identity?</h1>
 
       {{data['non-uk-group']}}
-      <p>Your document details will be checked with the issuing authority.</p>
+      <p>We will recommend you which online identities work best with the documents you are able to provide. Your document details will be checked with the issuing authority.</p>
 
 <!--       <div class="panel panel-border-wide">
         <p>
@@ -27,7 +27,10 @@
         <div class="form-group" data-required="Please answer the question">
           <fieldset class="block">
 
-            <legend class="heading-medium">Do you have a valid UK photocard driving licence, full or provisional?</legend>
+            <legend class="heading-medium">
+              Can you use a valid UK photocard driving licence, full or provisional?
+              <span class='form-hint'>You'll need your driving licence with you to confirm your identity with it.</span>
+            </legend>
 
             <div class="multiple-choice" data-target="driving-licence-uk">
               <input id="driving-licence-true" type="radio" name="drivingLicence" value="true">
@@ -60,7 +63,11 @@
         <div class="form-group" data-required="Please answer the question">
           <fieldset class="block">
 
-            <legend class="heading-medium">Do you have a UK passport?</legend>
+            <legend class="heading-medium">
+              Can you use a UK passport?
+              <span class='form-hint'>You'll need your passport with you to confirm your identity with it.</span>
+            </legend>
+            
 
             <div class="multiple-choice" data-target="">
               <input id="passport-true" type="radio" name="passport" value="true">

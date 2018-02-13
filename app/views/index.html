@@ -8,7 +8,7 @@
 
 <main id="content" role="main">
   <div class="grid-row">
- 
+    {{ formData | safe }}
     <form method="POST" action="hub/slide-start{{formQuery}}">
  
       <div class="column-half">
@@ -22,6 +22,7 @@
 
           <h2 class="heading-medium">LOA2 services</h2>
           <input type="submit" formaction="/service/check-state-pension-start?requestId=check-state-pension" value="Check your state pension" class="button" id="next-button">
+          <input type="submit" formaction="/service/personal-tax-account-start?requestId=personal-tax-account" value="Personal tax account" class="button" id="next-button">
         </div>
       </div>
       <div class="column-half">
