@@ -12,12 +12,10 @@
     {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
   		<h1 class="heading-large">
-        <span class="heading-secondary">1. Picking your digital identity provider</span>
-        Select the digial identity you<br>want to sign up with</h1>
+        <span class="heading-secondary">1. Select the identity provider you want use</span>
+        Identity providers </h1>
 
-        <p>You don't have to be an existing customer with the company that provides it.</p>
-
-        <p>They ask you to provide personal information and evidence, and then check it's correct using the new, secure systems they built.</p>
+        <p>You don’t have to be an existing customer as they’ve all built new, secure systems in order to verify identities. The provider you choose asks you for some personal details and checks them against records held by mobile phone providers, credit agencies, HM Passport Office or DVLA.</p>
 
         <p><a href="#">Why there’s a choice of online identities</a></p>
 
@@ -33,9 +31,7 @@
           <div class="company-logo">
             <img alt="" src="/public/images/idp-logos/{{ idp.slug }}.png">
 
-            <p class="company-about">
-              <a href="/about-idp{{ formQuery | safe }}&amp;idp={{ idp.slug }}">About {{ idp.name }}</a>
-            </p>
+           
           </div>
 
           <div class="idp-option">
@@ -43,7 +39,7 @@
             <div class="button-wrap">
               <form method="POST" action="/hub/redirect-to-idp{{formQuery}}">
                 <input type="hidden" name="idpChoice" value="{{idp.slug}}">
-                <button class="button">Select {{ idp.name }}</button>
+                <button class="button">Select {{ idp.accountName }}</button>
               </form>
             </div>
             

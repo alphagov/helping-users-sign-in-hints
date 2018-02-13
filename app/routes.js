@@ -130,6 +130,7 @@ router.use(function (req, res, next) {
     viewData.userInfo = userInfo;
     viewData.idpName = getIDPBySlug(req.session.data['idpChoice']).name
     viewData.idpSlug = getIDPBySlug(req.session.data['idpChoice']).slug
+    viewData.idpAccountName = getIDPBySlug(req.session.data['idpChoice']).accountName
     viewData.usersLOA = req.session.data['usersLOA']
     viewData.query = req.query;
 

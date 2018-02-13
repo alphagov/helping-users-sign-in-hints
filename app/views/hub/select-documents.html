@@ -12,28 +12,19 @@
     {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
   		<h1 class="heading-large">
-        <span class="heading-secondary">1. Picking your digital identity provider</span>
-        Which documents can you use to confirm your identity?
+        <span class="heading-secondary">1. Select the identity provider you want use</span>
+        Your photo identity documents
       </h1>
 
       {{data['non-uk-group']}}
-      <p>We will recommend you which online identities work best with the documents you are able to provide. Your document details will be checked with the issuing authority.</p>
+      <p>You don’t have to be an existing customer as they’ve all built new, secure systems in order to verify identities. The provider you choose asks you for some personal details and checks them against records held by mobile phone providers, credit agencies, HM Passport Office or DVLA.</p>
 
-<!--       <div class="panel panel-border-wide">
-        <p>
-          The more identity documents you can provide now, the more likely it is that the company can verify you successfully.
-        </p>
-      </div>
- -->
       <form action="/hub/select-other-documents{{formQuery}}">
         {{formData | safe}}
         <div class="form-group" data-required="Please answer the question">
           <fieldset class="block">
 
-            <legend class="heading-medium">
-              Can you use a valid UK photocard driving licence, full or provisional?
-              <span class='form-hint'>You'll need your driving licence with you to confirm your identity with it.</span>
-            </legend>
+            <legend class="heading-medium">Do you have a valid UK photocard driving licence, full or provisional?</legend>
 
             <div class="multiple-choice" data-target="driving-licence-uk">
               <input id="driving-licence-true" type="radio" name="drivingLicence" value="true">
@@ -66,10 +57,7 @@
         <div class="form-group" data-required="Please answer the question">
           <fieldset class="block">
 
-            <legend class="heading-medium">
-              Can you use a UK passport?
-              <span class='form-hint'>You'll need your passport with you to confirm your identity with it.</span>
-            </legend>
+            <legend class="heading-medium"> Do you have a UK passport?</legend>
             
 
             <div class="multiple-choice" data-target="">

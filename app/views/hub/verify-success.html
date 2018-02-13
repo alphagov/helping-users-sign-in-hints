@@ -14,12 +14,13 @@
 
 	<h1 class="heading-large">
 	  <span class="heading-secondary">3. Continue to {{serviceNameLower}}</span>
-		{{idpName}} has verified your identity
+		Your digital identity
 	</h1>
 
-	<p>You can sign in whenever you see the Verify logo with your {{idpName}} username and password.</p>
+	<p>You’ve set up your digital identity with {{idpAccountName}} so now you can continue to access {{serviceNameLower}}
+</p>
 
-  <p>Continue to {{serviceNameLower}}</p>
+  <p>In the future you can use your digital identity wherever you see the GOV.UK Verify logo.</p>
 
 
 <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/third-cycle-matching{{formQuery}}" accept-charset="UTF-8" method="get">
@@ -31,7 +32,7 @@
 </form>
 
 	{% if serviceLOA == 1 %}
-		
+<!-- 		
 		<p>
 	  	<span class="font-small">When you access some government services, you'll be asked to provide more evidence, but you only need to do this once. </span>
 		</p>
@@ -55,7 +56,7 @@
 	          <li>help friends or family with their tax</li>
 	        </ul>
 	      </div>
-	    </details>
+	    </details> -->
 
 	  {% endif %}
 

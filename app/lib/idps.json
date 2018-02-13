@@ -1,30 +1,37 @@
 [
   {
     "name" : "Barclays",
+    "accountName" : "Barclays Identity Service",
     "slug" : "barclays"
   },
   {
     "name" : "Citizensafe",
+    "accountName" : "Citizensafe",
     "slug" : "citizensafe"
   },
   {
     "name" : "Digidentity",
+    "accountName" : "Digidentity",
     "slug" : "digidentity"
   },
   {
     "name" : "Experian",
+    "accountName" : "ExperianID",
     "slug" : "experian"
   },
   {
     "name" : "Post Office",
+    "accountName" : "My Post Office",
     "slug" : "post-office"
   },
   {
     "name" : "Royal Mail",
+    "accountName" : "Royal Mail Identity",
     "slug" : "royal-mail"
   },
   {
     "name" : "SecureIdentity",
+    "accountName" : "SecureIdentity",
     "slug" : "secureidentity"
   }
 ]
