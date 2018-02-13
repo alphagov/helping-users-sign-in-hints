@@ -167,7 +167,16 @@ router.get('/hub/sm-signin', function (req, res) {
   data.idps = idps;
   console.log("session: " + JSON.stringify(req.session, null, "  "))
 
-  res.render('hub/sm-signin', data);
+  res.render('hub/sm-signin-2col', data);
+});
+
+router.get('/hub/sm-signin-2col', function (req, res) {
+  var data = {};
+
+  data.idps = idps;
+  console.log("session: " + JSON.stringify(req.session, null, "  "))
+
+  res.render('hub/sm-signin-2col', data);
 });
 
 
