@@ -1,21 +1,28 @@
-{% extends "layout_slide.html" %}
+{% extends "layout.html" %}
 
-{% block body_classes %}hub-start{% endblock %}
-{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
 
-{% block slide_content %}
+{% block content %}
 
-<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/third-cycle-matching{{formQuery}}" accept-charset="UTF-8" method="get">
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+ 		<div class="column-two-thirds">
+  		
 
-  {{ formData | safe }}
-
-	<h1>{{idpName}} has verified your identity</h1>
+	<h1 class="heading-large">
+	  <span class="heading-secondary">3. Continue to {{serviceNameLower}}</span>
+		{{idpName}} has verified your identity
+	</h1>
 
 	<p>You can sign in whenever you see the Verify logo with your {{idpName}} username and password.</p>
 
   <p>Continue to {{serviceNameLower}}</p>
 
 
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/third-cycle-matching{{formQuery}}" accept-charset="UTF-8" method="get">
   <div class="form-group">
     <div class="actions">
       <input class="button" id="next-button" type="submit" value="Continue">
@@ -52,4 +59,14 @@
 
 	  {% endif %}
 
+
+  	</div>
+  </div>
+</main>
+
 {% endblock %}
+
+
+
+
+

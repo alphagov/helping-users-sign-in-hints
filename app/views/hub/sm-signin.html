@@ -14,7 +14,7 @@
         <div class="column-one-half sign-in-container" style="">
               
           <h1 class="heading-large">
-           Prove your identity with an<br>online identity
+           Set up or sign in with a digital identity
           </h1>
 
           <h2 class="heading-medium">Create an online identity</h2>sadasdsad
@@ -39,7 +39,7 @@
             {% for idp in idps %}
               <li class="idp-links">
                 <div class="button-wrap">
-                  <form method="POST" action="{{idpRoot}}/{{ idp.slug }}/sign-in{{formQuery}}&idp={{idp.slug}}&serviceLOA={{serviceLOA}}">
+                  <form method="POST" action="{{idpRoot}}/sign-in{{formQuery}}&idp={{idp.slug}}&serviceLOA={{serviceLOA}}">
                     <input type="hidden" name="registration" value="false">
                     <div class="idp-icon-container">
                       <img src="/public/images/idp-icons/{{idp.slug}}.png" class="idp-icon">

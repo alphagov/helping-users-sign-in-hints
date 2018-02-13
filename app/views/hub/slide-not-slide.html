@@ -12,37 +12,25 @@
   <div class="grid-row">
   {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
-			<h1 class="heading-large">Setting up an online identity</h1>
+			<h1 class="heading-large">Setting up your  digital identity</h1>
 
-				<p>You'll need to set up your own online identity so you can safely and securely {{serviceNameLower}}.</p>
-				<p>The setting up your online identity takes 4 steps:</p>
-				<ul class="list list-number steps">
-					<li>
-						<span class='heading-medium'>Pick which online identity you want to create</span>
-						<p>You have a choice of online identities that are certified to sign you in to Government services, it's your choice you you sign up with.</p>
-					</li>
-					<li>
-						<span class='heading-medium'>Create your online identity with the provider</span>
-						<p>You'll create your online identity which you can then use every time you sign in to number of Government services.</p>
-					</li>
-					<li>
-						<span class='heading-medium'>Confirm your idenity</span>
-						<p>You'll need to provide some documents that will be double checked with the agency that provided them to you.</p>
-					</li>
-					<li>
-						<span class='heading-medium'>Continue to your service</span>
-						<p>You can then access the service safely and securely when we are sure that you are you you say you are.</p>
-					</li>
-				</ul>
-				<p>You'll need about 15 minutes to get set up.<!--  up but then you'll have an account that can securely access a range of govenment services --></p>
-				
-				<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/slide-pick-idp" accept-charset="UTF-8" method="get">
-				  <div class="form-group">
-				    <div class="actions">
-				      <input class="button" id="next-button" type="submit" value="Set up your online identity">
-				    </div>
-				  </div>
-				</form>
+	<p>The 3 steps to setting up your digital identity:</p>
+	<ul class="list list-number">
+		<li class=''>Select the identity provider you want use.</li>
+		<li class=''>Confirm your details so the provider can verify your identity.</li>
+		<li class=''>Return to GOV.UK to access {{serviceNameLower}}.</li>
+	</ul>
+	<p>It takes about 15 minutes to get set up.</p>
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/select-documents" accept-charset="UTF-8" method="get">
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Pick a digital identity provider">
+      <span style="display:inline-block; margin-top: 10px; padding-left: 5px; font-size: 19px"> or <a href="/hub/slide-pick-idp">find out more</a></span>
+    </div>
+  </div>
+</form>
+
 
     </div>
   </div>

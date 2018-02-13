@@ -1,32 +1,90 @@
-{% extends "layout_slide.html" %}
+{% extends "layout.html" %}
 
-{% block body_classes %}hub-start{% endblock %}
-{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
 
-{% block slide_content %}
+{% block content %}
 
-<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/slide-create-account" accept-charset="UTF-8" method="get">
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
 
-  {{ formData | safe }}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Setting up your  digital identity</h1>
 
-	<h1 class="slide-heading">1. Pick which online identity you want to use</h1>
+     
+  <h2 class="heading-medium">1. Select the identity provider you want to use</h2>
 
   <p>We'll ask you some questions to work out which will work best for you – you'll then get a choice of which one to use.</p>
-  <p>Its free to use and you don't need to be a customer of the company that provides the account.</p>
 
-    <details role="group">
+  <p>Its free to use and you don't need to be a customer of the company that provides the account.
+  </p>
+
+  <details role="group">
     <summary role="button" aria-controls="details-content-0" aria-expanded="false">
-      <span class="summary">Why you need to pick an online idenity</span>
+      <span class="summary">Why you need to pick a digital idenity</span>
     </summary>
     <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
     </div>
   </details>
 
-  <div class="form-group">
-    <div class="actions">
-      <input class="button" id="next-button" type="submit" value="About creating your online identity">
+
+  <h2 class="heading-medium">2. Confirm your details so the provider can verify your identity</h2>
+
+  <p>You'll be taken to the companies website to create an online identity.</p>
+  <!-- <p>You'll need to create a username and password, and add some personal details so they know who you are.</p> -->
+  <p>You'll be able to use this account to securely access a range of other services across GOV.UK.</p>
+
+  <details role="group">
+    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+      <span class="summary">More about confirm your details so the provider can verify your identity</span>
+    </summary>
+    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+
+    </div>
+  </details>
+
+
+  <h2 class="heading-medium">3. Return to GOV.UK to access {{serviceNameLower}}</h2>
+
+  <p>Once you've confirmed your identity, you'll be able to safely and securely {{serviceNameLower}}.</p>
+
+  <p>You'll only need to do this once, as next time you'll be able to sign in quickly with the username and password you created with your identity account.</p>
+
+  <details role="group">
+    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+      <span class="summary">More about confirm your details so the provider can verify your identity</span>
+    </summary>
+    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+
+    </div>
+  </details>
+
+  <br>
+
+
+      <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/select-documents" accept-charset="UTF-8" method="get">
+
+        <div class="form-group">
+          <div class="actions">
+            <input class="button" id="next-button" type="submit" value="Select your digital identity provider">
+            <span style="display:inline-block; margin-top: 10px; padding-left: 5px; font-size: 19px"></div>
+        </div>
+      </form>
     </div>
   </div>
-</form>
+</main>
+
+
 
 {% endblock %}
+
+
+
+
+
+
+
+
+

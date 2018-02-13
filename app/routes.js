@@ -389,11 +389,11 @@ router.get('/idp/verify-success', function(req,res){
 
 router.get('/hub/verify-success', function(req,res){
 
-  if ((res.locals.serviceLOA == '2') && (res.locals.usersLOA == '1') ){
-    res.redirect(res.locals.serviceCompleteURL + res.locals.formQuery)
-  } else {
+  // if ((res.locals.serviceLOA == '2') && (res.locals.usersLOA == '1') ){
+  //   res.redirect(res.locals.serviceCompleteURL + res.locals.formQuery)
+  // } else {
     res.render('hub/verify-success')
-  }
+  // }
 })
 
 
