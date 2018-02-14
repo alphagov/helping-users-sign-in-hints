@@ -21,7 +21,7 @@
 
   		 <div id="company-about">
 
-        {% for idp in available_idps | sort(false, true, 'name') %}
+        {% for idp in available_idps | sort(true, true, 'name') %}
         <div class="idp-choice">
 
           <div class="company-logo">
