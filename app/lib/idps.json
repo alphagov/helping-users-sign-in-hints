@@ -1,10 +1,5 @@
 [
   {
-    "name" : "Barclays",
-    "accountName" : "Barclays Identity Service",
-    "slug" : "barclays"
-  },
-  {
     "name" : "Citizensafe",
     "accountName" : "Citizensafe",
     "slug" : "citizensafe"
@@ -13,6 +8,11 @@
     "name" : "Digidentity",
     "accountName" : "Digidentity",
     "slug" : "digidentity"
+  },
+  {
+    "name" : "Barclays",
+    "accountName" : "Barclays Identity Service",
+    "slug" : "barclays"
   },
   {
     "name" : "Experian",
