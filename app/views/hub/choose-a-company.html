@@ -17,13 +17,9 @@
 
         <p>You don’t have to be an existing customer as they’ve all built new, secure systems in order to verify identities. The provider you choose asks you for some personal details and checks them against records held by mobile phone providers, credit agencies, HM Passport Office or DVLA.</p>
 
-        <p><a href="#">Why there’s a choice of online identities</a></p>
-
         {{ formData | safe }}
 
   		 <div id="company-about">
-
-        <p>Based on your answers, {{ available_idps | length }} companies can verify you now:</p>
 
         {% for idp in available_idps | sort(false, true, 'name') %}
         <div class="idp-choice">
