@@ -160,6 +160,20 @@ router.get('/', function (req, res) {
 
 
 
+// Sending user to their selected signin method
+
+router.get('/hub/signin-method', function (req, res) {
+  
+  if (req.session.data['sign_in'] == 'gateway'){
+    res.redirect('/hub/gateway' + res.locals.formQuery)
+  } else if (req.session.data['sign_in'] == 'verify'){
+    res.redirect('/hub/sm-signin' + res.locals.formQuery)
+  } else {
+  res.redirect('create-account');
+  }
+});
+
+
 // Sending data to sm-signin page
 
 router.get('/hub/sm-signin', function (req, res) {
@@ -168,27 +182,9 @@ router.get('/hub/sm-signin', function (req, res) {
   data.idps = idps;
   console.log("session: " + JSON.stringify(req.session, null, "  "))
 
-  res.render('hub/sm-signin-2col', data);
+  res.render('hub/sm-signin', data);
 });
 
-router.get('/hub/sm-signin-2col', function (req, res) {
-  var data = {};
-
-  data.idps = idps;
-  console.log("session: " + JSON.stringify(req.session, null, "  "))
-
-  res.render('hub/sm-signin-2col', data);
-});
-
-
-// Sending user to sn signin
-
-router.get('/hub/slide-start', function(req,res){
-
-  
-  res.redirect('sm-signin')
-  
-})
 
 // Sign in or registraion journey routing
 

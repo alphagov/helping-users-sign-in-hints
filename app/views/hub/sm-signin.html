@@ -9,74 +9,89 @@
 <main id="content" role="main">
   {% include "includes/available-languages.html" %}
 
-    <div class="grid-row">
-      <div class="column-quarter">.</div>
-        <div class="column-one-half sign-in-container" style="">
+    <div class="grid-row">      
+        <div class="column-two-thirds" style="">
               
-          <h1 class="heading-large">
-           Set up or sign in with a digital identity
-          </h1>
+          <h1 class="heading-large">Set up or sign in with a digital identity</h1>
+        </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-half">
+        <h2 class="heading-medium">Set up a digital identity</h2>
+        <p>Set up a digital identity with an identity provider so you can securely sign in to {{serviceNameLower}}.</p>
 
-          <h2 class="heading-medium">Create an online identity</h2>sadasdsad
-          <p>To securely access {{serviceNameLower}} you need to sign in with an online identity.</p>
+        <form id="" class="js-validate" novalidate="novalidate" action="/hub/setting-up-verify{{formQuery}}" accept-charset="UTF-8" method="get">
+          {{formData | safe}}
+          <input class="button" id="next-button" type="submit" value="Set up a digital identity">
+          <input type="hidden" name="registration" value="true">
+        </form>
+        <br>
 
-          <form id="" class="js-validate" novalidate="novalidate" action="/hub/slide-all-long{{formQuery}}" accept-charset="UTF-8" method="get">
-            {{formData | safe}}
-            <input class="button" id="next-button" type="submit" value="Set up a new online identity">
-            <input type="hidden" name="registration" value="true">
-          </form>
-          <br>
-          <p>or</p>
-
-          <h3 class="heading-medium">Sign in with an existing online identity</h3>
-
-          <p>If you've already set one up, select your online identity.</p>
+         
+      </div>
+      <div class="column-half">
+          <h2 class="heading-medium">Sign in with your digital identity</h2>
+          <p>Sign in with a digital identity that you set up with an identity provider in the past.</p>
 
           {{formData | safe}}
           
-          <div class="idp-list-container">
+          <div class="">
             <ul class="list ">
             {% for idp in idps %}
               <li class="idp-links">
                 <div class="button-wrap">
                   <form method="POST" action="{{idpRoot}}/sign-in{{formQuery}}&idp={{idp.slug}}&serviceLOA={{serviceLOA}}">
                     <input type="hidden" name="registration" value="false">
+                    <input type="hidden" name="idpChoice" value="{{idp.slug}}">
+
                     <div class="idp-icon-container">
                       <img src="/public/images/idp-icons/{{idp.slug}}.png" class="idp-icon">
                     </div>
-                    
-                    <button class="button-link" >{{ idp.name }}</button>
+
+                    <button class="button-link" >{{ idp.accountName }}</button>
                   </form>
                 </div>
               </li>    
             {% endfor %}
             </ul>
           </div>
-
-          <br>
-          <br>
-          <p style="text-align: left;">UK government trusts these certified companies as they are part of GOV.UK Verify.</p>
+           <p style="text-align: left;">UK government trusts these identity providers as they’re part of GOV.UK Verify.</p>
           <img src="/public/images/verify-certified-badge.svg" width="75%" class="">
           <br>
           <br>
           <details  style="">
             <summary><span class="summary">What is GOV.UK Verify?</span></summary>
             <div class="" style="text-align: left;">
-              <p>GOV.UK Verify is designed by the UK government to fight the growing problem of online identity theft.</p>
+              <p>GOV.UK Verify is designed by the UK government to fight the growing problem of identity theft.</p>
 
-              <p>Companies apply to be part of GOV.UK Verify. They are certified when they meet security and privacy standards set by government so you can trust them with your personal information.</p>
+              <p>Identity providers apply to be part of GOV.UK Verify. They are certified when they meet security and privacy standards set by government so you can trust them with your personal information.</p>
 
-              <p>When a government service uses GOV.UK Verify, you can access the service with the online identity you set up with the certified company.
-              </p>
-
+              <p>When a government service uses GOV.UK Verify, you can access the service with the digital identity you set up with the identity provider.</p>
             </div>
           </details>
+
     </div>
   </div>
 
 </main>
 
 <style type="text/css">
+.idp-links {
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.idp-links:last-child {
+  border-bottom: none;
+}
+
+.idp-links:last-child {
+  border-bottom: none;
+}
 
 
 </style>
