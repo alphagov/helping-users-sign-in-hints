@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Setting up your  digital identity</h1>
+
+     
+  <h2 class="heading-medium">1. Select the identity provider you want to use</h2>
+
+  <p>Each identity provider has different requirements, so we’ll now ask you some questions to filter out the providers that won’t work for you. </p>
+
+  <p>When you select the provider you want to use, we’ll send you to their website.</p>
+
+
+
+  <h2 class="heading-medium">2. Confirm your details so the provider can verify your identity</h2>
+
+  <p>The first first thing the identity provider will ask you to do is create a username and password. This is so you can reuse your digital identity wherever you see the GOV.UK Verify logo.</p>
+
+  <p>The identity provider will ask you to provide some personal details, including identity documents if you have them, so they can double check them against records held by mobile phone providers, credit agencies, HM Passport Office or DVLA for example.</p>
+
+
+
+  <h2 class="heading-medium">3. Continue to GOV.UK to access {{serviceNameLower}}</h2>
+
+  <p>When you're digital identity is set up, the identity provider will send you back to GOV.UK so you can safely and securely {{serviceNameLower}}.</p>
+
+  <p>You only need to set up one digital identity next time you just sign in with your username and password.</p>
+
+  <br>
+
+
+      <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/select-documents" accept-charset="UTF-8" method="get">
+
+        <div class="form-group">
+          <div class="actions">
+            <input class="button" id="next-button" type="submit" value="Select your digital identity provider">
+            <span style="display:inline-block; margin-top: 10px; padding-left: 5px; font-size: 19px">
+          </div>
+        </div>
+      </form>
+      <details role="group">
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+          <span class="summary">Where can I use my digital identity?</span>
+        </summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+          <p>You can use your digital identity to:</p>
+          <ul class="list list-bullet">
+            <li>complete your Self Assessment</li>
+            <li>check your State Pension</li>
+            <li>sign in to your personal tax account</li>
+            <li>view or share your driving licence information</li>
+            <li>complete your claim or access your Universal Credit account</li>
+            <li>claim your redundancy payment and monies owed</li>
+            <li>check your income tax for the current year</li>
+            <li>report a medical condition that affects your driving</li>
+            <li>renew your short-term medical driving licence</li>
+            <li>check or update your company car tax</li>
+            <li>use Rural Payments</li>
+            <li>help friends and family with their tax</li>
+            <li>apply for a vehicle operator licence</li>
+            <li>request a basic DBS check</li>
+            
+
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
