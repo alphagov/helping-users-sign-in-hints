@@ -19,6 +19,42 @@
 
   			{{ formData|safe }}
 
+  {% if data['idpChoice'] != undefined %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p>The last person using this device signed in with {{idpName}}.</p>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-third">
+        <div class="company">
+          <div class="company-inner">
+            <div class="company-logo">
+              <div class="company-logo-inner">
+                <img src="/public/images/idp-logos/{{idpSlug}}.png" alt="{{idpName}}">
+              </div>
+            </div>
+
+            <div class="button-wrap">
+              <form method="POST" action="{{idpRoot}}/sign-in{{formQuery}}">
+                
+                <input type="hidden" name="idpChoice" value="{{idpSlug}}">
+                
+                <button class="button">Select {{ idpName }}</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p>You can also sign in with any of these companys if you’ve previously set up an identity account with them.</p>
+      </div>
+    </div>
+  {% endif %}
+
 
   {% for idp in idps %}
     {% if loop.index0 % 3 == 0 or loop.first %}
