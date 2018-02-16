@@ -159,7 +159,6 @@ router.get('/', function (req, res) {
 // HUB ROUTING
 
 
-
 // Sending user to their selected signin method
 
 router.get('/hub/signin-method', function (req, res) {
@@ -180,22 +179,9 @@ router.get('/hub/sm-signin', function (req, res) {
   var data = {};
 
   data.idps = idps;
-  console.log("session: " + JSON.stringify(req.session, null, "  "))
 
   res.render('hub/sm-signin', data);
 });
-
-
-// Sign in or registraion journey routing
-
-router.get('/hub/slide-about', function(req,res){
-
-  if (req.session.data['registration'] == 'false'){
-    res.redirect('/hub/hub-sign-in' + res.locals.formQuery)
-  } else {
-    res.render('hub/slide-about')
-  }
-})
 
 
 // Routing past hub questions for LOA1 services
