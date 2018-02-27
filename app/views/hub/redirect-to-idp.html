@@ -21,7 +21,15 @@
 
         <p>You’ll need your:</p>
         <ul class="list list-bullet">
-          <li>identity documents</li>
+          {% if data['passport'] == 'true' %}
+            <li>passport</li>
+          {% endif %}
+          {% if data['drivingLicence'] == 'true' %}
+            <li>driving licence</li>
+          {% endif %}
+          {% if data['non_uk_id'] == 'true' %}
+            <li>non-UK identity document</li>
+          {% endif %}
           <li>mobile phone</li>
         </ul>
 
