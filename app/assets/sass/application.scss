@@ -152,16 +152,13 @@ $path: "/public/images/";
   font-weight: bold;
    dt, dd {
     display: inline-block;
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
   }
   dt {
-    width: 1.5em;
+    width: 1.25em;
     vertical-align: top;
   }
   dd {
     width:90%;
-  :first-of-type {
-    color:red;
-  }
   }
 }
