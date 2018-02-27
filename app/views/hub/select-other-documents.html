@@ -15,16 +15,16 @@
         Other identity documents
       </h1>
 
-      <p>Some identity providers can use identity documents from other countries.</p>
+      <p>Some digital identities can use identity documents from other countries.</p>
 
-      <form action="/hub/select-phone{{formQuery}}">
+      <form action="/hub/choose-a-company{{formQuery}}">
         {{formData | safe}}
         <div class="form-group" data-required="Please answer the question">
           <fieldset class="block">
 
             <legend class="heading-medium">Do you have a non-UK passport, ID card or driving licence?</legend>
 
-            <div class="multiple-choice" data-target="">
+            <div class="multiple-choice" data-target="non-uk-doc">
               <input id="non-uk-id-true" type="radio" name="non_uk_id" value="true">
               <label for="non-uk-id-true">Yes</label>
             </div>
@@ -32,6 +32,24 @@
             <div class="multiple-choice" data-target="">
               <input id="non-uk-id-false" type="radio" name="non_uk_id" value="false">
               <label for="non-uk-id-false">No</label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="non-uk-doc">
+              
+              <legend class="heading-small">
+                Can you download an app to take a picture of your document?
+                <span class='form-hint'>You may need to download a free app and use your phone's camera as part of setting up your digital identity.</span>
+              </legend>
+
+              <div class="multiple-choice" data-target="">
+                <input id="app-true" type="radio" name="app" value="true">
+                <label for="app-true">Yes</label>
+              </div>
+
+              <div class="multiple-choice" data-target="">
+                <input id="app-false" type="radio" name="app" value="false">
+                <label for="app-false">No</label>
+              </div>
             </div>
 
           </fieldset>
