@@ -13,47 +13,78 @@
     <div class="column-two-thirds">
 			<h1 class="heading-large">Setting up your digital identity</h1>
 
-	<p>3 steps to set up your digital identity:</p>
-	<dl class="steps-list">
-		<dt>1.</dt>
-		<dd>Choose the digital identity you want to set up.</dd>
-		<br>
-		<dt>2.</dt>
-		<dd>Confirm your details to set up your digital identity.</dd>
-		<br>
-		<dt>3.</dt>
-		<dd>Continue to GOV.UK to access {{serviceNameLower}}.</dd>
-	</dl>
+			<p>3 steps to set up your digital identity:</p>
+			<dl class="steps-list">
+				<dt>1.</dt>
+				<dd>
+					<span class="step-heading">Choose the digital identity you want to set up.</span>
 
-		
+					<details>
+					  <summary><span class="summary">More information</span></summary>
+  					<div class="panel panel-border-narrow">
+													
+						  <p>Each digital identity has different requirements, so we’ll ask you some questions so we can list the ones that will work for you. </p>
 
-		
+						  <p>???LOGOS???</p>
 
-		
+						  <p>When you choose the digital identity you want to set up, we’ll send you to their website.</p>
 
-	<p>It’s free and takes about 15 minutes to set up.</p>
-	
-	<p><a href="/hub/setting-up-more-info">Find out more</a> or</p>
+  					</div>
+  				</details>
+				</dd>
 
-	<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/select-documents" accept-charset="UTF-8" method="get">
+				<br>
+				
+				<dt>2.</dt>
+				<dd>
+					<span class="step-heading">Confirm your details to set up your digital identity.</span>
+					<details>
+					  <summary><span class="summary">More information</span></summary>
+  					<div class="panel panel-border-narrow">
+  						
+						  <p>The first first thing you will do is create a username and password. This is so you can reuse your digital identity wherever you see the GOV.UK Verify logo.</p>
 
-  <div class="form-group">
-    <div class="actions">
-      <input class="button" id="next-button" type="submit" value="Choose a digital identity">
-    </div>
-  </div>
-</form>
+						  <p>You need to provide some personal details, including identity documents if you have them, so they can be double checked against records held by mobile phone providers, credit agencies, HM Passport Office or DVLA for example.</p>
+
+  					</div>
+  				</details>
+				</dd>
+
+				<br>
+				
+				<dt>3.</dt>
+				<dd>
+					<span class="step-heading">Continue to GOV.UK to access {{serviceNameLower}}.</span>
+					
+					<details>
+					  <summary><span class="summary">More information</span></summary>
+  					<div class="panel panel-border-narrow">
+  						
+						  <p>When your digital identity is set up, you will be sent  back to GOV.UK so you can safely and securely {{serviceNameLower}}.</p>
+
+						  <p>You only need to set up one digital identity, next time you just sign in with your username and password.</p>
+
+  					</div>
+  				</details>
+
+				</dd>
+			</dl>
+
+			<p>It’s free and takes about 15 minutes to set up.</p>
+			
+			<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/select-documents" accept-charset="UTF-8" method="get">
+
+			  <div class="form-group">
+			    <div class="actions">
+			      <input class="button" id="next-button" type="submit" value="Choose a digital identity">
+			    </div>
+			  </div>
+			</form>
 
 
     </div>
   </div>
 </main>
-
-<style>
-
-
-
-</style>
 
 
 {% endblock %}

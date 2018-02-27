@@ -150,6 +150,10 @@ $path: "/public/images/";
 
 .steps-list {
   font-weight: bold;
+  summary .summary{
+    font-weight:lighter;
+    font-size: 19px;
+  }
    dt, dd {
     display: inline-block;
     padding-bottom: 1em;
