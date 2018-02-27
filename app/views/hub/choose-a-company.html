@@ -12,10 +12,18 @@
     {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
   		<h1 class="heading-large">
-        <span class="heading-secondary">Select the identity account you want use</span>
-        Identity accounts </h1>
+        <span class="heading-secondary">Step 1. Choose the digital identity you want to set up</span>
+        Digital Identities </h1>
 
         <p>You don’t have to be an existing customer as they’ve all built new, secure systems in order to verify identities. The account you choose asks you for some personal details and checks them against records held by mobile phone providers, credit agencies, HM Passport Office or DVLA.</p>
+
+        <p>Because you have a 
+
+        <!-- {% if data['passport'] == 'true' %}
+        passport
+        {% endif %}
+ -->
+        [driving licence and a passport], you can set up one of these digital identities:</p>
 
         {{ formData | safe }}
 
