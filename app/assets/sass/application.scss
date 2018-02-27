@@ -147,3 +147,21 @@ $path: "/public/images/";
   font-weight: 400;
 }
 
+
+.steps-list {
+  font-weight: bold;
+   dt, dd {
+    display: inline-block;
+    padding-bottom: 0.5em;
+  }
+  dt {
+    width: 1.5em;
+    vertical-align: top;
+  }
+  dd {
+    width:90%;
+  :first-of-type {
+    color:red;
+  }
+  }
+}
