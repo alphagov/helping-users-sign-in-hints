@@ -20,18 +20,26 @@
         <h2 class="heading-medium">Set up a digital identity</h2>
         <p>Set up a digital identity so you can securely sign in to {{serviceNameLower}}.</p>
 
+        <p>To set up a digital identity you need to:</p>
+
+        <ul class="list list-bullet">
+          <li>Be over 18 years old</li>
+          <li>Have a UK address</li>
+        </ul>
+
         <form id="" class="js-validate" novalidate="novalidate" action="/hub/setting-up-verify{{formQuery}}" accept-charset="UTF-8" method="get">
           {{formData | safe}}
           <input class="button" id="next-button" type="submit" value="Set up a digital identity">
           <input type="hidden" name="registration" value="true">
         </form>
         <br>
-
+        <p>Or <a href="/hub/other-ways">view other ways to access the service</a></p>
          
       </div>
       <div class="column-half">
           <h2 class="heading-medium">Sign in with your digital identity</h2>
           <p>Sign in with a digital identity that you set up in the past.</p>
+
 
           {{formData | safe}}
           
