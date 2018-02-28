@@ -267,11 +267,55 @@ router.get('/hub/choose-a-company', function (req, res) {
 
   // +++ add picker logic here +++
 
-  var tempValid = [ "post-office", "digidentity", "royal-mail","citizensafe","experian","secureidentity","barclays"];
-  var tempInvalid = [];
+  if (query.passport == "true" || query.driving_licence == "true") {
+    // 2 docs
+    console.log("2 docs");
 
-  addValidCompany(tempValid);
-  addInvalidCompany(tempInvalid);
+    var tempValid = ["post-office", "barclays", "experian", "digidentity", "morpho", "citizensafe", "royal-mail", ];
+    var tempInvalid = [];
+
+    if (query.app != "true" && query.codeType == "code-text") {
+      tempValid.splice(tempValid.indexOf("morpho"), 1);
+      tempInvalid.push("morpho");
+    }
+
+    if (query.landline == "true") {
+      tempValid = ["experian"];
+      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","morpho",];
+    }
+
+    addValidCompany(tempValid);
+    addInvalidCompany(tempInvalid);
+
+  } else if (query.non_uk_id == "true" && query.app == "true") {
+    // 2 docs
+    console.log("2 docs");
+
+    var tempValid = ["post-office", "experian", "digidentity"];
+    var tempInvalid = [];
+
+    if (query.app != "true" && query.codeType == "code-text") {
+      tempValid.splice(tempValid.indexOf("morpho"), 1);
+      tempInvalid.push("morpho");
+    }
+
+    if (query.landline == "true") {
+      tempValid = ["experian"];
+      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","morpho",];
+    }
+
+    addValidCompany(tempValid);
+    addInvalidCompany(tempInvalid);
+
+  } else {
+
+    var tempValid = ["experian"];
+    var tempInvalid = [];
+
+    addValidCompany(tempValid);
+    addInvalidCompany(tempInvalid);
+
+  }
 
   var data = {
     "available_idps" : available_idps,
