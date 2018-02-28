@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">  
+    <div class="column-two-thirds">    
+        
+      <h1 class="heading-large">{{serviceName}}</h1>
+
+      <article>
+        <p>You can apply for, renew, replace or update your passport and pay for it online.</p>
+        <p>You can’t use this service if you’re travelling within the next 4 weeks.</p>
+
+        <div class="sign-in-wrap">
+          <div class="button-wrap">
+            <a class="button button-start" href="/hub/sm-signin{{formQuery}}">
+              <strong>Start now</strong>
+            </a>
+          </div>
+        </div>
+
+        <h3 class="heading-small">Before you start</h3>
+
+        <p>You’ll need a debit or credit card to use this service.</p>
+
+        <p>It should take 6 weeks to get your first adult passport once your form has been received. For all other application types, it should take 3 weeks.</p>
+
+        <p>It can take longer if more information is needed or your application hasn’t been filled out correctly.</p>
+
+        <p>You should use a different service if you <a href="https://www.gov.uk/get-a-passport-urgently">need your passport urgently</a>.</p>
+
+        <div class="panel panel-border-narrow " id="details-content-0" aria-expanded="false" >
+          <p>Don’t book travel until you have a valid passport - doing so is at your own risk.</p>
+        </div>
+
+        <h3 class="heading-small">Other ways to apply</h3>
+
+        <p>You can pick up passport application forms from your <a href="http://www.postoffice.co.uk/branch-finder">local Post Office</a> and apply by post, or use the <a href="https://www.gov.uk/how-the-post-office-check-and-send-service-works">Post Office Check and Send service</a>.</p>
+
+
+      </article>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+
