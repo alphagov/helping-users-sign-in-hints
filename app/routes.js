@@ -271,17 +271,17 @@ router.get('/hub/choose-a-company', function (req, res) {
     // 2 docs
     console.log("2 docs");
 
-    var tempValid = ["post-office", "barclays", "experian", "digidentity", "morpho", "citizensafe", "royal-mail", ];
+    var tempValid = ["post-office", "barclays", "experian", "digidentity", "secureidentity", "citizensafe", "royal-mail", ];
     var tempInvalid = [];
 
     if (query.app != "true" && query.codeType == "code-text") {
-      tempValid.splice(tempValid.indexOf("morpho"), 1);
-      tempInvalid.push("morpho");
+      tempValid.splice(tempValid.indexOf("secureidentity"), 1);
+      tempInvalid.push("secureidentity");
     }
 
     if (query.landline == "true") {
       tempValid = ["experian"];
-      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","morpho",];
+      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","secureidentity",];
     }
 
     addValidCompany(tempValid);
@@ -295,13 +295,13 @@ router.get('/hub/choose-a-company', function (req, res) {
     var tempInvalid = [];
 
     if (query.app != "true" && query.codeType == "code-text") {
-      tempValid.splice(tempValid.indexOf("morpho"), 1);
-      tempInvalid.push("morpho");
+      tempValid.splice(tempValid.indexOf("secureidentity"), 1);
+      tempInvalid.push("secureidentity");
     }
 
     if (query.landline == "true") {
       tempValid = ["experian"];
-      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","morpho",];
+      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","secureidentity",];
     }
 
     addValidCompany(tempValid);
