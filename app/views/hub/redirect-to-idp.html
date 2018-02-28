@@ -13,7 +13,7 @@
 
     <div class="column-two-thirds">
       <h1 class="heading-large">
-        <span class="heading-secondary">Step 2. Confirm your details to set up your digital identity</span>
+        <span class="heading-secondary">Step 2. Confirm your details</span>
         Set up your {{idpAccountName}} digital identity
       </h1>
 
@@ -22,18 +22,22 @@
         <p>You’ll need your:</p>
         <ul class="list list-bullet">
           {% if data['passport'] == 'true' %}
-            <li>passport</li>
+            <li>a passport</li>
           {% endif %}
           {% if data['drivingLicence'] == 'true' %}
-            <li>driving licence</li>
+            <li>a driving licence</li>
           {% endif %}
           {% if data['non_uk_id'] == 'true' %}
-            <li>non-UK identity document</li>
+            <li>a non-UK identity document</li>
           {% endif %}
-          <li>mobile phone</li>
+          {% if data['non_uk_id'] == 'true' %}
+            <li>a smartphone or tablet</li>
+          {% else %}
+            <li>a mobile phone</li>
+          {% endif %}
         </ul>
 
-        <p>When you’ve set up your digital identity, {{idpAccountName}} will send you back to GOV.UK so you can do step 3, access {{serviceNameLower}}.</p>
+        <p>When you’ve set up your digital identity, {{idpAccountName}} will send you back to GOV.UK so you can do step 3 – {{serviceNameLower}}.</p>
 
         <p>In the future you can use your digital identity wherever you see the GOV.UK Verify logo.</p>
 
