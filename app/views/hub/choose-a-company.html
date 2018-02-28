@@ -20,19 +20,19 @@
         <p>
 
         {% if (data['passport'] == 'true') or (data['drivingLicence'] == 'true') %}
-          Because you have a
+          You can use any of the following digital identities because you have:
+          <ul class="list list-bullet">
+            
+          
         {% endif %}
         {% if data['passport'] == 'true' %}
-          passport
-        {% endif %}
-        {% if (data['passport'] == 'true') and (data['drivingLicence'] == 'true') %}
-        and
+          <li>a passport</li>
         {% endif %}
         {% if data['drivingLicence'] == 'true' %}
-          driving licence
+          <li>a driving licence</li>
         {% endif %}
         {% if (data['passport'] == 'true') or (data['drivingLicence'] == 'true') %}
-          you can use any of the following digital identities:
+          </ul>
         {% endif %}
 
       </p>
