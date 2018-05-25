@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">  
+    <div class="column-two-thirds">    
+        
+      <h1 class="heading-xlarge">{{serviceName}}</h1>
+      
+      <p>Apply for a basic Disclosure and Barring Service (DBS) check to get a copy of your criminal record. This is called ‘basic disclosure’. It’s available for people living or working in England and Wales.</p>
+      
+      <div class="panel panel-border-wide">
+        <p>There’s a different way to apply if you live or are applying for a job in <a href="#">Northern Ireland</a> or <a href="#">Scotland</a>.</p>
+      </div>
+
+      <p>The check will only show convictions that aren’t ‘spent’, for example some types of caution will disappear after 3 months.</p>
+
+      <p>It costs £25. You must be 16 or over to make the request.</p>
+
+      <p>It usually takes up to 14 days for you to receive your certificate.</p>
+
+      <p>The service is available from 8am to 11:30pm.</p>
+
+      <h2 class="heading-medium">What you’ll need</h2>
+      <p>To apply, you’ll need:</p>
+      <ul class="list list-bullet">
+        <li>all your addresses for the last 5 years and the dates you lived there</li>
+        <li>your National Insurance number</li>
+        <li>a debit or credit card</li>
+        <li>proof of your identity, for example a passport, valid driving licence or birth certificate (if you haven’t used GOV.UK Verify before)</li>
+      </ul>
+      <p>If you haven’t used GOV.UK Verify before it takes about 15 minutes to get set up. You can then use it to access other government services securely.</p>
+
+      <div class="sign-in-wrap">
+        <div class="button-wrap">
+          <a class="button button-start" href="/hub/service-signin{{formQuery}}">
+            <strong>Start now</strong>
+          </a>
+        </div>
+      </div>
+
+      <h2 class="heading-medium">Before you start</h2>
+      <p>Make sure a basic DBS check is the correct one for you. For certain roles, your employer may need to apply for a higher level of criminal record check.</p>
+
+      <p>Use the tool to <a href="">see if you need a basic DBS check</a> or ask your employer if you’re not sure.</p>
+
+      <h2 class="heading-medium">Get help to use the online service</h2>
+      <p>If you need phone or face-to-face support to apply online, call the DBS helpline on 03000 200 190 or email <a href="#">customerservices@dbs.gsi.gov.uk</a>.</p>
+
+      <h2 class="heading-medium">Other ways to apply</h2>
+      {{serviceOtherWays | safe}}
+
+      <h2 class="heading-medium">Requesting your police record</h2>
+      <p>You’ll need to <a href="#">request a police record</a> instead if:</p>
+      <ul class="list list-bullet">
+        <li>you’re applying for certain visas</li>
+        <li>you want to see your police file without receiving a certificate - this will show up any warnings or cautions that aren’t on your official criminal record</li>
+      </ul>
+
+          
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+
