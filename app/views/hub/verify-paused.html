@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        {{idpName}} has saved your information
+      </h1>
+
+      <p>When you’re ready you can <a href='/hub/idp-reminder{{formQuery}}'>continue verifying your identity and securely access {{serviceNameLower}}</a>.</p>
+
+      <!-- <p>You’ll need the username and password you created to verify with {{idpName}}.</p> -->
+
+
+      {% include "includes/idp-and-verify-logos.html" %}
+
+      <p>Alternatively, you can <a href="{{serviceStartURL}}">go back to {{serviceNameLower}}</a></p>
+      </div>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+
