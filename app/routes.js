@@ -298,7 +298,7 @@ router.get('/hub/choose-a-company', function (req, res) {
     // 2 docs
     console.log("2 docs");
 
-    var tempValid = ["post-office", "barclays", "experian", "digidentity", "secureidentity", "citizensafe", "royal-mail", ];
+    var tempValid = ["experian", "post-office", "digidentity", "royal-mail", "citizensafe", "barclays", "secureidentity" ];
     var tempInvalid = [];
 
     if (query.app != "true" && query.codeType == "code-text") {
