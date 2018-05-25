@@ -27,9 +27,9 @@
         {% if data['non_uk_id'] == 'true' %}
           <li>a non-UK identity document</li>
         {% endif %}
-        {% if data['non_uk_id'] == 'true' %}
+        {% if data['apps'] == 'true' %}
           <li>a smartphone or tablet</li>
-        {% else %}
+        {% elif  data['mobile'] == 'true' %}
           <li>a mobile phone</li>
         {% endif %}
 
@@ -42,7 +42,7 @@
 
   		 <div id="company-about">
 
-        {% for idp in available_idps | sort(true, true, 'name') %}
+        {% for idp in available_idps %}
         <div class="idp-choice">
 
           <div class="company-logo">
@@ -56,7 +56,7 @@
             <div class="button-wrap">
               <form method="POST" action="/hub/redirect-to-idp{{formQuery}}">
                 <input type="hidden" name="idpChoice" value="{{idp.slug}}">
-                <button class="button">Select {{ idp.accountName }}</button>
+                <button class="button">Select {{ idp.name }}</button>
               </form>
             </div>
             

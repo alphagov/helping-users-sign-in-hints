@@ -29,9 +29,9 @@
           {% if data['non_uk_id'] == 'true' %}
             <li>a non-UK identity document</li>
           {% endif %}
-          {% if data['non_uk_id'] == 'true' %}
+          {% if data['apps'] == 'true' %}
             <li>a smartphone or tablet</li>
-          {% else %}
+          {% elif  data['mobile'] == 'true' %}
             <li>a mobile phone</li>
           {% endif %}
         </ul>
