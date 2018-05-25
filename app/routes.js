@@ -175,6 +175,33 @@ router.get('/hub/signin-method', function (req, res) {
 
 // Sending data to sm-signin page
 
+router.get('/hub/journey', function (req, res) {
+  var data = {};
+
+  data.idps = idps;
+
+  if (req.session.data['registration'] == 'false'){
+    res.redirect('/hub/signin-idp-picker' + res.locals.formQuery)
+  } else if (req.session.data['registration'] == 'resume'){
+    res.redirect('/idp/sign-in' + res.locals.formQuery)
+  } else {
+    res.render('hub/about', data);
+  }
+});
+
+
+// Sending data to the idp picker
+
+router.get('/hub/signin-idp-picker', function (req, res) {
+  var data = {};
+
+  data.idps = idps;
+
+  res.render('hub/signin-idp-picker', data);
+});
+
+// Sending data to sm-signin page
+
 router.get('/hub/sm-signin', function (req, res) {
   var data = {};
 
