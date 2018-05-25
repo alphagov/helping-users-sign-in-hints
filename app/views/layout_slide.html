@@ -18,9 +18,13 @@
 <main id="content">
 {% include "includes/available-languages.html" %}
   {% block page_content %}
-    
-    <div class="content-inner slides">
+<div class="content-inner slides">
       <div class="grid-row">
+        <div class="column-one-third">
+          <figure>
+            <img srcset="/public/images/govuk-verify.svg 1x" alt="GOV.UK Verify" src="/public/images/govuk-verify.png">
+          </figure>
+        </div>
         <div class="column-two-thirds">
           {% block slide_content %}{% endblock %}
         </div>
