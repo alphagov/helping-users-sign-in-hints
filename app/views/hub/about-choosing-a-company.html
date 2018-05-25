@@ -9,31 +9,28 @@
 <main id="content" role="main">
   {% include "includes/available-languages.html" %}
   <div class="grid-row">
-    {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
-  		<h1 class="heading-large">Finding the right company to verify you</h1>
 
-      <p>Certified companies have built new, secure systems to verify identities. These systems work by checking:</p>
+    <h1 class="heading-large">
+      Finding the right company to verify you
+    </h1>
+    <p>Certified companies have built new, secure systems to verify identities. These systems work by checking:
+    </p>
+    
+    <ul class="list list-bullet">
+      <li>your identity documents are valid </li>
+      <li>it’s you providing your details, and not someone pretending to be you</li>
+    </ul>
+    <p>However, each company uses different methods for each of these steps.</p>
+    <p>So we’ll now ask you some questions to check which companies can verify you. We’ll then send you to the website of the company you choose.</p>
+    
+    <form id="start-page-form" action="/hub/about-you">
+      {{ formData | safe }}
+      <input class="button" id="next-button" type="submit" value="Continue">
+    </form>
 
-      <ul class="list list-bullet">
-        <li>your identity documents are valid</li>
-        <li>it’s you providing your details, and not someone pretending to be you</li>
-      </ul>
-
-      <p>However, each company uses different methods for each of these steps.</p>
-
-      <p>So we’ll now ask you some questions to check which companies can verify you. We’ll then send you to the website of the company you choose.</p>
-
-      <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/about-you" accept-charset="UTF-8" method="get">
-
-        <div class="form-group">
-          <div class="actions">
-            <input class="button" id="next-button" type="submit" value="Continue">
-          </div>
-        </div>
-      </form>
-  	</div>
   </div>
+</div>
 </main>
 
 {% endblock %}

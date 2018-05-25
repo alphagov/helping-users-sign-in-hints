@@ -1,0 +1,27 @@
+{% extends "layout_slide.html" %}
+
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+
+{% block slide_content %}
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/about-certified-companies" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+  <p>GOV.UK Verify is a secure service built to help fight the growing problem of online identity theft.</p>
+
+  {% if servicewhyVerifysUsed.length > 1 %}
+  <p>{{serviceProvider}} uses Verify to help prevent other people from {{servicewhyVerifysUsed | safe}}, as it stops someone from pretending to be you.</p>
+  {% else %}
+  <p>Verify helps prevent other people from pretending to be you.</p>
+  {% endif %}
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Start now">
+    </div>
+  </div>
+</form>
+
+{% endblock %}

@@ -7,10 +7,14 @@
 {% block content %}
 
 <main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  
   <div class="grid-row">
     <div class="column-two-thirds">
 
       <h1 class="heading-large">Prove your identity to continue</h1>
+
+      <p>You’ll need an account to prove your identity and {{serviceNameLower}}.</p>
 
       {{formData | safe}}
 
@@ -22,23 +26,15 @@
             <div class="multiple-choice">
               <input id="radio-inline-1" type="radio" name="sign_in" value="gateway">
               <label for="radio-inline-1">
-                <span class="label-header">Sign in with Government Gateway</span></br>
-                <span class="label-subhead">You’ll have a user ID if you’ve signed up to do things like file your Self Assessment tax return online. </span>
+                <span class="label-header">Use Government Gateway</span></br>
+                <span class="label-subhead">If you’re setting up an account it will take about 10 minutes. You’ll need your National Insurance number and a recent payslip, P60 or valid UK passport.</span>
               </label>
             </div>
             <div class="multiple-choice">
               <input id="radio-inline-2" type="radio" name="sign_in" value="verify">
               <label for="radio-inline-2">
-                <span class='label-header'>Sign in with a GOV.UK Verify digital identity</span><br>
-                <span class="label-subhead">You’ll have an account if you’ve already created a digital identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity. </span>
-              </label>
-            </div>
-            <div class="form-block">or</div>
-            <div class="multiple-choice">
-              <input id="radio-inline-3" type="radio" name="sign_in" value="create">
-              <label for="radio-inline-3">
-                <span class="label-header">Create an account</span><br>
-                <span class="label-subhead">Create a new account with Government Gateway or GOV.UK Verify.</span>
+                <span class='label-header'>Use GOV.UK Verify</span><br>
+                <span class="label-subhead">If you’re setting up an account it will take about 15 minutes. You’ll need a UK address and it works best with a valid passport or photocard driving licence.</span>
               </label>
             </div>
           </fieldset>
