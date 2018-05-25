@@ -242,7 +242,7 @@ router.get('/hub/select-documents', function(req,res){
 router.get('/hub/select-other-documents', function(req,res){
 
   if ((req.session.data['passport'] == 'true')||(req.session.data['drivingLicence'] == 'true')){
-    res.redirect('choose-a-company' + res.locals.formQuery)
+    res.redirect('select-phone' + res.locals.formQuery)
   } else {
     res.render('hub/select-other-documents')
   }
@@ -387,9 +387,11 @@ router.get('/idp/sign-in', function (req, res) {
 
 // Routing Uplift, Sign in and Registering users after sign in/up pages
 
-router.get('/idp/name', function (req, res) {
+router.get('/idp/journey', function (req, res) {
   
-  if (req.session.data['registration'] == 'false'){
+  if (req.session.data['saml'] == 'pending'){
+      res.redirect('/idp/choose-id' + res.locals.formQuery)
+    } else if (req.session.data['registration'] == 'false'){
 
     if ((res.locals.usersLOA == '1') && (res.locals.serviceLOA == '2')){
       res.redirect('/idp/uplift-warning' + res.locals.formQuery)
