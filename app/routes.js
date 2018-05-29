@@ -18,6 +18,9 @@ if (userInfo){
  userInfo = require(__dirname+"/lib/user.json");
 }
 
+var NotifyClient = require('notifications-node-client').NotifyClient;
+    notifyClient = new NotifyClient(process.env.NOTIFYAPIKEY);
+
 var serviceLOA = ""
 
 var getServices = function (callback){
