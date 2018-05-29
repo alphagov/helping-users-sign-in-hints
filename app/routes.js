@@ -9,6 +9,8 @@ var extend = require('util')._extend,
     idpRoot = '/idp/',
     idps = require("./lib/idps.json"),
     dbURL = 'http://govuk-verify-db.herokuapp.com/prototypes/test2';
+    
+
 
 var userInfo = process.env.USER_INFO;
 
@@ -375,6 +377,51 @@ router.get('/hub/hub-sign-in', function (req, res) {
 
 
 // IDP ROUTING
+router.get('/idp/sign-up', function(req, res){
+
+
+    console.log( )
+
+res.render('idp/sign-up');
+
+});
+
+
+
+router.post('/idp/security-code', function(req, res){
+
+  req.session.data['mobileNumber'] = req.body.mobileNumber
+
+  usersPhone = req.session.data['mobileNumber']
+
+  personalisation = {
+    'code': parseInt((Math.random())*10000)  
+  }
+
+  notifyClient.sendSms("5c179906-df50-44c9-b42e-f71de4c26b50", usersPhone, personalisation);
+
+res.redirect('/idp/security-code-enter' + res.locals.formQuery);
+
+});
+
+
+router.post('/idp/pause-warning', function(req, res){
+
+  usersEmail = req.session.data['email']
+  name = req.session.data['firstName']
+
+  personalisation = {
+    'name': name,
+    'idpname': res.locals.idpName,
+  }
+
+  notifyClient.sendEmail("6b5da1fb-6097-440f-af56-7aa562e9da32", usersEmail, personalisation);
+
+res.redirect('/hub/verify-paused' + res.locals.formQuery);
+
+});
+
+  
 
 // Sending data to IDP sign in page
 
