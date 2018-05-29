@@ -22,8 +22,9 @@
       
 			{{ formData | safe }}
 
-      <a href="/hub/verify-paused{{formQuery}}&saml=pending" class="button">Yes, save and return to GOV.UK</a> or <a href="javascript:history.back()">No, continue my verification</a>
-
+			<form id="main-form" action="/idp/pause-warning{{formQuery}}&saml=pending" method="post" name="Form">
+				<button class="button">Yes, save and return to GOV.UK</button> or <a href="javascript:history.back()">No, continue my verification</a>
+			</form>
 		</div>
 	</div>
 </main>
