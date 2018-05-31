@@ -4,27 +4,51 @@
 {% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
 
 {% block slide_content %}
-<h1>Continue verifying with {{idpName}}</h1>
+<!-- <h1>Continue verifying with {{idpName}}</h1>
 
 <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/idp/sign-in" accept-charset="UTF-8" method="get">
 
   {{ formData | safe }}
 
         
-  The last user on this device was part way through verifying with {{idpName}} to access {{serviceNameLower}} 
+  You’ll need to finish verifying your identity with {{idpName}} to {{serviceNameLower}}.
 
   <div class="form-group-tight">
     <div class="actions">
-      <input class="button" id="next-button" type="submit" value="Continue verifying with {{idpName}}">
+      <input class="button" id="next-button" type="submit" value="Continue with {{idpName}}">
     </div>
   </div>
 </form>
 
 <br>
-If this wasn't you:
+You can also:
+<ul class="list list-bullet" style="font-size: 19px;">
+	<li><a href="/hub/about">create a new identity account</a></li>
+	<li><a href="/hub/signin-idp-picker">sign in with another certified company</a></li>
+	<li><a href="/hub/other-ways">see other ways to {{serviceNameLower}}</a></li>
+</ul> -->
+
+<h1>Prove your identity with</br> GOV.UK Verify</h1>
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/idp/sign-in" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+        
+  The last certified company used on this device was {{idpName}}.
+
+  <div class="form-group-tight">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Continue with {{idpName}}">
+    </div>
+  </div>
+</form>
+
 <br>
-<a href="/hub/about">Create a new identity account</a></li>
-<br>
-<a href="/hub/signin-idp-picker">Continue with another certified company</a></li>
+You can also:
+<ul class="list list-bullet" style="font-size: 19px;">
+	<li><a href="/hub/about">create a new identity account</a></li>
+	<li><a href="/hub/signin-idp-picker">sign in with another certified company</a></li>
+</ul>
 
 {% endblock %}

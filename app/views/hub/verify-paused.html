@@ -16,15 +16,18 @@
         {{idpName}} has saved your information
       </h1>
 
-      <p>When you’re ready you can <a href='/hub/idp-reminder{{formQuery}}'>continue verifying your identity and securely access {{serviceNameLower}}</a>.</p>
 
-      <!-- <p>You’ll need the username and password you created to verify with {{idpName}}.</p> -->
+      <p>When you’re ready you can come back to <a href="{{serviceStartURL}}">{{serviceNameLower}}</a> and finish verifying your identity.</p>
 
+      <p>You’ll need the email or username and password you used to create an account with {{idpName}}.</p>
+
+      <p><a class="button" href='/hub/idp-reminder{{formQuery}}'>Continue verifying with {{idpName}}</a></p>
+
+      <p>or <a href="{{serviceStartURL}}">return to {{serviceNameLower}}</a></p>
 
       {% include "includes/idp-and-verify-logos.html" %}
 
-      <p>Alternatively, you can <a href="{{serviceStartURL}}">go back to {{serviceNameLower}}</a></p>
-      </div>
+
   	</div>
   </div>
 </main>
