@@ -1,3 +1,7 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
+
 // Core dependencies
 const crypto = require('crypto')
 const path = require('path')
@@ -5,7 +9,6 @@ const path = require('path')
 // NPM dependencies
 const bodyParser = require('body-parser')
 const browserSync = require('browser-sync')
-const dotenv = require('dotenv')
 const express = require('express')
 const favicon = require('serve-favicon')
 const nunjucks = require('nunjucks')
@@ -20,7 +23,6 @@ const utils = require('./lib/utils.js')
 
 const app = express()
 const documentationApp = express()
-dotenv.config()
 
 // Set up configuration variables
 var releaseVersion = packageJson.version
