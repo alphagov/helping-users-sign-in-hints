@@ -435,6 +435,25 @@ router.get('/idp/sign-in', function (req, res) {
 });
 
 
+router.post('/idp/sign-in-code-send', function (req, res) {
+
+  usersPhone = req.session.data['mobileNumber']
+  code = parseInt((Math.random())*10000)  
+
+  if (usersPhone != undefined ){
+      
+    personalisation = {
+      'code': code
+    }
+    notifyClient.sendSms("5c179906-df50-44c9-b42e-f71de4c26b50", usersPhone, personalisation);
+    console.log('Message sent: ' + code)
+  }
+
+  res.redirect("security-code-enter" + res.locals.formQuery);
+});
+
+
+
 // Routing Uplift, Sign in and Registering users after sign in/up pages
 
 router.get('/idp/journey', function (req, res) {
