@@ -18,20 +18,20 @@
         <table>
           <tr>
             <th>Name</th>
-            <td>{{data['firstName']}} {{data['lastName']}}</td>
+            <td>{{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</td>
           </tr>
           <tr>
             <th>Date of birth</th>
-            <td>{{data['dobDay']}} / {{data['dobMonth']}} / {{data['dobYear']}}</td>
+            <td>{{data['dobDay']}} {{data['dobMonth']}} {{data['dobYear']}}</td>
           </tr>
           <tr>
             <th>Address</th>
             <td>
-                {{data['address1']}},<br>
-                {{data['address2']}},<br>
-                {{data['town']}},<br>
-                {{data['county']}},<br>
-                {{data['postcode']}}
+                {% if data['address1'] | length > 1 %} {{data['address1']}}<br>{% endif %}
+                {% if data['address2'] | length > 1 %} {{data['address2']}},<br> {% endif %}
+                {% if data['town'] | length > 1 %} {{data['town']}},<br> {% endif %}
+                {% if data['county'] | length > 1 %} {{data['county']}},<br> {% endif %}
+                {% if data['postcode'] | length > 1 %} {{data['postcode']}} {% endif %}
             </td>
           </tr>
         </table>
