@@ -413,6 +413,7 @@ router.post('/idp/pause-warning', function(req, res){
   personalisation = {
     'name': name,
     'idpname': res.locals.idpName,
+    'idpslug': res.locals.idpSlug,
   }
 
   notifyClient.sendEmail("6b5da1fb-6097-440f-af56-7aa562e9da32", usersEmail, personalisation);
