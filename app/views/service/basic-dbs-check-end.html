@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">  
+    <div class="column-two-thirds">    
+        
+      <h1 class="heading-large">Is this your full name, date of birth and address?</h1>
+
+        <p>This is your name, date of birth and address from your Verify account.</p>
+        
+        <table>
+          <tr>
+            <th>Name</th>
+            <td>{{data['firstName']}} {{data['lastName']}}</td>
+          </tr>
+          <tr>
+            <th>Date of birth</th>
+            <td>{{data['dobDay']}} / {{data['dobMonth']}} / {{data['dobYear']}}</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>
+                {{data['address1']}},<br>
+                {{data['address2']}},<br>
+                {{data['town']}},<br>
+                {{data['county']}},<br>
+                {{data['postcode']}}
+            </td>
+          </tr>
+        </table>
+        <br>
+
+        <form action="" class="form">
+          <div class="form-group">
+            <fieldset class="inline">
+              <div class="multiple-choice">
+                <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                <label for="radio-inline-1">Yes</label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                <label for="radio-inline-2">No</label>
+              </div>
+            </fieldset>
+          </div>
+            <button class="button">Continue</button>
+        </form>
+        <br>
+        <p><a href="#">This is not my full name, what should I do?</a></p>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}
+
+
