@@ -1,23 +1,18 @@
-{% extends "layout.html" %}
+{% extends "layout_slide.html" %}
 
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
 
-{% block content %}
+{% block slide_content %}
 
-<main id="content" role="main">
-  {% include "includes/available-languages.html" %}
-  <div class="grid-row">
- 		<div class="column-two-thirds">
-  		
+  {{ formData | safe }}
 
-	<h1 class="heading-large">You've set up your identity account</h1>
+  <h1>{{idpName}} has verified your identity</h1>
 
-	<p>You’ve set up your {{idpName}} identity account so now you can continue to {{serviceNameLower}}.</p>
 
-  <p>In the future you can use your identity account wherever you see the GOV.UK Verify logo.</p>
+  <p>You can sing in wherever you see the GOV.UK Verify logo with your {{idpName}} identity account username and password.</p>
 
+	<p>You can now you can continue to {{serviceNameLower}}.</p>
 
 <form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/third-cycle-matching{{formQuery}}" accept-charset="UTF-8" method="get">
   <div class="form-group">
@@ -26,43 +21,9 @@
     </div>
   </div>
 </form>
-
-	{% if serviceLOA == 1 %}
-<!-- 		
-		<p>
-	  	<span class="font-small">When you access some government services, you'll be asked to provide more evidence, but you only need to do this once. </span>
-		</p>
-	    <details role="group">
-	      <summary role="button" aria-controls="details-content-0" aria-expanded="false">
-	        <span class="summary">Government services requiring more evidence</span>
-	      </summary>
-	      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-	        <ul class="list-bullet list">
-	          <li>renew or update your UK passport</li>
-	          <li>renew your driving licence</li>
-	          <li>check your Income Tax for the current year</li>
-	          <li>check your State Pension </li>
-	          <li>tell DVLA about your medical condition</li>
-	          <li>renew your medical driving licence</li>
-	          <li>claim your redundancy payment and monies owed</li>
-	          <li>sign in and file your Self Assessment tax return</li>
-	          <li>sign in to your personal tax account</li>
-	          <li>check or update your company car tax</li>
-	          <li>update your rural payments details</li>
-	          <li>help friends or family with their tax</li>
-	        </ul>
-	      </div>
-	    </details> -->
-
-	  {% endif %}
-
-
-  	</div>
-  </div>
-</main>
+</form>
 
 {% endblock %}
-
 
 
 
