@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Your identity verification with {{idpName}} has been cancelled
+      </h1>
+
+      <p>What do you want to do next?</p>
+
+      <li><a href="/hub/other-ways">see other ways to {{serviceNameLower}}</a></li>
+      <li><a href="/hub/signin-idp-picker">verify with another certified company</a></li>
+      <li><a href="https://www.signin.service.gov.uk/feedback?feedback-source=CANCELLED_REGISTRATION">contact GOV.UK Verify</a></li>
+
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+
