@@ -172,7 +172,7 @@ router.get('/hub/signin-method', function (req, res) {
     res.redirect('/hub/gateway' + res.locals.formQuery)
   } else if (req.session.data['sign_in'] == 'verify'){
 
-    if (req.session.data['email'] != undefined){
+    if (req.session.data['idpChoice'] != undefined){
       res.redirect('/hub/idp-reminder' + res.locals.formQuery)
     } else {
     res.redirect('/hub/verify-signin-picker' + res.locals.formQuery)
