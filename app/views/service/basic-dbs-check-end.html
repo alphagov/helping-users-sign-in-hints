@@ -21,10 +21,6 @@
             <td>{{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</td>
           </tr>
           <tr>
-            <th>Date of birth</th>
-            <td>{{data['dobDay']}} {{data['dobMonth']}} {{data['dobYear']}}</td>
-          </tr>
-          <tr>
             <th>Address</th>
             <td>
                 {% if data['address1'] | length > 1 %} {{data['address1']}}<br>{% endif %}
