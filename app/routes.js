@@ -346,7 +346,7 @@ router.get('/hub/choose-a-company', function (req, res) {
 
   } else {
 
-    var tempValid = ["experian"];
+    var tempValid = ["experian", "post-office", "digidentity", "royal-mail", "citizensafe", "barclays", "secureidentity" ];
     var tempInvalid = [];
 
     addValidCompany(tempValid);
