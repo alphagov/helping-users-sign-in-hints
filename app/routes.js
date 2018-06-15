@@ -464,7 +464,7 @@ router.post('/idp/sign-in-code-send', function (req, res) {
 
 router.get('/idp/journey', function (req, res) {
   
-  if (req.session.data['saml'] == 'pending'){
+  if (req.session.data['idpChoice'] != undefined){
       res.redirect('/idp/choose-id' + res.locals.formQuery)
     } else if (req.session.data['registration'] == 'false'){
 
