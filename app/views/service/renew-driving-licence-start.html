@@ -7,11 +7,10 @@
 {% block content %}
 
 <main id="content" role="main">
-  {% include "includes/available-languages.html" %}
   <div class="grid-row">  
     <div class="column-two-thirds">    
         
-      <h1 class="heading-large">{{serviceName}}</h1>
+      <h1 class="heading-xlarge">{{serviceName}}</h1>
 
       <article>
         <p>You can apply for, renew, replace or update your passport and pay for it online.</p>
@@ -25,26 +24,57 @@
           </div>
         </div>
 
-        <h3 class="heading-small">Before you start</h3>
-
-        <p>You’ll need a debit or credit card to use this service.</p>
-
-        <p>It should take 6 weeks to get your first adult passport once your form has been received. For all other application types, it should take 3 weeks.</p>
-
-        <p>It can take longer if more information is needed or your application hasn’t been filled out correctly.</p>
-
-        <p>You should use a different service if you <a href="https://www.gov.uk/get-a-passport-urgently">need your passport urgently</a>.</p>
-
-        <div class="panel panel-border-narrow " id="details-content-0" aria-expanded="false" >
-          <p>Don’t book travel until you have a valid passport - doing so is at your own risk.</p>
+        <h3 class="heading-medium">Before you start</h3>
+        
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visually-hidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            You cannot apply online if your name or title has changed.
+          </strong>
         </div>
 
-        <h3 class="heading-small">Other ways to apply</h3>
+        <p>You must renew a photocard licence every 10 years - you’ll receive a reminder before your current licence ends.</p>
 
-        <p>You can pick up passport application forms from your <a href="http://www.postoffice.co.uk/branch-finder">local Post Office</a> and apply by post, or use the <a href="https://www.gov.uk/how-the-post-office-check-and-send-service-works">Post Office Check and Send service</a>.</p>
+        <h3 class="heading-small">What you need</h3>
+        <p>To renew online, you need:</p>
+        <ul class="list list-bullet">
+          <li>a valid UK passport</li>
+          <li>to be a resident of Great Britain - there’s a different service in Northern Ireland</li>
+          <li>to pay £14 by MasterCard, Visa, Electron, Maestro or Delta debit or credit card (there’s no fee if you’re over 70 or have </li><li>a medical short period licence)</li>
+          <li>addresses of where you’ve lived over the last 3 years</li>
+          <li>your current driving licence (if you do not have your licence you must say why in your application)</li>
+          <li>your National Insurance number (if you know it)</li>
+          <li>to not be disqualified from driving</li>
+        </ul>
+        <h3 class="heading-small">How long it takes</h3>
+        <p>Your driving licence should arrive within a week if you apply online.</p>
+        <div class="panel panel-border-wide">
+          <p>You must send your old photocard licence to DVLA when you get your new licence. You’ll be told the address to use when you finish the application.</p>
+        </div>
+        <p>Your new licence will be valid from the date your application is approved, not from the expiry date of your current licence.</p>
 
+        <h3 class="heading-small">Personal data</h3>
+        <p>DVLA will send you a confirmation email once you’ve applied. You might be asked to take part in research by email, but you can opt out.</p>
 
       </article>
+    </div>
+    <div class="column-third">
+      <div class="related-content">
+        <h2 class="heading-small">Related content</h2>
+
+        <ul class="list" style="font-size: 16px;">
+
+          <li><a href="https://www.gov.uk/view-driving-licence">View or share your driving licence information</a></li>
+          <li><a href="https://www.gov.uk/change-address-driving-licence">Change the address on your driving licence</a></li>
+          <li><a href="https://www.gov.uk/change-name-driving-licence">Change the name or gender on your driving licence</a></li>
+          <li><a href="https://www.gov.uk/renew-photo-driving-licence">Change the photo on your driving licence</a></li>
+          <li><a href="https://www.gov.uk/renew-driving-licence-at-70">Renew your driving licence if you're 70 or over</a></li>
+          <li><a href="https://www.gov.uk/driving-licence-fees">Driving licence fees</a></li>
+
+        </ul>
+      </div>
     </div>
   </div>
 </main>
