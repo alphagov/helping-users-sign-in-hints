@@ -412,6 +412,8 @@ res.redirect('/idp/security-code-enter' + res.locals.formQuery);
 
 router.post('/idp/pause-warning', function(req, res){
 
+  console.log("routing")
+
   usersEmail = req.session.data['email']
   name = req.session.data['firstName']
 
@@ -419,9 +421,14 @@ router.post('/idp/pause-warning', function(req, res){
     'name': name,
     'idpname': res.locals.idpName,
     'idpslug': res.locals.idpSlug,
+    'idpchoice': req.session.data["idpChoice"],
   }
+  console.log("personalisation " + personalisation )
 
   notifyClient.sendEmail("6b5da1fb-6097-440f-af56-7aa562e9da32", usersEmail, personalisation);
+
+  console.log("email sent" )
+
 
 res.redirect('/hub/verify-paused' + res.locals.formQuery);
 
@@ -463,8 +470,8 @@ router.post('/idp/sign-in-code-send', function (req, res) {
 // Routing Uplift, Sign in and Registering users after sign in/up pages
 
 router.get('/idp/journey', function (req, res) {
-  
-  if (req.session.data['idpChoice'] != undefined){
+  if (req.session.data['signUp'] != "true"){
+      
       res.redirect('/idp/choose-id' + res.locals.formQuery)
     } else if (req.session.data['registration'] == 'false'){
 
