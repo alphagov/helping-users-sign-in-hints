@@ -130,7 +130,7 @@ h1,h2,h3,h4,button,.button{
   opacity:0.9;
 }
 
-.secondry-button {
+.secondary-button {
   padding-left: 1em;
   margin-top:10px;
   display: inline-block;
@@ -138,6 +138,9 @@ h1,h2,h3,h4,button,.button{
 
 .form-control{
   border: 1px solid #CCC;
+  @include media(tablet) {
+    width: 75%;
+  }
 }
 
 .form-control-long{
@@ -266,13 +269,12 @@ $idps: (
 // Certified company logo
 
 .certified-logo {
-  float: right;
-  // clear: right;
-  // margin-right: 45px;
   margin-top: 30px;
   img {
-    align: center;
-    max-height: 75px;
+    width: 100%;
+    @include media(mobile){
+      width: 70%;
+    }
   } 
   .heading-large {
     font-weight: 300; 

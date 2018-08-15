@@ -12,26 +12,22 @@
 
 <main id="content" role="main">
 	<div class="grid-row">
-		{% include "includes/idp-sidebar.html" %}
-		<div class="column-half">
+		<div class="column-two-thirds">
 			<h1 class="heading-large ">Sign in to your GOV.UK identity account</h1>
 			<div class="form-group">
-				
-
 				<form id="main-form" action="/idp/sign-in-code-send{{formQuery}}" method="post">
 					
 					{{ formData|safe }}
 
 					<div class="form-group">
 						<label class="form-label">Email address</label>
-					<input class="form-control" type="text" placeholder="Enter your email address" style="width:460px;" >
+					<input class="form-control" type="text" placeholder="Enter your email address">
 					</div>
 			
 					<div class="form-group">
-						<label class="form-label" >Password</label>
-						<input class="form-control" type="password" placeholder="Enter your password" autocomplete='off'  style="width:460px;">
+						<label class="form-label">Password</label>
+						<input class="form-control" type="password" placeholder="Enter your password" autocomplete="off">
 					</div>
-					
 					
 					<span class="error error-message hidden" id="error-message-full-name">Username or password not recognised</span>
 			
@@ -39,7 +35,7 @@
 						Continue
 					</button>
 					
-					<div  class="secondry-button">
+					<div  class="secondary-button">
 						<a href="javascript:history.back()">Back</a>
 					</div>
 			
@@ -48,6 +44,7 @@
 				
 			</div>
 		</div>
+		{% include "includes/idp-sidebar.html" %}
 	</div>
 </main>
 

@@ -12,8 +12,7 @@
 
 <main id="content" role="main">
 	<div class="grid-row">
-		{% include "includes/idp-sidebar.html" %}
-		<div class="column-half">
+		<div class="column-two-thirds">
 			<h1 class="heading-xlarge ">Sign up to GOV.UK Verify Free, safe and secure.</h1>
 			<div class="form-group">
 
@@ -26,17 +25,17 @@
 
 					<div class="form-group" data-required="Please enter your email address">
 						<label class="form-label" >Email address</label>
-					<input class="form-control" type="text" placeholder="Enter your email address" name='email' style="width:460px;">
+					<input class="form-control" type="text" placeholder="Enter your email address" name='email'>
 					</div>
 			
 					<div class="form-group" data-required="Please enter your password">
 						<label class="form-label">Password</label>
-						<input class="form-control" type="password" placeholder="Enter your password" autocomplete='off'  style="width:460px;">
+						<input class="form-control" type="password" placeholder="Enter your password" autocomplete='off'>
 					</div>
 			
 					<div class="form-group" data-required="Please confirm your password">
 						<label class="form-label" >Confirm password</label>
-						<input class="form-control" type="password" placeholder="Confirm your password" autocomplete='off'  style="width:460px;">
+						<input class="form-control" type="password" placeholder="Confirm your password" autocomplete='off'>
 					</div>
 
 					<p>
@@ -50,7 +49,7 @@
 							Continue
 						</button>
 						
-						<div  class="secondry-button">
+						<div  class="secondary-button">
 							<a href="javascript:history.back()">Back</a>
 						</div>
 					</div>
@@ -61,6 +60,7 @@
 				
 			</div>
 		</div>
+		{% include "includes/idp-sidebar.html" %}
 	</div>
 </main>
 
