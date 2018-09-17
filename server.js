@@ -12,7 +12,7 @@ const browserSync = require('browser-sync')
 const express = require('express')
 const favicon = require('serve-favicon')
 const nunjucks = require('nunjucks')
-const session = require('express-session')
+const session = require('client-sessions')
 
 // Local dependencies
 const config = require('./app/config.js')
@@ -122,16 +122,20 @@ app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
 
 // Support session data
+// Session uses service name to avoid clashes with other prototypes
+const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
+
+// Support session data in cookie
+
 app.use(session({
+  secret: sessionName,
   cookie: {
     maxAge: 1000 * 60 * 60 * 4, // 4 hours
     secure: isSecure
   },
-  // use random name to avoid clashes with other prototypes
-  name: 'govuk-prototype-kit-' + crypto.randomBytes(64).toString('hex'),
-  resave: false,
-  saveUninitialized: false,
-  secret: crypto.randomBytes(64).toString('hex')
+  cookieName: sessionName,
+  proxy: true,
+  requestKey: 'session'
 }))
 
 // Automatically store all data users enter
