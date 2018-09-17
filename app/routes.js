@@ -9,7 +9,7 @@ var extend = require('util')._extend,
     idpRoot = '/idp/',
     idps = require("./lib/idps.json"),
     dbURL = 'http://govuk-verify-db.herokuapp.com/prototypes/test2';
-    
+
 
 
 var userInfo = process.env.USER_INFO;
@@ -167,7 +167,7 @@ router.get('/', function (req, res) {
 // Sending user to their selected signin method
 
 router.get('/hub/signin-method', function (req, res) {
-  
+
   if (req.session.data['sign_in'] == 'gateway'){
     res.redirect('/hub/gateway' + res.locals.formQuery)
   } else if (req.session.data['sign_in'] == 'verify'){
@@ -287,8 +287,10 @@ router.get('/hub/choose-a-company', function (req, res) {
   }
 
   var removeValidCompany = function (slug) {
+    console.log('removeValidCompany ' + slug)
     available_idps.forEach(function(idp, i) {
       if (idp.slug == slug) {
+        console.log('splice ' + i)
         available_idps.splice(i, 1);
       }
     });
@@ -354,6 +356,21 @@ router.get('/hub/choose-a-company', function (req, res) {
 
   }
 
+  console.log(JSON.stringify(req.session.data['connectedIDP'], null, "  "));
+
+  let connectedIDP = req.session.data['connectedIDP']
+
+  // go backwards through array to remove disconnected IDPs
+  for (let index = available_idps.length-1; index >=0; index--){
+    let idp = available_idps[index]
+    console.log(idp.slug)
+    if (connectedIDP.includes(idp.slug) == false){
+      console.log('deleting ' + idp.slug)
+      removeValidCompany(idp.slug)
+      removeInvalidCompany(idp.slug)
+    }
+  }
+
   var data = {
     "available_idps" : available_idps,
     "unavailable_idps" : unavailable_idps
@@ -400,7 +417,7 @@ router.post('/idp/security-code', function(req, res){
   usersPhone = req.session.data['mobileNumber']
 
   personalisation = {
-    'code': parseInt((Math.random())*10000)  
+    'code': parseInt((Math.random())*10000)
   }
 
   notifyClient.sendSms("5c179906-df50-44c9-b42e-f71de4c26b50", usersPhone, personalisation);
@@ -434,7 +451,7 @@ res.redirect('/hub/verify-paused' + res.locals.formQuery);
 
 });
 
-  
+
 
 // Sending data to IDP sign in page
 
@@ -451,10 +468,10 @@ router.get('/idp/sign-in', function (req, res) {
 router.post('/idp/sign-in-code-send', function (req, res) {
 
   usersPhone = req.session.data['mobileNumber']
-  code = parseInt((Math.random())*10000)  
+  code = parseInt((Math.random())*10000)
 
   if (usersPhone != undefined ){
-      
+
     personalisation = {
       'code': code
     }
@@ -471,7 +488,7 @@ router.post('/idp/sign-in-code-send', function (req, res) {
 
 router.get('/idp/journey', function (req, res) {
   if (req.session.data['signUp'] != "true"){
-      
+
       res.redirect('/idp/choose-id' + res.locals.formQuery)
     } else if (req.session.data['registration'] == 'false'){
 
@@ -511,7 +528,7 @@ router.get('/idp/identity-test-intro', function(req,res){
 })
 
 
-// Forcing the user to fail 
+// Forcing the user to fail
 
 router.get('/idp/verify-success', function(req,res){
 
