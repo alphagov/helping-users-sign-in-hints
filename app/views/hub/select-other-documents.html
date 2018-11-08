@@ -14,9 +14,15 @@
         Other identity documents
       </h1>
 
-      <p>You can use identity documents from other countries to set up some digital identities.</p>
+      <p>Some certified companies can use identity documents from other countries to verify you.</p>
 
-      <form action="/hub/choose-a-company{{formQuery}}">
+      <div class="panel panel-border-wide">
+        <p>
+          The more identity documents you can provide now, the more likely it is that the company can verify you successfully.
+        </p>
+      </div>
+
+      <form action="/hub/select-phone{{formQuery}}">
         {{formData | safe}}
         <div class="form-group" data-required="Please answer the question">
           <fieldset class="block">
@@ -31,24 +37,6 @@
             <div class="multiple-choice" data-target="">
               <input id="non-uk-id-false" type="radio" name="non_uk_id" value="false">
               <label for="non-uk-id-false">No</label>
-            </div>
-
-            <div class="panel panel-border-narrow js-hidden" id="non-uk-doc">
-              
-              <legend class="heading-small">
-                Can you download an app to your smartphone or tablet?
-                <span class='form-hint'>You will need to download a free app and use your device's camera to take a photo of your identity document and a selfie.</span>
-              </legend>
-
-              <div class="multiple-choice" data-target="">
-                <input id="app-true" type="radio" name="app" value="true">
-                <label for="app-true">Yes</label>
-              </div>
-
-              <div class="multiple-choice" data-target="">
-                <input id="app-false" type="radio" name="app" value="false">
-                <label for="app-false">No</label>
-              </div>
             </div>
 
           </fieldset>

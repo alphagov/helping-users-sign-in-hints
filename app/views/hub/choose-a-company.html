@@ -13,29 +13,18 @@
     <div class="column-two-thirds">
   		<h1 class="heading-large">Choose a company to verify your identity</h1>
 
-        <p>You don’t have to be an existing customer as they’ve all built new, secure systems in order to verify identities -  you’ll be asked for some personal details that will be checked against records held by {% if data['passport'] == 'true' %}HM Passport Office, {% endif %}{% if data['drivingLicence'] == 'true' %}DVLA, {% endif %}mobile phone providers, banks or credit agencies.</p>
+      <p>You don't have to be an existing customer with a company.</p>
 
-        <p>
-          You can set up any of these digital identities because you have:
-          <ul class="list list-bullet">
-        {% if data['passport'] == 'true' %}
-          <li>a passport</li>
-        {% endif %}
-        {% if data['drivingLicence'] == 'true' %}
-          <li>a driving licence</li>
-        {% endif %}
-        {% if data['non_uk_id'] == 'true' %}
-          <li>a non-UK identity document</li>
-        {% endif %}
-        {% if data['apps'] == 'true' %}
-          <li>a smartphone or tablet</li>
-        {% elif  data['mobile'] == 'true' %}
-          <li>a mobile phone</li>
-        {% endif %}
+      <p>They ask you to provide personal information and evidence, and then check it's correct using the new, secure systems they built.</p>
 
-        <ul>
+      <ul class="list list-bullet">
+        <li><a href="/hub/why-theres-a-choice">Why there’s a choice of companies</a></li>
+      </ul>
 
-      </p>
+
+      <p>Based on your answers, 3 companies can verify you now:</p>
+
+
  
 
         {{ formData | safe }}

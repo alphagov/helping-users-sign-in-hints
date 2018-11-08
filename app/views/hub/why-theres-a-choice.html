@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    {% include "includes/verify-logo.html" %}
+    <div class="column-two-thirds">
+  		<h1 class="heading-large">Why there’s a choice of companies</h1>
+
+      <p>More certified companies means a more secure system - information is not stored in one place, but is split up in lots of different places, making it safer.</p>
+
+      <p>It’s your right to choose who you want to deal with from these companies. It’s also your right to change which company you deal with at any time.</p>
+
+      <p>When verifying your identity, these companies can use their own records, and they’re certified to access information like credit records. They do this to check information you provide from passports and driving licences is correct.</p>
+
+      <p>Certified companies meet strict government privacy standards, so you can trust them with your information. They won’t use your information for any other purpose without your consent.</p>
+
+      <p>There’s no effect on your credit score.</p>
+
+      <p><a href="javascript:history.back();">Choose a company</a></p>
+
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
+
+

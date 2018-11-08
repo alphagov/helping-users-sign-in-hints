@@ -16,39 +16,21 @@
         Create your {{idpName}} identity account
       </h1>
 
-        <p>We'll now send you to {{idpName}}’s website.</p>
+      <p>You'll now verify your identity on the {{idpName}} website.</p>
 
-        <p>You’ll need your:</p>
-        <ul class="list list-bullet">
-          {% if data['passport'] == 'true' %}
-            <li>passport</li>
-          {% endif %}
-          {% if data['drivingLicence'] == 'true' %}
-            <li>driving licence</li>
-          {% endif %}
-          {% if data['non_uk_id'] == 'true' %}
-            <li>non-UK identity document</li>
-          {% endif %}
-          {% if data['apps'] == 'true' %}
-            <li>smartphone or tablet</li>
-          {% elif  data['mobile'] == 'true' %}
-            <li>mobile phone</li>
-          {% endif %}
-        </ul>
+      <p>They'll give you an identity account you can use wherever you see the GOV.UK Verify logo.</p>
 
-        <p>They'll give you an identity account you can use wherever you see the GOV.UK Verify logo.</p>
+      <p>You'll then be able to {{serviceNameLower}}.</p>
 
-        <p>You'll then be able to sign in to {{serviceNameLower}}</p>
+      <form action="{{idpRoot}}sign-up{{formQuery}}">
 
-        <form action="{{idpRoot}}sign-up{{formQuery}}">
-
-          <div class="form-group">
-            <div class="actions">
-              <input class="button" id="next-button" type="submit" value="Continue to the {{idpName}} website">
-            </div>
+        <div class="form-group">
+          <div class="actions">
+            <input class="button" id="next-button" type="submit" value="Continue to the {{idpName}} website">
           </div>
+        </div>
 
-        </form>
+      </form>
 
       {% include "includes/idp-and-verify-logos.html" %}
 
