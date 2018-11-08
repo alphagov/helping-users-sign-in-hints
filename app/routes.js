@@ -310,7 +310,7 @@ router.get('/hub/choose-a-company', function (req, res) {
     // 2 docs
     console.log("2 docs");
 
-    var tempValid = ["experian", "post-office", "digidentity", "royal-mail", "citizensafe", "barclays", "secureidentity" ];
+    var tempValid = ["experian", "post-office", "digidentity", "barclays", "secureidentity" ];
     var tempInvalid = [];
 
     if (query.app != "true" && query.codeType == "code-text") {
@@ -320,7 +320,7 @@ router.get('/hub/choose-a-company', function (req, res) {
 
     if (query.landline == "true") {
       tempValid = ["experian"];
-      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","secureidentity",];
+      tempInvalid = ["barclays","digidentity","post-office","secureidentity",];
     }
 
     addValidCompany(tempValid);
@@ -340,7 +340,7 @@ router.get('/hub/choose-a-company', function (req, res) {
 
     if (query.landline == "true") {
       tempValid = ["experian"];
-      tempInvalid = ["citizensafe","barclays","digidentity","post-office","royal-mail","secureidentity",];
+      tempInvalid = ["barclays","digidentity","post-office","secureidentity",];
     }
 
     addValidCompany(tempValid);
@@ -348,7 +348,7 @@ router.get('/hub/choose-a-company', function (req, res) {
 
   } else {
 
-    var tempValid = ["experian", "post-office", "digidentity", "royal-mail", "citizensafe", "barclays", "secureidentity" ];
+    var tempValid = ["experian", "post-office", "digidentity", "barclays", "secureidentity" ];
     var tempInvalid = [];
 
     addValidCompany(tempValid);

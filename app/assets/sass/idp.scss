@@ -203,12 +203,10 @@ span.error-message {
 
 $idps: (
   barclays: (white, #28ABE3, #28ABE3),
-  citizensafe: (white, #13558C, #c9cde2),
   digidentity: (white, #80BC47, #80BC47),
   experian: (white, #26478d, #c5cce8),
   secureidentity: (white, #184183, #bfcfe7),
-  post-office: (white, #C0163F, #f2bdb0),
-  royal-mail: (white, #BE4130, #BE4130)
+  post-office: (white, #C0163F, #f2bdb0)
   );
 
 @each $idp, $data in $idps
