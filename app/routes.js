@@ -225,7 +225,7 @@ router.get('/hub/sm-signin', function (req, res) {
 
 router.get('/hub/about-choosing-a-company', function(req,res){
 
-  if (res.locals.serviceLOA == '1'){
+  if (res.locals.serviceLOA < '2'){
     res.redirect('choose-a-company' + res.locals.formQuery)
   } else {
     res.render('hub/about-choosing-a-company')
@@ -508,7 +508,7 @@ router.get('/idp/journey', function (req, res) {
 
 router.get('/idp/choose-id', function(req,res){
 
-  if ((res.locals.serviceLOA == '1') && (res.locals.usersLOA < '1') ){
+  if ((res.locals.serviceLOA < '2') && (res.locals.usersLOA < '1') ){
     res.redirect('identity-test-intro' + res.locals.formQuery)
   } else {
     res.render('idp/choose-id')
