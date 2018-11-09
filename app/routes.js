@@ -8,7 +8,7 @@ var extend = require('util')._extend,
     marked = require('marked');
     idpRoot = '/idp/',
     idps = require("./lib/idps.json"),
-    dbURL = 'http://govuk-verify-db.herokuapp.com/prototypes/test2';
+    dbURL = 'http://govuk-verify-db.herokuapp.com/prototypes/stable';
 
 
 
