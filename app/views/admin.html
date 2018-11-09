@@ -13,15 +13,32 @@
       
       <p><a href="/admin/add-service" class="button">Add a service</a></p>
 
-      <h3 class="heading-medium">Services</h3>
+
+      <h3 class="heading-medium">LOA1 Services</h3>
 
       <ul class="list list-bullet">
         {% for service in services %}
-        <li class="service">
-          <a href="/admin/services/{{service.slug | safe}}">{{service.name}}</a>
-        </li>
+          {% if service.LOA != 2 %}
+            <li class="service">
+              <a href="/admin/services/{{service.slug | safe}}">{{service.name}} </a>
+            </li>        
+          {% endif %}
         {% endfor %}
       </ul>
+
+      <hr>
+
+      <h3 class="heading-medium">LOA2 Services</h3>
+      <ul class="list list-bullet">
+        {% for service in services %}
+          {% if service.LOA == 2 %}
+            <li class="service">
+              <a href="/admin/services/{{service.slug | safe}}">{{service.name}} </a>
+            </li>        
+          {% endif %}
+        {% endfor %}
+      </ul>
+
     </div>
   </div>
 </main>
