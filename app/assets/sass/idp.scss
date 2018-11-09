@@ -265,13 +265,19 @@ $idps: (
 // Certified company logo
 
 .certified-logo {
-  margin-top: 30px;
-  img {
-    width: 100%;
-    @include media(mobile){
-      width: 70%;
-    }
-  } 
+  text-align: left;
+  .certified-logo-container{
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+      img {
+        width: 50%;
+        @include media(mobile){
+          width: 70%;
+      }
+    } 
+  }
   .heading-large {
     font-weight: 300; 
     font-size:24px;
