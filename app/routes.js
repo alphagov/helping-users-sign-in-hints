@@ -534,6 +534,8 @@ router.get('/idp/verify-success', function(req,res){
 
   if (req.session.data['verify'] == 'false') {
     res.redirect('/idp/verify-failed' + res.locals.formQuery)
+  } else if (req.session.data['mobileNumber'] === "07712225464"){
+    res.redirect('/idp/verify-failed'+ res.locals.formQuery);
   } else {
     res.render('idp/verify-success')
   }
