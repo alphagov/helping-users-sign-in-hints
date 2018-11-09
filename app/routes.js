@@ -237,9 +237,11 @@ router.get('/hub/about-choosing-a-company', function(req,res){
 
 router.get('/hub/select-documents', function(req,res){
 
-  if (req.session.data['non-uk-group'] == 'false'){
+  if ((req.session.data['user_uk'] == 'false')&&(req.session.data['non-uk-group'] == 'false')){
     res.redirect('will-not-work' + res.locals.formQuery)
-  } else if ((req.session.data['non-uk-group'] == 'false')||(req.session.data['user_age'] == 'false')){
+  } else if ((req.session.data['user_uk'] == 'false')&&(req.session.data['non-uk-group'] == 'true')){
+    res.redirect('might-not-work' + res.locals.formQuery)
+  } else if (req.session.data['user_age'] == 'false'){
     res.redirect('might-not-work' + res.locals.formQuery)
   } else {
     res.render('hub/select-documents')
