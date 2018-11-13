@@ -160,6 +160,10 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+router.get('/intro', function (req, res) {
+  res.render('hub/verify-signin-picker')
+})
+
 
 // HUB ROUTING
 
