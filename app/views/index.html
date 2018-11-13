@@ -12,24 +12,23 @@
     <form method="POST" action="hub/slide-start{{formQuery}}">
 
       <div class="column-half">
-        <h1 class="heading-large">
-          The fancy new GOV.UK Verify prototype
-          <span class="heading-secondary">v3.0</span>
-        </h1>
+        <h1 class="heading-large">GOV.UK Verify prototype</h1>
         <div class="button-wrap">
-          <h2 class="heading-medium">LOA1 services</h2>
+          <h2 class="heading-medium">Example LOA1 service</h2>
           <ul class="start-button-list">
             <li><input type="submit" formaction="/service/view-driving-licence-start?requestId=view-share-driving-licence" value="View or share your driving licence information" class="button" id="next-button"></li>
           </ul>
-          <h2 class="heading-medium">LOA2 services</h2>
+          <h2 class="heading-medium">Example LOA2 service</h2>
           <ul class="start-button-list">
             
             <li><input type="submit" formaction="/service/personal-tax-account-start?requestId=personal-account" value="Personal tax account" class="button" id="next-button"></li>
           </ul>
         </div>
+        <h2 class="heading-medium">Forcing users to fail verification</h2>
+        <p>By entering the phone number 07712225464 when prompted, users will go down the 'fail verification' journey.</p>
       </div>
 
-      <div class="column-half">
+     <!--  <div class="column-half">
 
       <div id="usersLOA">
         <h2 class="heading-medium">Select additional options</h2>
@@ -153,7 +152,7 @@
               </div>
             </div>
         </div>
-
+ -->
       </form>
     </div>
   </div>
