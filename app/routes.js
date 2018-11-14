@@ -362,20 +362,20 @@ router.get('/hub/choose-a-company', function (req, res) {
 
   }
 
-  console.log(JSON.stringify(req.session.data['connectedIDP'], null, "  "));
+  // console.log(JSON.stringify(req.session.data['connectedIDP'], null, "  "));
 
-  let connectedIDP = req.session.data['connectedIDP']
+  // let connectedIDP = req.session.data['connectedIDP']
 
-  // go backwards through array to remove disconnected IDPs
-  for (let index = available_idps.length-1; index >=0; index--){
-    let idp = available_idps[index]
-    console.log(idp.slug)
-    if (connectedIDP.includes(idp.slug) == false){
-      console.log('deleting ' + idp.slug)
-      removeValidCompany(idp.slug)
-      removeInvalidCompany(idp.slug)
-    }
-  }
+  // // go backwards through array to remove disconnected IDPs
+  // for (let index = available_idps.length-1; index >=0; index--){
+  //   let idp = available_idps[index]
+  //   console.log(idp.slug)
+  //   if (connectedIDP.includes(idp.slug) == false){
+  //     console.log('deleting ' + idp.slug)
+  //     removeValidCompany(idp.slug)
+  //     removeInvalidCompany(idp.slug)
+  //   }
+  // }
 
   var data = {
     "available_idps" : available_idps,
