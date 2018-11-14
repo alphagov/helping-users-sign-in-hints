@@ -493,10 +493,11 @@ router.post('/idp/sign-in-code-send', function (req, res) {
 // Routing Uplift, Sign in and Registering users after sign in/up pages
 
 router.get('/idp/journey', function (req, res) {
-  if (req.session.data['signUp'] != "true"){
+  // if (req.session.data['signUp'] != "true"){
 
-      res.redirect('/idp/choose-id' + res.locals.formQuery)
-    } else if (req.session.data['registration'] == 'false'){
+  //     res.redirect('/idp/choose-id' + res.locals.formQuery)
+  //   } else 
+  if (req.session.data['registration'] == 'false'){
 
     if ((res.locals.usersLOA == '1') && (res.locals.serviceLOA == '2')){
       res.redirect('/idp/uplift-warning' + res.locals.formQuery)
@@ -514,7 +515,7 @@ router.get('/idp/journey', function (req, res) {
 
 router.get('/idp/choose-id', function(req,res){
 
-  if ((res.locals.serviceLOA < '2') && (res.locals.usersLOA < '1') ){
+  if ((res.locals.serviceLOA < '2') ){
     res.redirect('identity-test-intro' + res.locals.formQuery)
   } else {
     res.render('idp/choose-id')
@@ -524,14 +525,14 @@ router.get('/idp/choose-id', function(req,res){
 
 // Taking uplifting users past KBVs
 
-router.get('/idp/identity-test-intro', function(req,res){
+// router.get('/idp/identity-test-intro', function(req,res){
 
-  if (res.locals.usersLOA > '0'){
-    res.redirect('/idp/verify-success' + res.locals.formQuery)
-  } else {
-    res.render('idp/identity-test-intro')
-  }
-})
+//   if (res.locals.usersLOA > '0'){
+//     res.redirect('/idp/verify-success' + res.locals.formQuery)
+//   } else {
+//     res.render('idp/identity-test-intro')
+//   }
+// })
 
 
 // Forcing the user to fail
