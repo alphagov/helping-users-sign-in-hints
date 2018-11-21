@@ -79,7 +79,7 @@ router.use(function (req, res, next) {
   // send common data to every view:
   // service, IDP root
 
-  var requestId = req.session.data['requestId'] || "view-share-driving-licence";
+  var requestId = req.session.data['requestId'] || "german-service-test";
 
   getServices(function (error) {
     if (error) {
