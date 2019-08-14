@@ -15,37 +15,42 @@
 		<div class="column-two-thirds">
 			<h1 class="heading-large ">Security code</h1>
 			<div class="form-group">
-	
+
 					{% if data['mobileNumber'] > 1 %}
 						<p>We've sent your security code to:</p>
 						<p>{{data['mobileNumber']}}</p>
 					{% else %}
 						<p>We've sent your security code to your mobile phone.</p>
 					{% endif %}
-				
+
 				<p>It may take a minute or so to arrive.</p>
 
-				<form id="main-form" action="/idp/journey{{formQuery}}" method="get">
-					
+          {% if data['userHasIdpAccount'] == 'true' %}
+            <form id="main-form" action="/idp/verify-success" method="post" name="Form" >
+          {% else %}
+            <form id="main-form" action="/idp/journey{{formQuery}}" method="get">
+  				{% endif %}
+
+
 					{{ formData|safe }}
 
 					<div class="form-group"  data-required="Please enter the security code sent to your mobile phone">
 						<label class="form-label" for="securityCode">Security code</label>
 						<input class="form-control" id="securityCode" name="securityCode" type="text">
 					</div>
-				
+
 					<div class='form-group'>
 						<button class="button">
 							Continue
 						</button>
-						
+
 						<div  class="secondary-button">
 							<a href="javascript:history.back()">Back</a>
 						</div>
 					</div>
 
 				</form>
-				
+
 			</div>
 		</div>
 		{% include "includes/idp-sidebar.html" %}

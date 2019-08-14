@@ -8,11 +8,11 @@
 
 <main id="content" role="main">
   {% include "includes/available-languages.html" %}
-  <div class="grid-row">  
-    <div class="column-two-thirds">    
-        
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
       <h1 class="heading-large">{{serviceName}}</h1>
-      
+
       <p>Use this service to find out how much State Pension you could get when you reach State Pension age.</p>
 
       <p>The amount is based on an estimate of what your National Insurance record could be when you reach State Pension age.</p>
@@ -20,10 +20,10 @@
       <p>You’ll also get information about how to increase your State Pension, if you can.</p>
 
       <p>You can only use this service if you’re under State Pension age.</p>
-      
+
       <div class="sign-in-wrap">
         <div class="button-wrap">
-          <a class="button button-start" href="/hub/verify-signin-picker{{formQuery}}">
+          <a class="button button-start" href="/hub/interstitial">
             <strong>Start now</strong>
           </a>
         </div>
@@ -32,7 +32,7 @@
       <h2 class="heading-medium">Other ways to apply</h2>
 
       {{serviceOtherWays | safe}}
-          
+
     </div>
   </div>
 </main>
@@ -40,5 +40,3 @@
 
 
 {% endblock %}
-
-

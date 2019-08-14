@@ -77,6 +77,26 @@
   margin-bottom: 0;
 }
 
+.hint-logo{
+  width: 45%;
+  margin-right: 4%;
+  margin-bottom: 25px;
+  padding-right: 1.5em;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.hint-logo:first-child{
+  border-right: 3px solid #dee0e2;
+}
+
+.hint-logo img{
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+}
+
 .idp-choice {
   padding: 15px 0;
   border-bottom: 1px solid $grey-1;

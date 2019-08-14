@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Prove your identity to continue</h1>
+
+        <p>Choose how you want to prove your identity so you can apply for a DBS basic check.</p>
+
+        <h2 class="heading-medium">Use GOV.UK Verify</h2>
+
+        <p>
+          Registering with GOV.UK Verify usually takes about 15 minutes. It works best if you have:
+          <ul>
+            <li>a UK address</li>
+            <li>a valid passport or photocard driving licence</li>
+          </ul>
+        </p>
+
+        <p>
+          A certified identity provider will check your identity when you register with GOV.UK Verify. They’ve all met security standards set by government.
+        </p>
+
+        <form method="POST" action="/hub/verify-signin-picker{{formQuery}}">
+          <input type="hidden" name="userHasIdpAccount" value="true">
+          <input type="hidden" name="userHasIdpAccountError" value="false">
+          <button class="button">Use GOV.UK Verify</button>
+        </form>
+
+        <h2 class="heading-medium">Use a digital identity from another European country</h2>
+
+        <p>
+          If you are part of Germany’s Online-Ausweis you can use it here. Identity schemes from other countries will become available later.
+        </p>
+
+        <p>
+          A certified identity provider will check your identity when you register with GOV.UK Verify. They’ve all met security standards set by government.
+        </p>
+
+        <button class="button">Select your European digital identity</button>
+
+      </div>
+    </div>
+  <br><br>
+  <p>Not you? <a href="/hub/eidas-interstitial">Choose another way to prove your identity</a>.</p>
+</main>
+
+{% endblock %}

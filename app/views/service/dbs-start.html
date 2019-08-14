@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <h1 class="heading-xlarge">Request a basic DBS check</h1>
+
+    <p>
+      Apply for a basic Disclosure and Barring Service (DBS) check to get a copy of your criminal record. This is called ‘basic disclosure’. It’s available for people working in England and Wales.
+    </p>
+
+    <p>
+      This includes if you live in Northern Ireland or Scotland but the job you’re applying for is in England or Wales.
+    </p>
+
+    <p>
+      The check will only show convictions that are not ‘spent’, for example some types of caution will disappear after 3 months.
+    </p>
+    <p>
+      You must be 16 or over to apply.
+    </p>
+    <p>
+      It usually takes up to 14 days for you to receive your certificate.
+    </p>
+    <p>
+      The service is available from 8am to 11:30pm.
+    </p>
+
+    <h2 class="heading-medium">Fees</h2>
+    <p>
+      It costs £25.
+    </p>
+    <p>
+      You can pay with a debit or credit card. You can also use Google Pay or Apple Pay.
+    </p>
+
+
+    <h2 class="heading-medium">What you’ll need</h2>
+
+    <p>
+      To apply for a basic DBS check you’ll need:
+      <ul class="list-bullet">
+        <li>all your addresses for the last 5 years and the dates you lived there</li>
+        <li>your National Insurance number</li>
+        <li>your passport</li>
+        <li>your driving licence</li>
+      </ul>
+    </p>
+
+    <div class="sign-in-wrap">
+      <div class="button-wrap">
+        <a class="button button-start" href="/service/dbs-consent">
+          <strong>Start now</strong>
+        </a>
+      </div>
+    </div>
+
+    <section class="more">
+      <div id="before-you-start">
+        <h2 class="heading-medium">Before you start</h2>
+        <p>Make sure a basic DBS check is the correct one for you. For certain roles, your employer may need to apply for a higher level of criminal record check.</p>
+
+        <p><a href="/find-out-dbs-check">Find out if you need a basic DBS check</a> or ask your employer if you’re not sure.</p>
+
+        <h2 class="heading-medium" id="get-help-to-use-the-online-service">Get help to use the online service</h2>
+
+        <p>If you need support to apply online, call the DBS helpline on 03000 200 190 and select option 2 and then option 1.</p>
+
+        <h2 class="heading-medium" id="other-ways-to-apply">Other ways to apply</h2>
+
+        <p>You can also choose to apply through other companies. The Disclosure and Barring Service has a <a href="/guidance/responsible-organisations">list of companies</a> you can apply through.</p>
+
+        <h2 class="heading-medium" id="transgender-applications">Transgender applications</h2>
+
+        <p>Contact the DBS transgender applications team if you’re a transgender applicant and you do not want to reveal details of your previous identity to a potential employer.</p>
+
+        <div class="contact">
+        <p><strong>DBS transgender applications team</strong><br>
+        <a href="mailto:sensitive@dbs.gov.uk">sensitive@dbs.gov.uk</a><br>
+        Telephone: 0151 676 1452<br>
+        Monday to Friday, 9am to 5pm<br>
+        <a href="/call-charges">Find out about call charges</a></p>
+        </div>
+
+        <h2 class="heading-medium" id="requesting-your-police-record">Requesting your police record</h2>
+
+        <p>You’ll need to <a href="/copy-of-police-records">request a police record</a> instead if:</p>
+
+        <ul>
+          <li>you’re applying for certain visas</li>
+          <li>you want to see your police file without receiving a certificate - this will show up any warnings or cautions that are not on your official criminal record</li>
+        </ul>
+      </div>
+    </section>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock %}

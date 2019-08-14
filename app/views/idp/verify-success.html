@@ -15,7 +15,7 @@
 		<div class="column-two-thirds">
 			<h1 class="heading-large ">
 				{% if data['registration'] == 'true' %}
-			  	{{idpName}} has verified your identity 
+			  	{{idpName}} has verified your identity
 			  {% else %}
 			  	The evidence you provided is valid
 			  {% endif %}
@@ -25,27 +25,29 @@
 
 
 			<p>We're confident it's you accessing the government service, and not someone pretending to be you. You can continue to GOV.UK.</p>
-      
+
 			{% if data['registration'] != 'true' %}
       	<!-- Only renders if the user is doing an uplift journey -->
         <p>We've updated your {{idp}} identity account so you will not be asked for more evidence again when you need to access another government service.</p>
       {% endif %}
 
       <p>You can now sign in with your {{idp}} identity account whenever you see the GOV.UK Verify logo.</p>
-        
+
       <p><img class="sign-in-logo" src="/public/images/govuk-verify-small-black-text.png" style="max-height:50px;" alt=""></p>
 
       <p>Access government services that use GOV.UK Verify with your username, password and the security code we send to your mobile phone.</p>
-				
+
 			<form id="main-form" action="/hub/verify-success{{formQuery}}" method="get">
 				<input type="hidden" name="usersLOA" value="1">
 				<div class='form-group'>
+          <input type="hidden" name="userHasIdpAccount" value="true">
+          <input type="hidden" name="userHasIdpAccountError" value="false">
 					<button class="button">
 						Continue to GOV.UK
 					</button>
 				</div>
 			</form>
-				
+
 		</div>
 		{% include "includes/idp-sidebar.html" %}
 	</div>

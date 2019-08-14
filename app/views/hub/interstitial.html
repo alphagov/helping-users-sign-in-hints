@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/available-languages.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+  		<h1 class="heading-xlarge">Prove your identity to continue</h1>
+
+
+      <form action="/hub/sign-in-hint">
+        {{formData | safe}}
+        <div class="form-group">
+          <fieldset>
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="radio-group" value="gateway">
+              <label for="radio-1">
+                <p style='font-weight: bold;'>Sign in with Government Gateway</p>
+                <p class='hint'>You’ll have a user ID if you’ve signed up to do things like file your Self Assessment tax return online.</p>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-2" type="radio" name="radio-group" value="verify">
+              <label for="radio-2">
+                <p style='font-weight: bold;'>Sign in with GOV.UK Verify</p>
+                <p class='hint'>You’ll have an account if you’ve already proved your identity with either Barclays, Digidentity, Experian, Post Office or SecureIdentity.</p>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-3" type="radio" name="radio-group" value="eidas">
+              <label for="radio-3">
+                <p style='font-weight: bold;'>Sign in with a digital identity from another European country</p>
+                <p class='hint'>If you are part of Germany’s Online-Ausweis you can use it here. Identity schemes from other countries will become available later.</p>
+              </label>
+            </div>
+            <p class="form-block" style='margin-bottom: 25px;'>or</p>
+            <div class="multiple-choice">
+              <input id="radio-4" type="radio" name="radio-group" value="Create">
+              <label for="radio-4">
+                <p style='font-weight: bold;'>Create an account</p>
+                <p class='hint'>If you do not already have one of these accounts, we'll help you choose whether to use Government Gateway or GOV.UK Verify.</p>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        {% if data['idpChoice'] == 'digidentity' %}
+          <input type="hidden" name="idpChoice" value="post-office">
+        {% else %}
+          <input type="hidden" name="idpChoice" value="digidentity">
+        {% endif %}
+
+        <input class="button" type="submit" value="Continue">
+      </form>
+  	</div>
+  </div>
+</main>
+
+{% endblock %}
