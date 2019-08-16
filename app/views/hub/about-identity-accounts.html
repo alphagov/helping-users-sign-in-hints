@@ -5,7 +5,7 @@
 
 {% block slide_content %}
 
-<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/about-choosing-a-company" accept-charset="UTF-8" method="get">
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/choose-a-company?registration=true&user_age=true&user_uk=true&drivingLicence=true&drivingLicenceGB=true&passport=true&mobile=true&apps=true" accept-charset="UTF-8" method="get">
 
   {{ formData | safe }}
   <p>Verifying your identity takes about {% if serviceLOA < '2' %}5{% else %}15{% endif %} minutes to complete{% if serviceLOA == '2' %}, but you only have to do it once{% endif %}.</p>
@@ -13,7 +13,7 @@
   <p>You can then access other government services {% if serviceLOA != '0' %}in less than 1 minute {% endif %}wherever you see the GOV.UK Verify logo.</p>
 
   {% if serviceLOA == '2' %}
-  
+
   <details role="group">
     <summary role="button" aria-controls="details-content-0" aria-expanded="false">
       <span class="summary">Where you can use your identity account</span>
@@ -41,16 +41,16 @@
   </details>
 
   {% else %}
-  
+
   <details role="group">
     <summary role="button" aria-controls="details-content-0" aria-expanded="false">
       <span class="summary">Where you can use your identity account</span>
     </summary>
     <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-      
+
       <p>GOV.UK Verify is new, and government services are joining all the time.</p>
       <p>You can use your identity account to access:</p>
-      
+
       <ul class="list-bullet list">
         <li>view or share your driving licence information</li>
         <li>apply for Universal Credit </li>

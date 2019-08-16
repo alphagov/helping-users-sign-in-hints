@@ -134,15 +134,13 @@
 
 // About certified companies
 .list-companies {
-  text-align: center;
-  // margin-bottom: $gutter-half;
   li {
     @include inline-block;
     width: 50%;
 
     @include media (tablet) {
       width: 24%;
-      padding: 0 3%;
+      padding: 0 3% 0 0;
     }
   }
 

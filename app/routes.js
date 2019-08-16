@@ -354,8 +354,8 @@ router.get('/hub/choose-a-company', function (req, res) {
 
   } else {
 
-    var tempValid = ["experian", "post-office", "digidentity", "barclays", "secureidentity" ];
-    var tempInvalid = [];
+    var tempValid = [ "digidentity", "post-office" ];
+    var tempInvalid = ["experian", "barclays", "secureidentity"];
 
     addValidCompany(tempValid);
     addInvalidCompany(tempInvalid);
@@ -496,7 +496,7 @@ router.get('/idp/journey', function (req, res) {
   // if (req.session.data['signUp'] != "true"){
 
   //     res.redirect('/idp/choose-id' + res.locals.formQuery)
-  //   } else 
+  //   } else
   if (req.session.data['registration'] == 'false'){
 
     if ((res.locals.usersLOA == '1') && (res.locals.serviceLOA == '2')){
