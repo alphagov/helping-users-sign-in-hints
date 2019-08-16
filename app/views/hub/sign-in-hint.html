@@ -44,7 +44,15 @@
     </div>
   {% endif %}
   <br><br>
-  <p>Not you? <a href="/hub/eidas-interstitial">Choose another way to prove your identity</a>.</p>
+  <p>
+    Not you?
+    {% if data['requestId'] == 'dbs' %}
+      <a href="/hub/eidas-interstitial">Choose another way to prove your identity</a>
+    {% else %}
+      <a href="/hub/signin-idp-picker?registration=false">Choose another way to prove your identity</a>
+    {% endif %}
+    .
+  </p>
 </main>
 
 {% endblock %}
