@@ -5,23 +5,8 @@
     "slug" : "digidentity"
   },
   {
-    "name" : "Barclays",
-    "accountName" : "Barclays Identity Service",
-    "slug" : "barclays"
-  },
-  {
-    "name" : "Experian",
-    "accountName" : "ExperianID",
-    "slug" : "experian"
-  },
-  {
     "name" : "Post Office",
     "accountName" : "My Post Office",
     "slug" : "post-office"
-  },
-  {
-    "name" : "SecureIdentity",
-    "accountName" : "SecureIdentity",
-    "slug" : "secureidentity"
   }
 ]
