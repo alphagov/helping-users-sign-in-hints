@@ -11,21 +11,18 @@
   <div class="grid-row">
     {% include "includes/verify-logo.html" %}
     <div class="column-two-thirds">
-  		<h1 class="heading-large">Choose a company to verify your identity</h1>
+  		<h1 class="heading-large">Pick a company to verify you</h1>
 
-      <p>You don't have to be an existing customer with a company.</p>
+      <p>One of these companies will create your online identity account. </p>
 
-      <p>They ask you to provide personal information and evidence, and then check it's correct using the new, secure systems they built.</p>
+      <p>You can pick either company. There’s more than one so that:</p>
 
       <ul class="list list-bullet">
-        <li><a href="/hub/why-theres-a-choice">Why there’s a choice of companies</a></li>
+        <li>you can choose who verifies your identity</li>
+        <li>everyone’s information is not stored in one place</li>
       </ul>
 
-
-      <p>Based on your answers, these companies can verify you now:</p>
-
-
- 
+      <p>It usually takes 10-15 minutes, but you only have to do it once. Then you can reuse your account in the other government services that use GOV.UK Verify. </p>
 
         {{ formData | safe }}
 
@@ -37,7 +34,7 @@
           <div class="company-logo">
             <img alt="" src="/public/images/idp-logos/{{ idp.slug }}.png">
 
-           
+
           </div>
 
           <div class="idp-option">
@@ -48,7 +45,7 @@
                 <button class="button">Select {{ idp.name }}</button>
               </form>
             </div>
-            
+
           </div>
         </div>
         {% endfor %}
@@ -58,5 +55,3 @@
 </main>
 
 {% endblock %}
-
-

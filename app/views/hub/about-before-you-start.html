@@ -1,0 +1,58 @@
+{% extends "layout_slide.html" %}
+
+{% block body_classes %}hub-start{% endblock %}
+{% block page_title %}Start - GOV.UK Verify - GOV.UK{% endblock %}
+
+{% block slide_content %}
+
+<form id="start-page-form" class="js-validate" novalidate="novalidate" action="/hub/about-certified-companies" accept-charset="UTF-8" method="get">
+
+  {{ formData | safe }}
+
+  <p>
+    To set up a GOV.UK Verify account, you need:
+    <ul class="list list-bullet">
+      <li>at least one photo identity document (ID)</li>
+      <li>a UK address</li>
+      <li>a mobile phone</li>
+    </ul>
+  </p>
+  <p>
+    You can use a valid passport, full or provisional driving licence, or non-UK ID card.
+  </p>
+  <p>
+    If you’re just using one of those, you’ll also need a phone that can download an app and take pictures.
+  </p>
+</br>
+
+  <details role="group">
+    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+      <span class="summary">Other identity documents</span>
+    </summary>
+
+    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+      <p>
+        For security, you can’t use:
+        <ul class="list-bullet">
+          <li>any other identity documents (like railcards or library cards)</li>
+          <li>a paper-only driving licence</li>
+          <li>expired documents - except passports that ran out in the last 3 months</li>
+        </ul>
+      </p>
+      <p>
+        You can use passports and driving licenses from any country.
+      </p>
+      <p>
+        If you don’t have any valid documents, <a href="">see how to continue without using GOV.UK Verify</a>.
+      </p>
+    </div>
+  </details>
+
+  <div class="form-group">
+    <div class="actions">
+      <input class="button" id="next-button" type="submit" value="Next">
+    </div>
+  </div>
+</form>
+
+{% endblock %}
