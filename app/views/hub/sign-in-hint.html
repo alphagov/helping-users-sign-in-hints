@@ -33,26 +33,25 @@
         </div>
       </div>
     </div>
-
+    <br><br>
     <div class="grid-row">
-      <div class="column-two-thirds">
-        <form method="POST" action="{{idpRoot}}/sign-in{{formQuery}}">
+      <div class="column-full">
+        <form method="POST" action="{{idpRoot}}/sign-in{{formQuery}}"  style='float:left;'>
           <input type="hidden" name="idpChoice" value="{{idpSlug}}">
           <button class="button">Sign in with {{ idpName }}</button>
         </form>
+        <p style='float:left;margin-left:25px;padding-top:5px;'>
+          <span>Not you?</span>
+          {% if data['requestId'] == 'dbs' %}
+            <a href="/hub/eidas-interstitial">Choose another way to prove your identity</a>.
+          {% else %}
+            <a href="/hub/signin-idp-picker?registration=false">Choose another way to prove your identity</a>.
+          {% endif %}
+        </p>
       </div>
     </div>
   {% endif %}
-  <br><br>
-  <p>
-    Not you?
-    {% if data['requestId'] == 'dbs' %}
-      <a href="/hub/eidas-interstitial">Choose another way to prove your identity</a>
-    {% else %}
-      <a href="/hub/signin-idp-picker?registration=false">Choose another way to prove your identity</a>
-    {% endif %}
-    .
-  </p>
+
 </main>
 
 {% endblock %}
