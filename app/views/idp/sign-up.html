@@ -17,22 +17,22 @@
 			<div class="form-group">
 
 				<h2 class="heading-medium" style="font-weight: lighter; font-size:24px;" >Create your identity account</h2>
-				
+
 
 				<form id="main-form" action="/idp/security-code{{formQuery}}" method="get">
-					
+
 					{{ formData|safe }}
 
 					<div class="form-group" data-required="Please enter your email address">
 						<label class="form-label" >Email address</label>
 					<input class="form-control" type="text" placeholder="Enter your email address" name='email'>
 					</div>
-			
+
 					<div class="form-group" data-required="Please enter your password">
 						<label class="form-label">Password</label>
 						<input class="form-control" type="password" placeholder="Enter your password" autocomplete='off'>
 					</div>
-			
+
 					<div class="form-group" data-required="Please confirm your password">
 						<label class="form-label" >Confirm password</label>
 						<input class="form-control" type="password" placeholder="Confirm your password" autocomplete='off'>
@@ -48,16 +48,16 @@
 						<button class="button">
 							Continue
 						</button>
-						
+
 						<div  class="secondary-button">
 							<a href="javascript:history.back()">Back</a>
 						</div>
 					</div>
-					
-					<p>If you already have a {{idpName}} identity account you can <a href="{{baseURL}}/sign-in{{formQuery}}">sign in</a>.</p>
+
+					<p>If you already have a {{idpName}} identity account you can <a href="{{idpRoot}}sign-up{{formQuery}}">sign in</a>.</p>
 
 				</form>
-				
+
 			</div>
 		</div>
 		{% include "includes/idp-sidebar.html" %}

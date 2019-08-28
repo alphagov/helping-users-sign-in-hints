@@ -24,7 +24,7 @@
           {% endif %}
 
           {% if data['userHasIdpAccountError'] == 'true' %}
-            <span style="margin-bottom: 25px;" class="error error-message" id="error-message-full-name">We were unable to find an account with this email address. Please try a different email address or <a href="#">create an account</a>.</span>
+            <span style="margin-bottom: 25px;" class="error error-message" id="error-message-full-name">We were unable to find an account with this email address. Please try a different email address or <a href="{{idpRoot}}sign-up{{formQuery}}">create an account</a>.</span>
           {% endif %}
 					{{ formData|safe }}
 
@@ -46,7 +46,7 @@
 						<a href="javascript:history.back()">Back</a>
 					</div>
 
-					<p>If you don't already have a {{idpName}} identity account you can <a href="{{baseURL}}/input-email{{formQuery}}">create an account</a>.</p>
+					<p>If you don't already have a {{idpName}} identity account you can <a href="{{idpRoot}}sign-up{{formQuery}}">create an account</a>.</p>
 				</form>
 
 			</div>
