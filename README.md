@@ -1,6 +1,9 @@
 # GOV.UK Verify Prototype 3.0
 
 
+>**GOV.UK Verify has closed**
+>
+>This repository is out of date and has been archived
 
 ## About the prototype
 
